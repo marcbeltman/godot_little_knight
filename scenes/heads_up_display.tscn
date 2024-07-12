@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0tia5dve0qlo"]
+
+[ext_resource type="Script" path="res://scripts/CanvasLayerUI.gd" id="1_5bpsa"]
+[ext_resource type="FontFile" uid="uid://cbh3hxq8qdpwb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_wakcu"]
+[ext_resource type="AudioStream" uid="uid://bxkrnp0si51pe" path="res://assets/sounds/timesUp.mp3" id="3_vpvnk"]
+
+[node name="Heads-Up_Display" type="CanvasLayer"]
+script = ExtResource("1_5bpsa")
+redClr = Color(1, 0, 0, 1)
+origClr = Color(1, 1, 1, 1)
+
+[node name="countdown" type="Label" parent="."]
+offset_top = 7.0
+offset_right = 168.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("2_wakcu")
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 50.0
+
+[node name="TimesUp" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_vpvnk")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 57.0
+offset_right = -53.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "De functie van geld
+
+Vraag: Wat zijn de verschillende manieren waarop geld en spullen een rol spelen in het leven van mensen?
+
+A. Geld en spullen helpen bij het tonen van status en welvaart.
+
+B. Geld en spullen vergemakkelijken het ruilen van goederen.
+
+C. Geld en spullen zijn essentieel voor het onderhouden van sociale relaties.
+
+D. Geld en spullen bevorderen de fysieke gezondheid van mensen.
+
+"
+editable = false

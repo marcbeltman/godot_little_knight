@@ -1,0 +1,94 @@
+[gd_scene load_steps=14 format=3 uid="uid://dua4jjcukcirj"]
+
+[ext_resource type="Script" path="res://scripts/door.gd" id="1_ifixu"]
+[ext_resource type="Texture2D" uid="uid://dgxag3hl361oq" path="res://assets/sprites/door.png" id="2_ryy4x"]
+[ext_resource type="AudioStream" uid="uid://dcp46vf5vtv0p" path="res://assets/sounds/open-door.mp3" id="3_x0n7q"]
+[ext_resource type="FontFile" uid="uid://cbh3hxq8qdpwb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="5_jk4b1"]
+[ext_resource type="PackedScene" uid="uid://blt6cjjkqxgxj" path="res://scenes/next_level.tscn" id="6_5d5tr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bybs4"]
+atlas = ExtResource("2_ryy4x")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apevg"]
+atlas = ExtResource("2_ryy4x")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqlcc"]
+atlas = ExtResource("2_ryy4x")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ol0pv"]
+atlas = ExtResource("2_ryy4x")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iorfj"]
+atlas = ExtResource("2_ryy4x")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgj7l"]
+atlas = ExtResource("2_ryy4x")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sripy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bybs4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apevg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqlcc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ol0pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iorfj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgj7l")
+}],
+"loop": false,
+"name": &"open",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6h31g"]
+size = Vector2(28, 42)
+
+[node name="door_B" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_ifixu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sripy")
+animation = &"open"
+
+[node name="OpenDoorSound" type="AudioStreamPlayer2D" parent="AnimatedSprite2D"]
+position = Vector2(8, -11)
+stream = ExtResource("3_x0n7q")
+volume_db = 24.0
+bus = &"SFX"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-45, 4)
+shape = SubResource("RectangleShape2D_6h31g")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -19.0
+offset_top = -50.0
+offset_right = 21.0
+offset_bottom = -27.0
+theme_override_fonts/font = ExtResource("5_jk4b1")
+text = "B"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NextLevel" parent="." instance=ExtResource("6_5d5tr")]
+position = Vector2(0, 5)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cju36f8v8eryy"]
+
+[ext_resource type="PackedScene" uid="uid://bflftfppyuite" path="res://scenes/dialog.tscn" id="1_66qe5"]
+
+[node name="Game" type="Node2D"]
+
+[node name="dialog" parent="." instance=ExtResource("1_66qe5")]
+titel = " Thema 3 geld : De rol van Geld"
+question = "Vraag 01: Wat zijn de verschillende manieren waarop geld en spullen een rol spelen in het leven van mensen?"
+answer_A = "A. Geld en spullen helpen bij het tonen van status en welvaart."
+answer_B = "B. Geld en spullen vergemakkelijken het ruilen van goederen.g"
+answer_C = "C. Geld en spullen zijn essentieel voor het onderhouden van sociale relaties."
+answer_D = "D. Geld en spullen bevorderen de fysieke gezondheid van mensen."
