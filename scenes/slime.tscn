@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/slime.gd" id="1_jkgos"]
 [ext_resource type="Texture2D" uid="uid://b0mv1aji8be7y" path="res://assets/sprites/slime_green.png" id="1_tqual"]
-[ext_resource type="PackedScene" uid="uid://bent2ylxpl4oi" path="res://scenes/killzone.tscn" id="2_8mk40"]
+[ext_resource type="AudioStream" uid="uid://brermjcwc4ohv" path="res://assets/sounds/die.mp3" id="3_o7dkm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j46xm"]
 atlas = ExtResource("1_tqual")
@@ -40,8 +40,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygh3m"]
-size = Vector2(12, 15)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uqg8o"]
+size = Vector2(14, 15)
 
 [node name="slime" type="Node2D"]
 script = ExtResource("1_jkgos")
@@ -54,12 +54,6 @@ frame = 2
 frame_progress = 0.0781341
 flip_h = true
 
-[node name="Killzone" parent="AnimatedSprite2D" instance=ExtResource("2_8mk40")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Killzone"]
-position = Vector2(0, 4.5)
-shape = SubResource("RectangleShape2D_ygh3m")
-
 [node name="RayCastRight" type="RayCast2D" parent="."]
 position = Vector2(0, -7)
 target_position = Vector2(13, 0)
@@ -67,3 +61,17 @@ target_position = Vector2(13, 0)
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 position = Vector2(0, -7)
 target_position = Vector2(-13, 0)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_uqg8o")
+
+[node name="slime_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_o7dkm")
+volume_db = 3.5
+pitch_scale = 2.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

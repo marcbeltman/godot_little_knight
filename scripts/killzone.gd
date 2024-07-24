@@ -1,17 +1,11 @@
 extends Area2D
 
-@onready var timer = $Timer
-@onready var dieSound= $AudioStreamPlayer2D
-
+#declaratie signaal naar Health_System
+signal player_died(body)
 
 func _on_body_entered(body):
-	print("You DIED!!!")
-	dieSound.play()
-	Engine.time_scale = 0.5
-	body.get_node("CollisionShape2D").queue_free()
-	timer.start()
-
-
-func _on_timer_timeout():
-	Engine.time_scale = 1.0
-	get_tree().reload_current_scene()
+	die(body)
+	
+func die(body):
+	# verzenden signaal naar Health_System
+	player_died.emit(body)

@@ -1,10 +1,15 @@
 extends CanvasLayer
 
-@onready var countdown = $countdown
+@onready var countdown = $HBoxContainer/countdown
+@onready var lives = $HBoxContainer/lives
+@onready var score = $HBoxContainer/score
+
+
 @onready var timer = $Timer
 
 @onready var times_up = $TimesUp
 
+#@export var playTime : int
 
 @export var redClr : Color
 @export var origClr : Color
@@ -13,8 +18,9 @@ extends CanvasLayer
 func _ready():
 	timer.start()
 	OrigClrRet()
+	$"../GameManager/Heath_System".lives_changed.connect(update_lives_text)
+	%GameManager.score_changed.connect(update_score_text)
 	
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	update_countdown_text()
@@ -25,24 +31,25 @@ func _process(delta):
 			
 		if ceil(timer.time_left) == 1:
 			print("tijd is op")
-			
 			get_tree().reload_current_scene()
 			
 	else: 
 		OrigClrRet()
-		
-	
-		
+
+
 
 func OrigClrRet():
 	countdown.modulate = origClr
 
-
 func update_countdown_text():
 	countdown.text = str(ceil(timer.time_left))
 	
-func test():
-	print("klote")
+func update_lives_text(current_lives):
+	lives.text = str(current_lives)
+	
+func update_score_text(points):
+	#print("update_score_text ", score_shit)
+	score.text = str(points)
 	
 
 	

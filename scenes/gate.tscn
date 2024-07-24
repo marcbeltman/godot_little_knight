@@ -1,0 +1,83 @@
+[gd_scene load_steps=13 format=3 uid="uid://py8w2w7kv2me"]
+
+[ext_resource type="Script" path="res://scripts/gate.gd" id="1_yetht"]
+[ext_resource type="Texture2D" uid="uid://bpo4kxg7ch0te" path="res://assets/sprites/door-pixel.png" id="2_vs8tk"]
+[ext_resource type="FontFile" uid="uid://cbh3hxq8qdpwb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_4jtgk"]
+[ext_resource type="AudioStream" uid="uid://dcp46vf5vtv0p" path="res://assets/sounds/open-door.mp3" id="4_3hj3v"]
+[ext_resource type="AudioStream" uid="uid://b31xujqnf4o5j" path="res://assets/sounds/wrong_door.mp3" id="5_gkscn"]
+[ext_resource type="AudioStream" uid="uid://b5b4jppganei6" path="res://assets/sounds/next_level.mp3" id="6_elk4i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yks4m"]
+atlas = ExtResource("2_vs8tk")
+region = Rect2(0, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1plmr"]
+atlas = ExtResource("2_vs8tk")
+region = Rect2(64, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s52ft"]
+atlas = ExtResource("2_vs8tk")
+region = Rect2(128, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cj2xa"]
+atlas = ExtResource("2_vs8tk")
+region = Rect2(192, 0, 64, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7km6p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yks4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1plmr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s52ft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cj2xa")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oafil"]
+
+[node name="Gate" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_yetht")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7km6p")
+animation = &"open"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_oafil")
+
+[node name="gate_letter_label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -42.0
+offset_right = 20.0
+offset_bottom = -19.0
+theme_override_fonts/font = ExtResource("3_4jtgk")
+theme_override_font_sizes/font_size = 16
+text = "X"
+horizontal_alignment = 1
+
+[node name="open_gate_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_3hj3v")
+volume_db = 24.0
+pitch_scale = 1.5
+
+[node name="wrong_gate_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_gkscn")
+volume_db = 12.0
+pitch_scale = 0.65
+
+[node name="right_gate_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_elk4i")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

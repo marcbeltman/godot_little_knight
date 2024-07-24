@@ -23,7 +23,6 @@ func _ready():
 func _process(delta):
 	#$TextureRect/MarginContainer/RichTextLabel/NextIdicator.visible = finished
 	if Input.is_action_just_pressed("dialog"):
-		print("test")
 		load_dialog()
 		
 		

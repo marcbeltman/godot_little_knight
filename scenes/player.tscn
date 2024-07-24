@@ -173,6 +173,7 @@ animations = [{
 radius = 6.0
 
 [node name="player" type="CharacterBody2D"]
+z_index = 1
 collision_layer = 2
 script = ExtResource("1_wqcfy")
 
@@ -189,3 +190,10 @@ shape = SubResource("CircleShape2D_c43n3")
 
 [node name="jumpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_jiyb5")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -6)
+zoom = Vector2(4, 4)
+limit_bottom = 110
+limit_smoothed = true
+position_smoothing_enabled = true

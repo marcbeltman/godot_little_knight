@@ -84,7 +84,7 @@ shape = SubResource("RectangleShape2D_6h31g")
 [node name="Killzone" parent="." instance=ExtResource("4_dswhs")]
 position = Vector2(1, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_2o2px")
 
