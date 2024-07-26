@@ -1,13 +1,12 @@
 extends Area2D
 
-#declaratie signaal naar Health_System
+# Declaratie van signalen
 signal gate_player_died(body)
-
-#declaratie signaal naar level_manager
 signal gate_next_level(body)
 
+# variabelen extern inspector
 @export var gate_letter: String
-@export var right_gate:  bool
+@export var right_gate: bool
 
 @onready var gate_letter_label = $gate_letter_label
 @onready var open_gate_sound = $open_gate_sound
@@ -15,69 +14,77 @@ signal gate_next_level(body)
 @onready var right_gate_sound = $right_gate_sound
 @onready var animated_sprite = $AnimatedSprite2D
 
+# var voor algene beschikbaarheid in het script
 var body_to_process = null
-# vlag voor eenmalige animatie en sound
+#  vlag om 1x een animatie af te spelen
 var animation_played = false
 
 func _ready():
+	# check externe variabele of gate letter is toegekend 
 	if gate_letter == "":
-		print("De letter voor de gate is niet ingevuld")
+		print("Gate: Gate letter not asigned")
 	else:
 		gate_letter_label.text = gate_letter
 
+	# Verbind de signalen met de juiste functies uit Heath_system en Level_Manager
+	var health_system = get_node("../../../../GameManager/Heath_System")
+	# chek aanwezigheid
+	if health_system:
+		# Haal de nodige functie op uit health_system
+		connect("gate_player_died", Callable(health_system, "player_die"))
+	else:
+		print("Gate: Health_System not found")
+
+	var level_manager = get_node("../../../../GameManager/Level_Manager")
+	if level_manager:
+		connect("gate_next_level", Callable(level_manager, "next_level"))
+	else:
+		print("Gate: Level_Manager not found")
 
 func _on_body_entered(body):
-	print("hit by player")
+	print("Gate: hit by player")
+	# stop controls player 
+	body.set_physics_process(false)
+	# ken de player toe aan een de externe var voor beshikbaarheid
 	body_to_process = body
-	# Verbinden van het finished-signaal van de eerste AudioStreamPlayer aan een functie
-	open_gate_sound.finished.connect(_on_audio_open_gate_sound_finished)
-	# code om animatie en geluid 1 keer te spelen
+	# ga verder met de code,  pas als open_gate_sound klaar is met spelen
+	open_gate_sound.finished.connect(Callable(self, "_on_audio_open_gate_sound_finished"))
+	# check of de animatie al een keer is afgespeeld
 	if not animation_played:
-		# Start het afspelen van het eerste geluid gate open
 		open_gate_sound.play()
-		# Start de animatie
 		animated_sprite.play("open")
-		# zet de vlag op true
+		# animatie is afgespeeld var vlag wordt op true gezet
 		animation_played = true
 
-# Callback functie wanneer het eerste geluid klaar is met afspelen
+# open_gate_sound is klaar met afspelen
 func _on_audio_open_gate_sound_finished():
-	#print("Eerste geluid is klaar met afspelen")
-	# als het een goede deur is
-	if right_gate: 
-		# schakelt de beweging van de player uit
-		body_to_process.set_physics_process(false)
-		# Verbinden van het finished-signaal van de eerste AudioStreamPlayer aan een functie
-		right_gate_sound.finished.connect(_on_audio_right_gate_sound_finished)
-		# Start het afspelen van het geluid right_gate_sound
+	# als de bool right_gate in de inspector is aangevinkt
+	if right_gate:
+		# ga verder met de code, pas als right_gate_sound klaar is met spelen
+		right_gate_sound.finished.connect(Callable(self, "_on_audio_right_gate_sound_finished"))
 		right_gate_sound.play()
-	# als het een foute deur is
+	# als de bool right_gate NIET in de inspector is aangevinkt
 	else:
-		# Start het afspelen van het geluid wrong_gate_sound 
 		wrong_gate_sound.play()
-		# als de body van de player is gedetecteerd
+		# als de body van player bestaat
 		if body_to_process:
-			print("Processing body:", body_to_process)
-			# functie om signaal naar health-system te sturen
+			# zet de controls van de player aan
+			body_to_process.set_physics_process(true)
+			# verstuur het signaal met de player (body) en roep de fuctie "player_die" van de health sytem op
 			die(body_to_process)
-			# Reset de variabele na verwerking
-			body_to_process = null 
+			# maak de var body_to_process weer leeg
+			body_to_process = null
 
-# functie om te starten na afspelen geluid right_gate_sound
 func _on_audio_right_gate_sound_finished():
-	# als de body van de player is gedetecteerd
+	# als de body van player bestaat
 	if body_to_process:
-		print("Processing body:", body_to_process)
-		# functie om signaal naar de levelmanager te sturen
+		# verstuur het signaal met de player (body) en roep de fuctie "next_level" van de level manager op
 		next_level(body_to_process)
-		body_to_process = null # Reset de variabele na verwerking
+		body_to_process = null
 
-
+# functies om de signalen te verzenden met de body van de player
 func die(body):
-	#verzenden signaal naar Health_System
-	gate_player_died.emit(body)
-	
-	
+	emit_signal("gate_player_died", body)
+
 func next_level(body):
-	#verzenden signaal naar de level manager
-	gate_next_level.emit(body)
+	emit_signal("gate_next_level", body)

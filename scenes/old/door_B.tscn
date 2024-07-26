@@ -1,10 +1,10 @@
 [gd_scene load_steps=14 format=3 uid="uid://dua4jjcukcirj"]
 
-[ext_resource type="Script" path="res://scripts/door.gd" id="1_ifixu"]
+[ext_resource type="Script" path="res://scripts/old/door.gd" id="1_ifixu"]
 [ext_resource type="Texture2D" uid="uid://dgxag3hl361oq" path="res://assets/sprites/door.png" id="2_ryy4x"]
 [ext_resource type="AudioStream" uid="uid://dcp46vf5vtv0p" path="res://assets/sounds/open-door.mp3" id="3_x0n7q"]
 [ext_resource type="FontFile" uid="uid://cbh3hxq8qdpwb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="5_jk4b1"]
-[ext_resource type="PackedScene" uid="uid://blt6cjjkqxgxj" path="res://scenes/next_level.tscn" id="6_5d5tr"]
+[ext_resource type="PackedScene" uid="uid://blt6cjjkqxgxj" path="res://scenes/old/next_level.tscn" id="6_5d5tr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bybs4"]
 atlas = ExtResource("2_ryy4x")

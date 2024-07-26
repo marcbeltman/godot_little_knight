@@ -1,34 +1,34 @@
-[gd_scene load_steps=16 format=3 uid="uid://cq3l3tkgxwoye"]
+[gd_scene load_steps=16 format=3 uid="uid://h17ibkorqqew"]
 
-[ext_resource type="Script" path="res://scripts/door.gd" id="1_jok4b"]
-[ext_resource type="Texture2D" uid="uid://dgxag3hl361oq" path="res://assets/sprites/door.png" id="2_ulxko"]
-[ext_resource type="AudioStream" uid="uid://dcp46vf5vtv0p" path="res://assets/sounds/open-door.mp3" id="3_xnlwl"]
-[ext_resource type="PackedScene" uid="uid://bent2ylxpl4oi" path="res://scenes/killzone.tscn" id="4_65x7t"]
-[ext_resource type="FontFile" uid="uid://cbh3hxq8qdpwb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="5_cp50k"]
-[ext_resource type="PackedScene" uid="uid://djs3qpke3etiy" path="res://scenes/wrong_door_sound.tscn" id="6_bbl20"]
+[ext_resource type="Script" path="res://scripts/old/door.gd" id="1_wpth8"]
+[ext_resource type="Texture2D" uid="uid://dgxag3hl361oq" path="res://assets/sprites/door.png" id="2_lh08v"]
+[ext_resource type="AudioStream" uid="uid://dcp46vf5vtv0p" path="res://assets/sounds/open-door.mp3" id="3_r4xhq"]
+[ext_resource type="PackedScene" uid="uid://bent2ylxpl4oi" path="res://scenes/killzone.tscn" id="4_lv71d"]
+[ext_resource type="FontFile" uid="uid://cbh3hxq8qdpwb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="5_a3t2j"]
+[ext_resource type="PackedScene" uid="uid://djs3qpke3etiy" path="res://scenes/old/wrong_door_sound.tscn" id="6_x6bsj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bybs4"]
-atlas = ExtResource("2_ulxko")
+atlas = ExtResource("2_lh08v")
 region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_apevg"]
-atlas = ExtResource("2_ulxko")
+atlas = ExtResource("2_lh08v")
 region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sqlcc"]
-atlas = ExtResource("2_ulxko")
+atlas = ExtResource("2_lh08v")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ol0pv"]
-atlas = ExtResource("2_ulxko")
+atlas = ExtResource("2_lh08v")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iorfj"]
-atlas = ExtResource("2_ulxko")
+atlas = ExtResource("2_lh08v")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cgj7l"]
-atlas = ExtResource("2_ulxko")
+atlas = ExtResource("2_lh08v")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sripy"]
@@ -63,9 +63,9 @@ size = Vector2(28, 42)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2o2px"]
 size = Vector2(29, 36)
 
-[node name="door_C" type="Area2D"]
+[node name="door_A" type="Area2D"]
 collision_mask = 2
-script = ExtResource("1_jok4b")
+script = ExtResource("1_wpth8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_sripy")
@@ -73,7 +73,7 @@ animation = &"open"
 
 [node name="OpenDoorSound" type="AudioStreamPlayer2D" parent="AnimatedSprite2D"]
 position = Vector2(8, -11)
-stream = ExtResource("3_xnlwl")
+stream = ExtResource("3_r4xhq")
 volume_db = 24.0
 bus = &"SFX"
 
@@ -81,7 +81,7 @@ bus = &"SFX"
 position = Vector2(-45, 4)
 shape = SubResource("RectangleShape2D_6h31g")
 
-[node name="Killzone" parent="." instance=ExtResource("4_65x7t")]
+[node name="Killzone" parent="." instance=ExtResource("4_lv71d")]
 position = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
@@ -93,12 +93,12 @@ offset_left = -19.0
 offset_top = -50.0
 offset_right = 21.0
 offset_bottom = -27.0
-theme_override_fonts/font = ExtResource("5_cp50k")
-text = "C"
+theme_override_fonts/font = ExtResource("5_a3t2j")
+text = "A"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="wrong_door_sound" parent="." instance=ExtResource("6_bbl20")]
+[node name="wrong_door_sound" parent="." instance=ExtResource("6_x6bsj")]
 position = Vector2(0, 3)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

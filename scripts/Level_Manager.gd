@@ -3,9 +3,18 @@ extends Node
 const FILE_BEGIN = "res://scenes/levels/level_"
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	$"../../World/Objects/Gates/Gate_A".gate_next_level.connect(next_level)
-	$"../../World/Objects/Gates/Gate_B".gate_next_level.connect(next_level)
+#func _ready():
+	#$"../../World/Objects/Gates/Gate_A".gate_A_next_level.connect(next_level)
+	#$"../../World/Objects/Gates/Gate_B".gate_next_level.connect(next_level)
+	#$"../../World/Objects/Gates/Gate_C".gate_next_level.connect(next_level)
+	#$"../../World/Objects/Gates/Gate_D".gate_next_level.connect(next_level)
+
+
+
+
+
+
+
 
 
 func next_level(body):

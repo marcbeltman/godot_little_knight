@@ -1,20 +1,20 @@
 [gd_scene load_steps=4 format=3 uid="uid://blt6cjjkqxgxj"]
 
-[ext_resource type="Script" path="res://scripts/NextLevel.gd" id="1_svuus"]
-[ext_resource type="AudioStream" uid="uid://b5b4jppganei6" path="res://assets/sounds/next_level.mp3" id="2_2b4jx"]
+[ext_resource type="Script" path="res://scripts/old/NextLevel.gd" id="1_pxu6g"]
+[ext_resource type="AudioStream" uid="uid://b5b4jppganei6" path="res://assets/sounds/next_level.mp3" id="2_5pprm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nf8ch"]
 size = Vector2(34, 40)
 
 [node name="NextLevel" type="Area2D"]
 collision_mask = 2
-script = ExtResource("1_svuus")
+script = ExtResource("1_pxu6g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_nf8ch")
 
 [node name="next_level_sound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_2b4jx")
+stream = ExtResource("2_5pprm")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
