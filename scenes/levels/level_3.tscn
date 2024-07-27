@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://brermjcwc4ohv" path="res://assets/sounds/die.mp3" id="3_xkg8a"]
 [ext_resource type="Script" path="res://scripts/Level_Manager.gd" id="4_5aa2o"]
 [ext_resource type="PackedScene" uid="uid://blt6cjjkqxgxj" path="res://scenes/old/next_level.tscn" id="5_vvox7"]
-[ext_resource type="PackedScene" uid="uid://dbi3sqaw0lri2" path="res://scenes/platform_move_hor.tscn" id="8_qvu3q"]
+[ext_resource type="PackedScene" uid="uid://dbi3sqaw0lri2" path="res://scenes/old/platform_move_hor.tscn" id="8_qvu3q"]
 [ext_resource type="PackedScene" uid="uid://djem4tmwd3y4u" path="res://scenes/old/gate-A.tscn" id="10_5vbqp"]
 [ext_resource type="PackedScene" uid="uid://dpwu711vr4kwh" path="res://scenes/coin.tscn" id="10_lcrwn"]
 [ext_resource type="PackedScene" uid="uid://b8x7t2on6faco" path="res://scenes/platform.tscn" id="11_g6q4p"]

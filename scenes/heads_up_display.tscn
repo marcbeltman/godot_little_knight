@@ -6,8 +6,6 @@
 
 [node name="Heads-Up_Display" type="CanvasLayer"]
 script = ExtResource("1_5bpsa")
-redClr = Color(1, 0, 0, 1)
-origClr = Color(1, 1, 1, 1)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 17.0

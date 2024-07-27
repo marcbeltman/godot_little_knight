@@ -8,6 +8,7 @@ signal gate_next_level(body)
 @export var gate_letter: String
 @export var right_gate: bool
 
+
 @onready var gate_letter_label = $gate_letter_label
 @onready var open_gate_sound = $open_gate_sound
 @onready var wrong_gate_sound = $wrong_gate_sound
@@ -84,7 +85,14 @@ func _on_audio_right_gate_sound_finished():
 
 # functies om de signalen te verzenden met de body van de player
 func die(body):
+	#v erwijder de collisionshape2D zodat deze geen conflict geeft
+	var collision_shape = $CollisionShape2D
+	if collision_shape:
+		remove_child(collision_shape)
+		collision_shape.queue_free()
+	# signaal gaat naar de health manager
 	emit_signal("gate_player_died", body)
 
 func next_level(body):
+	# sigaal gaat naar de level manager
 	emit_signal("gate_next_level", body)

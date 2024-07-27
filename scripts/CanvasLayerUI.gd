@@ -6,14 +6,14 @@ extends CanvasLayer
 
 
 
-@onready var timer = $Timer
+#@onready var timer = $Timer
 
-@onready var times_up = $TimesUp
+#@onready var times_up = $TimesUp
 
 #@export var playTime : int
 
-@export var redClr : Color
-@export var origClr : Color
+##@export var redClr : Color
+#@export var origClr : Color
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

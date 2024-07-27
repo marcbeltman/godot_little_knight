@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://5k1i2qks33k3" path="res://assets/images/Backgrounds/backgroundEmpty.png" id="15_3yf8r"]
 [ext_resource type="PackedScene" uid="uid://d0tia5dve0qlo" path="res://scenes/heads_up_display.tscn" id="15_368sc"]
 [ext_resource type="Texture2D" uid="uid://mncrlk7k3hgj" path="res://assets/sprites/tiny-dungeon.png" id="15_qajj2"]
-[ext_resource type="PackedScene" uid="uid://dbi3sqaw0lri2" path="res://scenes/platform_move_hor.tscn" id="18_om0ne"]
+[ext_resource type="PackedScene" uid="uid://6mtpjh17dde1" path="res://scenes/platform_move.tscn" id="19_seq3n"]
 [ext_resource type="PackedScene" uid="uid://py8w2w7kv2me" path="res://scenes/gate.tscn" id="20_xlcqb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nimn1"]
@@ -1229,7 +1229,6 @@ position = Vector2(84, -129)
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_h6hl5")
-time = 75
 origClr = Color(1, 1, 1, 1)
 
 [node name="Heath_System" type="Node" parent="GameManager" node_paths=PackedStringArray("level_start_pos_01")]
@@ -1245,18 +1244,13 @@ pitch_scale = 2.0
 script = ExtResource("4_4ej8n")
 
 [node name="Player_Start_01" type="Node2D" parent="GameManager/Level_Manager"]
-position = Vector2(99, -119)
+position = Vector2(129, -74)
 
-[node name="Timer" type="Timer" parent="GameManager"]
+[node name="CountdownTimer" type="Timer" parent="GameManager"]
+autostart = true
 
 [node name="TimesUp" type="AudioStreamPlayer2D" parent="GameManager"]
 stream = ExtResource("5_tghr4")
-
-[node name="test_label" type="Label" parent="GameManager"]
-offset_left = 100.0
-offset_top = -85.0
-offset_right = 140.0
-offset_bottom = -62.0
 
 [node name="World" type="Node" parent="."]
 
@@ -1292,8 +1286,15 @@ position = Vector2(528, -81)
 [node name="01_right_limit" type="Marker2D" parent="World/Objects/platforms/platform_positions"]
 position = Vector2(613, -79)
 
-[node name="Platform_move_hor_01" parent="World/Objects/platforms" instance=ExtResource("18_om0ne")]
-position = Vector2(571, -85)
+[node name="02_left_limit" type="Marker2D" parent="World/Objects/platforms/platform_positions"]
+position = Vector2(201, -85)
+
+[node name="02_right_limit" type="Marker2D" parent="World/Objects/platforms/platform_positions"]
+position = Vector2(272, -83)
+
+[node name="platform_move" parent="World/Objects/platforms" instance=ExtResource("19_seq3n")]
+position = Vector2(567, -79)
+speed = 75.0
 left_limit_node = NodePath("../platform_positions/01_left_limit")
 right_limit_node = NodePath("../platform_positions/01_right_limit")
 
@@ -1337,7 +1338,6 @@ gate_letter = "C"
 [node name="Gate_D" parent="World/Objects/Gates" instance=ExtResource("20_xlcqb")]
 position = Vector2(850, -55)
 gate_letter = "D"
-right_gate = true
 
 [node name="TileMap" type="TileMap" parent="World"]
 position = Vector2(83, -127)
@@ -1375,4 +1375,4 @@ centered = false
 [node name="Heads-Up_Display" parent="." instance=ExtResource("15_368sc")]
 
 [node name="player" parent="." instance=ExtResource("4_7fdjm")]
-position = Vector2(10, 65)
+position = Vector2(32, 44)
