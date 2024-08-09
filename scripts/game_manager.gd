@@ -14,6 +14,10 @@ signal countdown_player_died()
 @export var redClr : Color = Color(1.0, 0.0, 0.0) # Rood definiëren
 @export var origClr : Color = Color(1.0, 1.1, 1.1) # Voorbeeld originele kleur
 
+@onready var health_system = $Health_System
+@onready var level_manager = $Level_Manager
+
+
 @onready var countdown_timer = $CountdownTimer
 @onready var times_up_sound = $TimesUp
 
@@ -24,9 +28,12 @@ var score = 0
 
 
 func _ready():
+	#zet de behaalde score uit GameData voor score default = 0
+	score = GameData.score
+	#print("De behaalde score uit GameData: ", score)
 	# verbinding met heath system voor resetten countdown
-	$"../GameManager/Heath_System".reset_countdown.connect(countdown_reset)
-	$"../GameManager/Level_Manager".stop_countdown.connect(countdown_stop)
+	health_system.reset_countdown.connect(countdown_reset)
+	level_manager.stop_countdown.connect(countdown_stop)
   	# Controleer of countdown_timer niet null is
 	if countdown_timer:
 	   # Verbind het timeout-signaal van de bestaande timer met de _on_timer_timeout functie
@@ -63,7 +70,7 @@ func countdown():
 		color_to_send = origClr
 
 	emit_signal("countdown_updated", time_left , color_to_send)
-	print(time_left )
+	#rint(time_left )
 	if time_left  <= 0:
 		countdown_timer.stop()  # Stop de timer wanneer de countdown voltooid is
 		times_up_sound.stop()

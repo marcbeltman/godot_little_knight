@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://dpon16jgxisd2"]
 
-[ext_resource type="FontFile" uid="uid://cmfmyu1epvek8" path="res://assets/fonts/PixelOperator8.ttf" id="2_37xi3"]
-[ext_resource type="Script" path="res://scripts/question.gd" id="4_o7xg2"]
-[ext_resource type="Texture2D" uid="uid://c63vovlvplrse" path="res://assets/images/BG_question.png" id="5_criv0"]
-[ext_resource type="Texture2D" uid="uid://leodkyojdp0e" path="res://assets/images/next_idicator.png" id="7_cmp5j"]
+[ext_resource type="Script" path="res://scripts/question.gd" id="1_cpq33"]
+[ext_resource type="Texture2D" uid="uid://c63vovlvplrse" path="res://assets/images/BG_question.png" id="2_hyu7v"]
+[ext_resource type="FontFile" uid="uid://cmfmyu1epvek8" path="res://assets/fonts/PixelOperator8.ttf" id="3_3uqwd"]
+[ext_resource type="Texture2D" uid="uid://leodkyojdp0e" path="res://assets/images/next_idicator.png" id="4_i4dq5"]
 
 [sub_resource type="Animation" id="Animation_m0gba"]
 length = 0.001
@@ -43,7 +43,7 @@ _data = {
 }
 
 [node name="question" type="CanvasLayer"]
-script = ExtResource("4_o7xg2")
+script = ExtResource("1_cpq33")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 8
@@ -57,7 +57,7 @@ offset_right = 349.0
 offset_bottom = 104.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_criv0")
+texture = ExtResource("2_hyu7v")
 
 [node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
 layout_mode = 1
@@ -74,7 +74,7 @@ theme_override_constants/margin_bottom = 15
 [node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/MarginContainer"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("2_37xi3")
+theme_override_fonts/normal_font = ExtResource("3_3uqwd")
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "De functie van geld
@@ -86,7 +86,7 @@ Wat zijn de verschillende manieren waarop geld en spullen een rol spelen in het 
 [node name="NextIdicator" type="Sprite2D" parent="TextureRect/MarginContainer/RichTextLabel"]
 position = Vector2(650, 150)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("7_cmp5j")
+texture = ExtResource("4_i4dq5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect/MarginContainer/RichTextLabel/NextIdicator"]
 libraries = {
@@ -106,6 +106,6 @@ offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_37xi3")
+theme_override_fonts/font = ExtResource("3_3uqwd")
 text = "Enter"
 vertical_alignment = 2

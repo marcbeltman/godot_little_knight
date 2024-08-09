@@ -22,17 +22,21 @@ func _ready():
 	#print("health system lives: ", current_lives)
 	#de verbinding met de nodes die een signaal verzenden
 	$"../../World/Killzone".player_died.connect(player_die)
-	$"../../World/Enemies/slime".player_hit.connect(player_die)
 	%GameManager.countdown_player_died.connect(countdown_death)
 
+# functie die hier wordt aangeroepen uit het slime script 
+func connect_enemy_signals(enemy):
+	enemy.player_hit.connect(player_die)
 
-	
+
 # player_die is de functie die wordt opgeroepen als het signaal wordt ontvangen
 func player_die(body):
 	#if player == null:
 	if body != null:
 		print("player_die: ", body)
 		decrease_lives()
+		# gevechts modus uit
+		GameData.weapon_equip = false
 		print("health system lives: ", current_lives)
 		#body.get_node("CollisionShape2D").queue_free()
 		die_sound.play()
@@ -50,6 +54,8 @@ func player_die(body):
 # respawn_player is de functie die de player opniew laat komen op gewenste level_start_pos of game over
 func respawn_player(body):
 		if current_lives  >= 1:
+			# laat de sword_trigger terug komen
+			%GameManager.level_manager.respawn_sword_trigger()
 			# create new player
 			var newPlayer = player_scene.instantiate()
 			# position player at start positiom
@@ -59,6 +65,7 @@ func respawn_player(body):
 			# Update de huidige speler referentie
 			current_player = newPlayer
 			emit_signal("reset_countdown")
+			
 
 		else:
 			print("Game over")

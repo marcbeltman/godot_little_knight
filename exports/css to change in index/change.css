@@ -1,0 +1,14 @@
+
+
+body {
+    touch-action: none;
+    margin: 0;
+    border: 0 none;
+    padding: 0;
+    text-align: center;
+    background-color: black;
+    display: flex; /* Nieuw toegevoegd om flexbox te gebruiken */
+    justify-content: center; /* Nieuw toegevoegd om horizontaal te centreren */
+    align-items: center; /* Nieuw toegevoegd om verticaal te centreren */
+    height: 100vh; /* Nieuw toegevoegd om het volledige scherm in hoogte te vullen */
+}

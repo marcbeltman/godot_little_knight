@@ -29,7 +29,7 @@ func _process(delta):
 func load_dialog():
 	dialog = check_and_collect_strings()
 	if dialog_index < dialog.size():
-		$TextureRect/MarginContainer/RichTextLabel.text = dialog[dialog_index]
+		$NinePatchRect/RichTextLabel.text = dialog[dialog_index]
 		audio_stream_player.play()
 		start_tween()
 	else:

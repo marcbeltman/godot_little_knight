@@ -4,19 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://b0mv1aji8be7y" path="res://assets/sprites/slime_green.png" id="1_tqual"]
 [ext_resource type="AudioStream" uid="uid://brermjcwc4ohv" path="res://assets/sounds/die.mp3" id="3_o7dkm"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j46xm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5tln"]
 atlas = ExtResource("1_tqual")
 region = Rect2(0, 24, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yy3yh"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ot5v"]
 atlas = ExtResource("1_tqual")
 region = Rect2(24, 24, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_81l0n"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ygdk"]
 atlas = ExtResource("1_tqual")
 region = Rect2(48, 24, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cfal1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_urt6b"]
 atlas = ExtResource("1_tqual")
 region = Rect2(72, 24, 24, 24)
 
@@ -24,16 +24,16 @@ region = Rect2(72, 24, 24, 24)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_j46xm")
+"texture": SubResource("AtlasTexture_i5tln")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yy3yh")
+"texture": SubResource("AtlasTexture_3ot5v")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_81l0n")
+"texture": SubResource("AtlasTexture_4ygdk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cfal1")
+"texture": SubResource("AtlasTexture_urt6b")
 }],
 "loop": true,
 "name": &"default",
@@ -43,15 +43,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uqg8o"]
 size = Vector2(14, 15)
 
-[node name="slime" type="Node2D"]
+[node name="slime_green" type="Node2D"]
 script = ExtResource("1_jkgos")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_libet")
 autoplay = "default"
-frame = 2
-frame_progress = 0.0781341
+frame_progress = 0.843378
 flip_h = true
 
 [node name="RayCastRight" type="RayCast2D" parent="."]

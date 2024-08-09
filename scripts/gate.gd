@@ -28,7 +28,7 @@ func _ready():
 		gate_letter_label.text = gate_letter
 
 	# Verbind de signalen met de juiste functies uit Heath_system en Level_Manager
-	var health_system = get_node("../../../../GameManager/Heath_System")
+	var health_system = get_node("../../../../GameManager/Health_System")
 	# chek aanwezigheid
 	if health_system:
 		# Haal de nodige functie op uit health_system
