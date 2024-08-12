@@ -29,6 +29,9 @@ func next_level(body):
 	# zet de transitie in. fade-out fade-in overgang ander level is een globale functie
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
+	# vernietig de player
+	#body.queue_free()
+	
 	# bepaal het volgende level
 	var current_scene_file = get_tree().current_scene.scene_file_path
 	print(current_scene_file)

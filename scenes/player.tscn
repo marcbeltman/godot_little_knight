@@ -1,10 +1,11 @@
-[gd_scene load_steps=39 format=3 uid="uid://bgg7nwg3nrtcu"]
+[gd_scene load_steps=42 format=3 uid="uid://bgg7nwg3nrtcu"]
 
 [ext_resource type="Texture2D" uid="uid://dfmlv106mrpq2" path="res://assets/sprites/knight.png" id="1_dpp24"]
 [ext_resource type="Script" path="res://scripts/player_knight.gd" id="1_rm2tp"]
 [ext_resource type="Texture2D" uid="uid://m7fr23w3vgfm" path="res://assets/sprites/attack.png" id="2_hde0c"]
 [ext_resource type="AudioStream" uid="uid://2n1c142efc0y" path="res://assets/sounds/jump.wav" id="3_jiyb5"]
 [ext_resource type="AudioStream" uid="uid://cpr830ivvll8f" path="res://assets/sounds/sword_sound.mp3" id="5_lojmm"]
+[ext_resource type="AudioStream" uid="uid://ba6dojx2fev8a" path="res://assets/sounds/player_hurt.mp3" id="6_18osk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ppit1"]
 atlas = ExtResource("2_hde0c")
@@ -254,6 +255,13 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_c43n3"]
 radius = 6.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_w85cg"]
+radius = 6.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1ws6v"]
+radius = 7.0
+height = 22.0
+
 [node name="player" type="CharacterBody2D"]
 z_index = 1
 collision_layer = 2
@@ -285,3 +293,23 @@ position_smoothing_enabled = true
 [node name="swordSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_lojmm")
 pitch_scale = 1.5
+
+[node name="DealDamageZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DealDamageZone"]
+position = Vector2(9, -9)
+shape = SubResource("CircleShape2D_w85cg")
+
+[node name="attack_cooldown_timer" type="Timer" parent="."]
+wait_time = 0.8
+
+[node name="PlayerHitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitBox"]
+position = Vector2(0, -10)
+shape = SubResource("CapsuleShape2D_1ws6v")
+
+[node name="hurtSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_18osk")
+volume_db = -10.0
+pitch_scale = 1.6

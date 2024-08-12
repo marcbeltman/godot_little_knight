@@ -8,8 +8,11 @@ signal reset_countdown()
 
 @onready var player_scene = preload("res://scenes/player.tscn")
 @onready var die_sound = $die_sound
-@onready var first_player = $"../../player"
+#@onready var first_player = $"../../player"
+@onready var first_player = $"../../World/player"
 
+
+var player_instance
 
 var current_lives = 3
 # Globale variabele om de player op te slaan
@@ -23,7 +26,19 @@ func _ready():
 	#de verbinding met de nodes die een signaal verzenden
 	$"../../World/Killzone".player_died.connect(player_die)
 	%GameManager.countdown_player_died.connect(countdown_death)
-
+	$"../../World/player".player_knight_died.connect(test)
+	#var player = get_node("/root/Game/World/player")
+	#player.player_died.connect(test)
+	
+	#var root = get_tree().root
+	#var player = root.find_node("player", true, false)
+	#$var player = get_tree().get_root().find_child("player")
+	#if player:
+		#player.player_died.connect(test)
+	
+	
+	
+	
 # functie die hier wordt aangeroepen uit het slime script 
 func connect_enemy_signals(enemy):
 	enemy.player_hit.connect(player_die)
@@ -42,6 +57,7 @@ func player_die(body):
 		die_sound.play()
 		# remove CollisionShape2D from player
 		body.get_node("CollisionShape2D").queue_free()
+		
 		# wait one seconde to respawn
 		await get_tree().create_timer(1).timeout
 		# destroy player
@@ -57,14 +73,32 @@ func respawn_player(body):
 			# laat de sword_trigger terug komen
 			%GameManager.level_manager.respawn_sword_trigger()
 			# create new player
-			var newPlayer = player_scene.instantiate()
+			var player_instance = player_scene.instantiate()
+			
+			# Verbind het signaal van de nieuwe speler aan de player_die functie
+			#newPlayer.connect("player_knight_died", self, "player_die")
+			
+			# Stel de naam in
+			#newPlayer.name = "player"
+			#print("Health system Player instance name: ", newPlayer.name)
+			
 			# position player at start positiom
-			newPlayer.position = level_start_pos_01.position
+			player_instance.position = level_start_pos_01.position
 			# add the new player to the game
-			get_parent().add_child(newPlayer)
+			#get_parent().add_child(newPlayer)
+			
+			# Voeg het nieuwe object toe aan een specifieke parent
+			var specific_parent = get_node("../../World")
+			specific_parent.add_child(player_instance)
+			
+			# Verbind het signaal van player scene  "player_knight_died"opnieuw met de nieuwe instatie
+			player_instance.player_knight_died.connect(test)
+			# belangrijk: laat de bat enemy weer aanvallen
+			GameData.is_bat_chase = true
 			# Update de huidige speler referentie
-			current_player = newPlayer
+			current_player = player_instance
 			emit_signal("reset_countdown")
+			
 			
 
 		else:
@@ -103,8 +137,10 @@ func countdown_death():
 	else:
 		print("Health sysytem: Player node not found.")
 	
-	
-	
+
+func test(body):
+	print("Health system signaal ontvangen van player die sterft door de bat")
+	player_die(body)
 	
 	
 	

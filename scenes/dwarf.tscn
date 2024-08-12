@@ -259,8 +259,7 @@ position = Vector2(0, -12)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_uahje")
 animation = &"attack"
-frame = 2
-frame_progress = 0.107035
+frame_progress = 0.313971
 
 [node name="detection_area" type="Area2D" parent="."]
 collision_layer = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cju36f8v8eryy"]
+[gd_scene load_steps=29 format=3 uid="uid://cju36f8v8eryy"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_fffre"]
 [ext_resource type="Script" path="res://scripts/Health_System.gd" id="2_jwcso"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://bhfpyfnti4k0k" path="res://scenes/dialogues/dialogue.tscn" id="21_xksu5"]
 [ext_resource type="PackedScene" uid="uid://bgg7nwg3nrtcu" path="res://scenes/player.tscn" id="22_sqpml"]
 [ext_resource type="PackedScene" uid="uid://dkgg5c4n1g8p6" path="res://scenes/sword_trigger.tscn" id="23_t5rxm"]
+[ext_resource type="PackedScene" uid="uid://0qia3v83ig7h" path="res://scenes/bat.tscn" id="24_w7kq3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nimn1"]
 texture = ExtResource("12_ts1qh")
@@ -1385,6 +1386,12 @@ position = Vector2(369, -271)
 [node name="slime_green" parent="World/Enemies" instance=ExtResource("16_u8sno")]
 position = Vector2(402, -46)
 
+[node name="BatEnemy" parent="World/Enemies" instance=ExtResource("24_w7kq3")]
+position = Vector2(170, -121)
+
+[node name="BatEnemy2" parent="World/Enemies" instance=ExtResource("24_w7kq3")]
+position = Vector2(215, -105)
+
 [node name="Killzone" parent="World" instance=ExtResource("17_mecyw")]
 position = Vector2(-16, 55)
 
@@ -1403,14 +1410,14 @@ texture = ExtResource("18_qg7a6")
 centered = false
 
 [node name="question_trigger" parent="World" instance=ExtResource("19_p385n")]
-position = Vector2(155, -55)
+position = Vector2(67, -184)
+
+[node name="player" parent="World" instance=ExtResource("22_sqpml")]
+position = Vector2(111, -49)
 
 [node name="Heads-Up_Display" parent="." instance=ExtResource("20_y1mui")]
 
 [node name="Dialogue" parent="Heads-Up_Display" instance=ExtResource("21_xksu5")]
-
-[node name="player" parent="." instance=ExtResource("22_sqpml")]
-position = Vector2(28, 62)
 
 [node name="sword_trigger" parent="." instance=ExtResource("23_t5rxm")]
 z_index = 0
