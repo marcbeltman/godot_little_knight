@@ -7,6 +7,21 @@
 [ext_resource type="FontFile" uid="uid://cmfmyu1epvek8" path="res://assets/fonts/PixelOperator8.ttf" id="5_dpk40"]
 [ext_resource type="AudioStream" uid="uid://m2ont0omvjn0" path="res://assets/sounds/select_007.ogg" id="6_quk16"]
 
+[sub_resource type="Animation" id="Animation_k6sxd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(685, 220)]
+}
+
 [sub_resource type="Animation" id="Animation_58ymv"]
 resource_name = "next-indicator"
 loop_mode = 1
@@ -23,21 +38,6 @@ tracks/0/keys = {
 "values": [Vector2(685, 220), Vector2(685, 230)]
 }
 
-[sub_resource type="Animation" id="Animation_k6sxd"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(685, 220)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nn17t"]
 _data = {
 "RESET": SubResource("Animation_k6sxd"),
@@ -46,13 +46,12 @@ _data = {
 
 [node name="Dialogue" type="CanvasLayer"]
 script = ExtResource("1_le8cw")
-titel = "les 01: De Bijbel"
-question = " De bijbel bestaat uit verschilende boeken. Uit hoeveel boeken bestaat de bijbel?"
-answer_A = "A) De Bijbel bestaat uit 88 boeken."
-answer_B = "B) De Bijbel bestaat uit 52 boeken."
-answer_C = "C) De Bijbel bestaat uit 62 boeken."
-answer_D = "D) De Bijbel bestaat uit 66 boeken."
-right_answer = " D"
+titel = " De titel "
+question = " De vraag"
+answer_A = " A) antwoord A"
+answer_B = "  B) antwoord B"
+answer_C = "  C) antwoord C"
+answer_D = "  D) antwoord D"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 anchors_preset = 5

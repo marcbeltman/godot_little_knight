@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://bflftfppyuite"]
 
 [ext_resource type="Texture2D" uid="uid://c63vovlvplrse" path="res://assets/images/BG_question.png" id="1_4jxo1"]
-[ext_resource type="Script" path="res://scripts/dialog.gd" id="1_eoo3j"]
+[ext_resource type="Script" path="res://scripts/test.gd" id="1_i5tqh"]
 [ext_resource type="FontFile" uid="uid://cmfmyu1epvek8" path="res://assets/fonts/PixelOperator8.ttf" id="2_arbmo"]
 [ext_resource type="Texture2D" uid="uid://cu1qnss75l8tn" path="res://assets/images/BG_dialog.png" id="2_nwvwx"]
 [ext_resource type="Texture2D" uid="uid://leodkyojdp0e" path="res://assets/images/next_idicator.png" id="3_7pfx8"]
@@ -46,14 +46,14 @@ _data = {
 }
 
 [node name="dialog" type="CanvasLayer"]
-script = ExtResource("1_eoo3j")
-titel = "les 01: De Bijbel"
-question = "De bijbel bestaat uit verschilende boeken. Uit hoeveel boeken bestaat de Bijbel?"
-answer_A = "A) De Bijbel bestaat uit 88 boeken."
-answer_B = "B) De Bijbel bestaat uit 52 boeken."
-answer_C = "C) De Bijbel bestaat uit 62 boeken."
-answer_D = "D) De Bijbel bestaat uit 66 boeken."
-right_answer = " D"
+script = ExtResource("1_i5tqh")
+titel = " dit is de titel"
+question = " dit is de vraag die nu in zijn geheel zichtbaar zou moeten zijn en waarvan 4 mogelijke antwoorden worden gegegevn."
+answer_A = " A) dit is het antwoord a"
+answer_B = "  B) dit is het antwoord b"
+answer_C = "  C) dit is het antwoord c"
+answer_D = "  D) dit is het antwoord d"
+right_answer = " A"
 
 [node name="TextureRect+background" type="TextureRect" parent="."]
 anchors_preset = 15

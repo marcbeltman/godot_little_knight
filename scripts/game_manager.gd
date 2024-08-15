@@ -85,6 +85,15 @@ func countdown_reset():
 	time_left = duration
 	countdown_timer.start()
 	
+func countdown_pause():
+	print("countdown pause werd opgeroepen")
+	time_left = time_left
+	countdown_timer.stop()
+	print("countdown_pause: ", time_left)
+	
+func countdown_resume():
+	countdown_timer.start()
+	print("coutdown_resume: ", time_left)
 
 func add_point():
 	score += point_value

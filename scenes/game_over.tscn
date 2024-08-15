@@ -57,6 +57,7 @@ theme_override_font_sizes/font_size = 32
 text = "RetrY"
 
 [node name="btn_Quit" type="Button" parent="ColorRect/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(0, 75)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_ugarq")

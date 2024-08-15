@@ -1232,8 +1232,6 @@ position = Vector2(84, -129)
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_h6hl5")
-duration = 200
-origClr = Color(1, 1, 1, 1)
 
 [node name="Health_System" type="Node" parent="GameManager" node_paths=PackedStringArray("level_start_pos_01")]
 script = ExtResource("3_xhon4")
