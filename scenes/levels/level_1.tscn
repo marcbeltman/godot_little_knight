@@ -1411,7 +1411,7 @@ position = Vector2(111, -49)
 [node name="Heads-Up_Display" parent="." instance=ExtResource("20_y1mui")]
 
 [node name="Dialogue" parent="Heads-Up_Display" instance=ExtResource("21_xksu5")]
-titel = "Les 01: De Bijbel."
+titel = "Thema: De Bijbel."
 question = "Vraag 01: uit hoeveel boeken bestaat de bijbel?"
 answer_A = " A) De bijbel bestaat uit 12 boeken."
 answer_B = "  B) Het aantal boeken in de bijbel is 60."
