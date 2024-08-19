@@ -93,6 +93,17 @@ func respawn_player(body):
 			
 			# Verbind het signaal van player scene  "player_knight_died"opnieuw met de nieuwe instatie
 			player_instance.player_knight_died.connect(test)
+			
+			# connecteer de boddy van player_instance opnieuw aan GameData zodat deze gevonden kan worden door de bats
+			GameData.playerBody = player_instance
+			#print("PLAYERBODY BIJ RESPAWN: ", player_instance.CharacterBody2D)
+			#if player_instance.has_node("CharacterBody2D"):
+				#print("PLAYERBODY BIJ RESPAWN: ", player_instance.get_node("CharacterBody2D"))
+			#else:
+				#print("CharacterBody2D node niet gevonden")
+				
+			#print("PLAYERBODY BIJ RESPAWN: ", player_instance)
+
 			# belangrijk: laat de bat enemy weer aanvallen
 			GameData.is_bat_chase = true
 			# Update de huidige speler referentie
@@ -103,6 +114,8 @@ func respawn_player(body):
 
 		else:
 			print("Game over")
+			# zet de score op nul
+			%GameManager.score = 0
 			TransitionScreen.transition()
 			await TransitionScreen.on_transition_finished
 			get_tree().change_scene_to_file("res://scenes/game_over.tscn")

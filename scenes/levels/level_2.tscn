@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://3g3cufe7v0fi"]
+[gd_scene load_steps=29 format=3 uid="uid://3g3cufe7v0fi"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_6n7e8"]
 [ext_resource type="Script" path="res://scripts/Health_System.gd" id="2_i53e0"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cwlfbfcef0p3l" path="res://scenes/slime_red.tscn" id="15_hu021"]
 [ext_resource type="PackedScene" uid="uid://tw5chfgikrve" path="res://scenes/slime_green.tscn" id="16_rlhiy"]
 [ext_resource type="PackedScene" uid="uid://bent2ylxpl4oi" path="res://scenes/killzone.tscn" id="17_yasml"]
+[ext_resource type="PackedScene" uid="uid://0qia3v83ig7h" path="res://scenes/bat.tscn" id="18_8j4sr"]
 [ext_resource type="Texture2D" uid="uid://5k1i2qks33k3" path="res://assets/images/Backgrounds/backgroundEmpty.png" id="18_y23yt"]
 [ext_resource type="PackedScene" uid="uid://dxobcjeut0me2" path="res://scenes/question_trigger.tscn" id="19_3opr1"]
 [ext_resource type="PackedScene" uid="uid://d0tia5dve0qlo" path="res://scenes/heads_up_display.tscn" id="19_6iivd"]
@@ -1368,7 +1369,7 @@ gate_letter = "D"
 [node name="Triggers" type="Node" parent="World/Objects"]
 
 [node name="question_trigger" parent="World/Objects/Triggers" instance=ExtResource("19_3opr1")]
-position = Vector2(59, -359)
+position = Vector2(124, -401)
 
 [node name="TileMap" type="TileMap" parent="World"]
 position = Vector2(83, -127)
@@ -1389,6 +1390,21 @@ position = Vector2(829, -191)
 [node name="slime_green" parent="World/Enemies" instance=ExtResource("16_rlhiy")]
 position = Vector2(562, -271)
 
+[node name="BatEnemy_01" parent="World/Enemies" instance=ExtResource("18_8j4sr")]
+position = Vector2(770, -126)
+collision_layer = 4
+collision_mask = 4
+
+[node name="BatEnemy_02" parent="World/Enemies" instance=ExtResource("18_8j4sr")]
+position = Vector2(495, -213)
+collision_layer = 4
+collision_mask = 4
+
+[node name="BatEnemy_03" parent="World/Enemies" instance=ExtResource("18_8j4sr")]
+position = Vector2(594, -186)
+collision_layer = 4
+collision_mask = 4
+
 [node name="Killzone" parent="World" instance=ExtResource("17_yasml")]
 position = Vector2(-16, 55)
 
@@ -1407,7 +1423,7 @@ texture = ExtResource("18_y23yt")
 centered = false
 
 [node name="player" parent="World" instance=ExtResource("20_knana")]
-position = Vector2(92, -376)
+position = Vector2(684, -44)
 
 [node name="Heads-Up_Display" parent="." instance=ExtResource("19_6iivd")]
 
@@ -1425,3 +1441,10 @@ position = Vector2(521, 47)
 
 [node name="Platform" parent="." instance=ExtResource("7_txakp")]
 position = Vector2(401, -215)
+
+[node name="BatOnlyCollision" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BatOnlyCollision"]
+polygon = PackedVector2Array(375, 88, 375, 97, 1044, 100, 1044, -11, 587, -13, 587, -107, 376, -106, 376, 79, 342, 79, 342, -122, 610, -121, 609, -25, 1058, -23, 1059, 114, 358, 112, 358, 86)

@@ -7,7 +7,7 @@ class_name BatEnemy
 var min_delay: float = 1.0
 var max_delay: float = 1.5
 
-const speed = 50
+const speed = 60
 var dir: Vector2
 var is_bat_chase: bool
 var player: CharacterBody2D
@@ -36,7 +36,7 @@ func _process(delta):
 	
 	# verwijderen van de gestorven bat
 	if is_on_floor() and dead:
-		await get_tree().create_timer(3.0).timeout
+		await get_tree().create_timer(2.0).timeout
 		self.queue_free()
 		
 	move(delta)
@@ -45,21 +45,29 @@ func _process(delta):
 
 func move(delta):
 	player = GameData.playerBody
-	#print("Player in bat:", player)
+	
+	# Controleer of de player bestaat
+	if !player:
+		return  # Verlaat de functie als de player niet bestaat
+
 	if !dead:
 		is_roaming = true
 		if !taking_damage and is_bat_chase:
-			velocity = position.direction_to(player.position) * speed 
-			dir.x = abs(velocity.x) / velocity.x
+			# Controleer of de player nog geldig is voordat je de richting berekent
+			if player:
+				velocity = position.direction_to(player.position) * speed
+				dir.x = abs(velocity.x) / velocity.x
 		elif taking_damage:
 			var knockback_dir = position.direction_to(player.position) * -50
 			velocity = knockback_dir
 		else:
 			velocity += dir * speed * delta
 	elif dead:
-			velocity.y += 10 * delta
-			velocity.x = 0
+		velocity.y += 10 * delta
+		velocity.x = 0
+	
 	move_and_slide()
+
 	
 	
 func _on_timer_timeout():

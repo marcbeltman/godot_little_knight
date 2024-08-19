@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bgg7nwg3nrtcu"]
+[gd_scene load_steps=43 format=3 uid="uid://bgg7nwg3nrtcu"]
 
 [ext_resource type="Texture2D" uid="uid://dfmlv106mrpq2" path="res://assets/sprites/knight.png" id="1_dpp24"]
 [ext_resource type="Script" path="res://scripts/player_knight.gd" id="1_rm2tp"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://2n1c142efc0y" path="res://assets/sounds/jump.wav" id="3_jiyb5"]
 [ext_resource type="AudioStream" uid="uid://cpr830ivvll8f" path="res://assets/sounds/sword_sound.mp3" id="5_lojmm"]
 [ext_resource type="AudioStream" uid="uid://ba6dojx2fev8a" path="res://assets/sounds/player_hurt.mp3" id="6_18osk"]
+[ext_resource type="PackedScene" uid="uid://c5y73qisbixf0" path="res://scenes/health_bar.tscn" id="7_5rw4q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ppit1"]
 atlas = ExtResource("2_hde0c")
@@ -313,3 +314,9 @@ shape = SubResource("CapsuleShape2D_1ws6v")
 stream = ExtResource("6_18osk")
 volume_db = -10.0
 pitch_scale = 1.6
+
+[node name="Health_Bar" parent="." instance=ExtResource("7_5rw4q")]
+offset_left = -9.0
+offset_top = -26.0
+offset_right = 9.0
+offset_bottom = -23.0

@@ -1367,7 +1367,7 @@ right_gate = true
 [node name="Triggers" type="Node" parent="World/Objects"]
 
 [node name="question_trigger" parent="World/Objects/Triggers" instance=ExtResource("19_p385n")]
-position = Vector2(75, -55)
+position = Vector2(186, -90)
 
 [node name="TileMap" type="TileMap" parent="World"]
 position = Vector2(83, -127)
