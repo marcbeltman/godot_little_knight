@@ -20,7 +20,7 @@ var health_min = 0
 var dead = false
 var taking_damage = false
 var is_roaming: bool
-var damage_to_deal = 20
+var damage_to_deal = 10
 
 # Vlag om bij te houden of de kill_points animatie is afgespeeld
 var kill_points_played = false
@@ -47,7 +47,6 @@ func _process(delta):
 			%GameManager.add_point(30)
 		await get_tree().create_timer(2.0).timeout
 		self.queue_free()
-		
 	move(delta)
 	handle_animation()
 

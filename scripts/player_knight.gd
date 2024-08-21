@@ -88,7 +88,7 @@ func _physics_process(delta):
 	weapon_equip = GameData.weapon_equip
 	GameData.playerDamageZone = deal_damage_zone
 	
-	
+	GameData.playerHitBox = $PlayerHitBox
 	
 	
 	# Handle attack
@@ -163,7 +163,10 @@ func check_hitbox():
 		var hitbox = hitbox_areas.front()
 		if hitbox.get_parent() is BatEnemy:
 			damage = GameData.batDamageAmount
-			
+		elif hitbox.get_parent() is DwarfEnemy:
+			damage = GameData.dwarfDamageAmount
+		
+		
 		if can_take_damage:
 			take_damage(damage)
 			
