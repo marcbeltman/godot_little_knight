@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 class_name BatEnemy
 
+@onready var kill_points = $AnimationPlayer
+
 @onready var audio_player = $AudioStreamPlayer2D
 # Minimale en maximale tijd tussen afspelingen (in seconden)
 var min_delay: float = 1.0
@@ -20,13 +22,15 @@ var taking_damage = false
 var is_roaming: bool
 var damage_to_deal = 20
 
-
+# Vlag om bij te houden of de kill_points animatie is afgespeeld
+var kill_points_played = false
 
 func _ready():
 	# belangrijk: start de aanval van de bat enemy
 	GameData.is_bat_chase = true
 	#is_bat_chase = true
 	#_play_random_sound()
+	
 
 func _process(delta):
 	# belangrijk: kijk constant of de bat enemy moet aanvallen of niet
@@ -36,6 +40,11 @@ func _process(delta):
 	
 	# verwijderen van de gestorven bat
 	if is_on_floor() and dead:
+		#play kill_points animatie
+		if not kill_points_played:
+			kill_points.play("kill_points")
+			kill_points_played = true
+			%GameManager.add_point(30)
 		await get_tree().create_timer(2.0).timeout
 		self.queue_free()
 		

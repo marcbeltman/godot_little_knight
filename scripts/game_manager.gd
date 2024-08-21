@@ -7,7 +7,7 @@ signal countdown_updated(time_left)
 signal countdown_player_died()
 
 @export_group("points")
-@export var point_value: int = 10
+#@export var point_value: int = 10
 
 @export_group("countdown")
 @export var duration: int = 50
@@ -95,7 +95,7 @@ func countdown_resume():
 	countdown_timer.start()
 	print("coutdown_resume: ", time_left)
 
-func add_point():
+func add_point(point_value):
 	score += point_value
 	emit_signal("score_changed", score)
 

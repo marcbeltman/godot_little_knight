@@ -257,9 +257,11 @@ size = Vector2(18, 24)
 position = Vector2(0, -12)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_uahje")
-animation = &"attack"
-frame_progress = 0.313971
+animation = &"run"
+frame = 2
+frame_progress = 0.574226
 
 [node name="detection_area" type="Area2D" parent="."]
 collision_layer = 2
