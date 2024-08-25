@@ -21,7 +21,7 @@ var finished = false
 
 var full_text = ""
 var current_index = 0
-var typing_speed = 0.07  # Interval in seconds between each character
+var typing_speed = 0.01  # Interval in seconds between each character was 0.07
 
 func _ready():
 	typing_timer.connect("timeout", Callable(self, "_on_typing_timeout"))

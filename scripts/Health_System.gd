@@ -55,7 +55,7 @@ func player_die(body):
 		print("health system lives: ", current_lives)
 		#body.get_node("CollisionShape2D").queue_free()
 		die_sound.play()
-		# remove CollisionShape2D from player
+		# remove CollisionShape2D from player 
 		body.get_node("CollisionShape2D").queue_free()
 		
 		# wait one seconde to respawn
