@@ -13,6 +13,7 @@ func _on_body_entered(body):
 	print("Sword_trigger: player hit")
 	sword_sound.play()
 	sword_sprite.visible = false
+	GameData.bow_equip = false
 	GameData.weapon_equip = true
 	sword_sound.finished.connect(_on_sound_finished)
 	

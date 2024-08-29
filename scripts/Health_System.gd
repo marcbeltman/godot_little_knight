@@ -52,6 +52,7 @@ func player_die(body):
 		decrease_lives()
 		# gevechts modus uit
 		GameData.weapon_equip = false
+		GameData.bow_equip = false
 		print("health system lives: ", current_lives)
 		#body.get_node("CollisionShape2D").queue_free()
 		die_sound.play()
@@ -72,6 +73,8 @@ func respawn_player(body):
 		if current_lives  >= 1:
 			# laat de sword_trigger terug komen
 			%GameManager.level_manager.respawn_sword_trigger()
+			# laat de bow_trigger terug komen
+			%GameManager.level_manager.respawn_bow_trigger()
 			# create new player
 			var player_instance = player_scene.instantiate()
 			

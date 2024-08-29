@@ -12,6 +12,7 @@ var gravity = 900
 
 # gevechtsmodus
 var weapon_equip: bool
+var bow_equip: bool
 
 # aanval modus
 #var current_attack: bool
@@ -43,6 +44,8 @@ func _ready():
 	dead = false 
 	can_take_damage = true 
 	weapon_equip = GameData.weapon_equip
+	bow_equip = GameData.bow_equip
+	
 	# attack functionality
 	#current_attack = false
 	
@@ -86,6 +89,9 @@ func _physics_process(delta):
 		
 	# Check of de player in gevechtsmodus moet gaan
 	weapon_equip = GameData.weapon_equip
+	
+	bow_equip = GameData.bow_equip
+	
 	GameData.playerDamageZone = deal_damage_zone
 	
 	GameData.playerHitBox = $PlayerHitBox
@@ -104,6 +110,8 @@ func _physics_process(delta):
 			animated_sprite.play("attack")
 			toggle_damage_collisions()
 			set_damage()
+			
+	# Handle shoot
 
 
 	# Get the imput direction: -1, 0, 1
@@ -118,17 +126,37 @@ func _physics_process(delta):
 		deal_damage_zone.scale.x = -1
 	
 	#play animations
+	#if is_on_floor():
+		#if animated_sprite.animation != "attack" or not animated_sprite.is_playing():
+			#if direction == 0 and !weapon_equip:
+				#animated_sprite.play("idle")
+			#elif direction == 0 and weapon_equip:
+				#animated_sprite.play("attack_idle")
+			#elif direction != 0:
+				#animated_sprite.play("run")
+	#else: 
+		#animated_sprite.play("jump")
+
+#######################################################################################################
+
 	if is_on_floor():
 		if animated_sprite.animation != "attack" or not animated_sprite.is_playing():
-			if direction == 0 and !weapon_equip:
-				animated_sprite.play("idle_bow")
-			elif direction == 0 and weapon_equip:
+			if direction == 0 and !weapon_equip and !bow_equip:
+				animated_sprite.play("idle")
+			elif direction == 0 and weapon_equip and !bow_equip:
 				animated_sprite.play("attack_idle")
+			elif direction == 0 and !weapon_equip and bow_equip:
+				animated_sprite.play("idle_bow")
 			elif direction != 0:
-				animated_sprite.play("run_bow")
+				animated_sprite.play("run")
 	else: 
 		animated_sprite.play("jump")
 
+
+
+
+
+######################################################################################################
 		
 	# Apply movement
 	if direction:

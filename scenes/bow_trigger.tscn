@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://8yd0dfjpmqbt"]
+
+[ext_resource type="Script" path="res://scripts/bow_trigger.gd" id="1_dgy2a"]
+[ext_resource type="Texture2D" uid="uid://dec42jhf7gecy" path="res://assets/images/arrow.png" id="1_i22ut"]
+[ext_resource type="AudioStream" uid="uid://3gymrpek8jnt" path="res://assets/sounds/confirmation_002.ogg" id="3_4x5xj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jvghi"]
+size = Vector2(16, 16)
+
+[node name="bow_trigger" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_dgy2a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_i22ut")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jvghi")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_4x5xj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

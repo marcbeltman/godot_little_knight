@@ -4,6 +4,8 @@ var score = 0
 
 # Check of de player in gevechtsmodus moet gaan
 var weapon_equip: bool
+var bow_equip: bool
+
 
 var playerBody: CharacterBody2D
 

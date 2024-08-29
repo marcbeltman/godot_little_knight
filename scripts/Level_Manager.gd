@@ -12,13 +12,20 @@ const FILE_BEGIN = "res://scenes/levels/level_"
 # positie sword_trigger
 @onready var sword_trigger_old = $"../../sword_trigger"
 
+# preload van de bow_trigger
+@onready var bow_trigger_new = preload("res://scenes/bow_trigger.tscn")
+# positie sword_trigger
+@onready var bow_trigger_old = $"../../bow_trigger"
+
+
 # Globale variabele om de positie van de sword_trigger in op te slaan
 var sword_trigger_position = null
-
+var bow_trigger_position = null
 
 func _ready():
 	# get position from sword trigger
 	get_position_sword_trigger()
+	get_position_bow_trigger()
 	
 
 func next_level(body):
@@ -55,6 +62,19 @@ func get_position_sword_trigger():
 		print("sword_trigger does not existe in this level.")
 
 
+func get_position_bow_trigger():
+	#controleer of sword_trigger_old bestaat
+	if bow_trigger_old: 
+		var position = bow_trigger_old.global_position
+		# controleer of 
+		if position:
+			bow_trigger_position = position
+		else:
+			print("bow_trigger has no valit position.")
+	else: 
+		print("bow_trigger does not existe in this level.")
+
+
 func respawn_sword_trigger():
 	print("Levelmanager respawn_sword_trigger: signaal van healthsystem ontvangen ")
 	if sword_trigger_position:
@@ -68,6 +88,18 @@ func respawn_sword_trigger():
 	else:
 		print("sword_trigger could not be found or does not existe in this level.")
 		
-	
+		
+func respawn_bow_trigger():
+	print("Levelmanager respawn_bow_trigger: signaal van healthsystem ontvangen ")
+	if bow_trigger_position:
+		#print("sword_trigger_postion werd gevonden", sword_trigger_position )
+		var new_trigger = bow_trigger_new.instantiate()
+		#print("Nieuw geïnstantieerd object:",new_trigger)
+		new_trigger.position = bow_trigger_position
+		#print("Positie van nieuw object:", new_trigger.position)
+		add_child(new_trigger)
+		#print("Nieuwe sword_trigger toegevoegd aan de scene")
+	else:
+		print("bow_trigger could not be found or does not existe in this level.")
 	
 	
