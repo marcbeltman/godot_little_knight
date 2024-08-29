@@ -1387,7 +1387,7 @@ gate_letter = "D"
 position = Vector2(694, -76)
 
 [node name="TileMap" type="TileMap" parent="World"]
-position = Vector2(83, -127)
+position = Vector2(83, -128)
 tile_set = SubResource("TileSet_dyiks")
 format = 2
 layer_0/name = "Background"

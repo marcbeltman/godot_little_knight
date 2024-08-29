@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpmlhrymp2imp"]
+[gd_scene load_steps=6 format=3 uid="uid://bpmlhrymp2imp"]
 
 [ext_resource type="Texture2D" uid="uid://bwmfo8a0ifvx8" path="res://assets/images/Backgrounds/backgroundCastles.png" id="1_e5a0a"]
 [ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_tspfn"]
 [ext_resource type="FontFile" uid="uid://cbh3hxq8qdpwb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_51213"]
 [ext_resource type="FontFile" uid="uid://cmfmyu1epvek8" path="res://assets/fonts/PixelOperator8.ttf" id="3_5jub0"]
+[ext_resource type="Texture2D" uid="uid://ca44t75a5yxb3" path="res://assets/images/little-knight-sword.png" id="5_aherv"]
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -53,7 +54,7 @@ theme_override_constants/shadow_offset_y = 8
 theme_override_constants/outline_size = 24
 theme_override_fonts/font = ExtResource("2_51213")
 theme_override_font_sizes/font_size = 64
-text = "Little KNIGHT
+text = "Little-KNIGHT
 "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -70,6 +71,18 @@ alignment = 1
 [node name="Seperator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
+[node name="Seperator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator4" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator5" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator6" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
 [node name="Start_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(120, 50)
 layout_mode = 2
@@ -84,3 +97,8 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_5jub0")
 theme_override_font_sizes/font_size = 24
 text = "Exit Game"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(599, 268)
+scale = Vector2(0.295288, 0.285714)
+texture = ExtResource("5_aherv")

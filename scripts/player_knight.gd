@@ -121,11 +121,11 @@ func _physics_process(delta):
 	if is_on_floor():
 		if animated_sprite.animation != "attack" or not animated_sprite.is_playing():
 			if direction == 0 and !weapon_equip:
-				animated_sprite.play("idle")
+				animated_sprite.play("idle_bow")
 			elif direction == 0 and weapon_equip:
 				animated_sprite.play("attack_idle")
 			elif direction != 0:
-				animated_sprite.play("run")
+				animated_sprite.play("run_bow")
 	else: 
 		animated_sprite.play("jump")
 
