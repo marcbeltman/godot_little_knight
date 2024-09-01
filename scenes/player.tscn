@@ -1,13 +1,15 @@
-[gd_scene load_steps=64 format=3 uid="uid://bgg7nwg3nrtcu"]
+[gd_scene load_steps=70 format=3 uid="uid://bgg7nwg3nrtcu"]
 
 [ext_resource type="Texture2D" uid="uid://dfmlv106mrpq2" path="res://assets/sprites/knight.png" id="1_dpp24"]
 [ext_resource type="Script" path="res://scripts/player_knight.gd" id="1_rm2tp"]
 [ext_resource type="Texture2D" uid="uid://m7fr23w3vgfm" path="res://assets/sprites/attack.png" id="2_hde0c"]
 [ext_resource type="AudioStream" uid="uid://2n1c142efc0y" path="res://assets/sounds/jump.wav" id="3_jiyb5"]
+[ext_resource type="Texture2D" uid="uid://ddp56yh6fmvyh" path="res://assets/sprites/knight-bow-charge.png" id="4_i7lum"]
 [ext_resource type="Texture2D" uid="uid://d2nip83iuerme" path="res://assets/sprites/knight-bow.png" id="4_lmv05"]
 [ext_resource type="AudioStream" uid="uid://cpr830ivvll8f" path="res://assets/sounds/sword_sound.mp3" id="5_lojmm"]
 [ext_resource type="AudioStream" uid="uid://ba6dojx2fev8a" path="res://assets/sounds/player_hurt.mp3" id="6_18osk"]
 [ext_resource type="PackedScene" uid="uid://c5y73qisbixf0" path="res://scenes/health_bar.tscn" id="7_5rw4q"]
+[ext_resource type="AudioStream" uid="uid://wmrhh7cutfki" path="res://assets/sounds/arrow-impact.mp3" id="10_wo8nr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ppit1"]
 atlas = ExtResource("2_hde0c")
@@ -65,19 +67,19 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("1_dpp24")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_352ri"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntccv"]
 atlas = ExtResource("4_lmv05")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yoj4k"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfvxv"]
 atlas = ExtResource("4_lmv05")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2dk63"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4y75"]
 atlas = ExtResource("4_lmv05")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_alj1a"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_okxws"]
 atlas = ExtResource("4_lmv05")
 region = Rect2(96, 0, 32, 32)
 
@@ -213,6 +215,22 @@ region = Rect2(192, 96, 32, 32)
 atlas = ExtResource("4_lmv05")
 region = Rect2(224, 96, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ug6ap"]
+atlas = ExtResource("4_i7lum")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cx6gf"]
+atlas = ExtResource("4_i7lum")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkqih"]
+atlas = ExtResource("4_i7lum")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3rw6"]
+atlas = ExtResource("4_i7lum")
+region = Rect2(96, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_dsvs7"]
 animations = [{
 "frames": [{
@@ -274,16 +292,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_352ri")
+"texture": SubResource("AtlasTexture_ntccv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yoj4k")
+"texture": SubResource("AtlasTexture_mfvxv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2dk63")
+"texture": SubResource("AtlasTexture_v4y75")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_alj1a")
+"texture": SubResource("AtlasTexture_okxws")
 }],
 "loop": true,
 "name": &"idle_bow",
@@ -402,6 +420,23 @@ animations = [{
 "loop": true,
 "name": &"run_bow",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ug6ap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cx6gf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkqih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3rw6")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c43n3"]
@@ -418,13 +453,15 @@ height = 22.0
 z_index = 1
 collision_layer = 2
 script = ExtResource("1_rm2tp")
+shootspeed = 2.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_dsvs7")
-animation = &"run_bow"
+animation = &"shoot"
 autoplay = "idle"
-frame_progress = 0.365203
+frame = 3
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 5
@@ -471,7 +508,9 @@ offset_top = -26.0
 offset_right = 9.0
 offset_bottom = -23.0
 
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(14, -9)
-
 [node name="shootSpeedTimer" type="Timer" parent="."]
+
+[node name="arrowSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_wo8nr")
+
+[connection signal="timeout" from="shootSpeedTimer" to="." method="_on_shoot_speed_timer_timeout"]

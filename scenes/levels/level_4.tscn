@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c6g0i0f7rxm1v"]
+[gd_scene load_steps=28 format=3 uid="uid://c6g0i0f7rxm1v"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_ty0md"]
 [ext_resource type="Script" path="res://scripts/Health_System.gd" id="2_o2jac"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://bhfpyfnti4k0k" path="res://scenes/dialogues/dialogue.tscn" id="20_8r7sv"]
 [ext_resource type="PackedScene" uid="uid://dkgg5c4n1g8p6" path="res://scenes/sword_trigger.tscn" id="21_jbogf"]
 [ext_resource type="PackedScene" uid="uid://8yd0dfjpmqbt" path="res://scenes/bow_trigger.tscn" id="22_4ccel"]
+[ext_resource type="PackedScene" uid="uid://b57i0n5apka0l" path="res://scenes/canon.tscn" id="23_t6bkv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nimn1"]
 texture = ExtResource("12_yw5eg")
@@ -1427,7 +1428,7 @@ texture = ExtResource("17_5ci33")
 centered = false
 
 [node name="player" parent="World" instance=ExtResource("18_f1vip")]
-position = Vector2(734, -84)
+position = Vector2(504, -823)
 
 [node name="Heads-Up_Display" parent="." instance=ExtResource("19_h3lci")]
 
@@ -1445,3 +1446,6 @@ position = Vector2(633, 87)
 
 [node name="bow_trigger" parent="." instance=ExtResource("22_4ccel")]
 position = Vector2(601, 89)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("23_t6bkv")]
+position = Vector2(381, -685)

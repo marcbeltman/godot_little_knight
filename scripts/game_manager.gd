@@ -81,7 +81,7 @@ func countdown_stop():
 
 	
 func countdown_reset():
-	print("countdown reset werd opgeroepen")
+	print("countdown reset werd opgeroepen") 
 	time_left = duration
 	countdown_timer.start()
 	

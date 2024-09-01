@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b57i0n5apka0l"]
+
+[ext_resource type="Texture2D" uid="uid://dm7p6dlxsrsce" path="res://assets/images/canon-gun.png" id="1_8xvno"]
+[ext_resource type="Texture2D" uid="uid://cwbbd3gikhqyv" path="res://assets/images/canon-wheel.png" id="2_tyxqd"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="canon_gun" type="Sprite2D" parent="."]
+texture = ExtResource("1_8xvno")
+
+[node name="canon_wheel" type="Sprite2D" parent="."]
+position = Vector2(0, 5)
+texture = ExtResource("2_tyxqd")

@@ -1426,7 +1426,7 @@ texture = ExtResource("20_0o5tq")
 centered = false
 
 [node name="player" parent="World" instance=ExtResource("21_sfcha")]
-position = Vector2(734, -84)
+position = Vector2(735, -45)
 
 [node name="Heads-Up_Display" parent="." instance=ExtResource("22_pcuc0")]
 
@@ -1441,3 +1441,6 @@ right_answer = "A"
 
 [node name="sword_trigger" parent="." instance=ExtResource("16_w31pu")]
 position = Vector2(247, -85)
+
+[node name="Platform" parent="." instance=ExtResource("17_rscc4")]
+position = Vector2(481, -649)

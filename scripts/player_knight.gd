@@ -14,8 +14,14 @@ var gravity = 900
 var weapon_equip: bool
 var bow_equip: bool
 
-# aanval modus
-#var current_attack: bool
+# shoot functionality
+@export var shootspeed = 1.0
+const ARROW_BULLET = preload("res://scenes/arrow_bullet.tscn")
+@onready var shoot_speed_timer = $shootSpeedTimer
+var canShoot = true
+var bulletDirection = 0
+@onready var collision_shape_2d = $DealDamageZone/CollisionShape2D
+
 
 var health = 100
 var health_max = 100
@@ -30,11 +36,16 @@ var can_attack = true
 @onready var jump_sound = $jumpSound
 @onready var sword_sound = $swordSound
 @onready var hurt_sound = $hurtSound
+@onready var arrow_sound = $arrowSound
 
 @onready var deal_damage_zone = $DealDamageZone
 
 func _ready():
-		# player naar GameData 
+	
+	#shoot functionality
+	shoot_speed_timer.wait_time = 1.0 / shootspeed
+	
+	# player naar GameData 
 	GameData.playerBody = self 
 	print("Player in GameData:", GameData.playerBody)
 	
@@ -60,10 +71,6 @@ func _ready():
 		#health_system.connect("player_knight_died", Callable(health_system, "player_die"))
 	#else:
 		#print("Player: Health_System not found")
-
-
-
-
 
 
 	# nodig voor toggle_damage_collisions()
@@ -111,7 +118,11 @@ func _physics_process(delta):
 			toggle_damage_collisions()
 			set_damage()
 			
-	# Handle shoot
+
+	
+	
+	
+	
 
 
 	# Get the imput direction: -1, 0, 1
@@ -121,9 +132,20 @@ func _physics_process(delta):
 	if direction > 0:
 		animated_sprite.flip_h = false
 		deal_damage_zone.scale.x = 1
+		bulletDirection = direction
 	elif direction < 0:
 		animated_sprite.flip_h = true
 		deal_damage_zone.scale.x = -1
+		bulletDirection = direction
+		
+		
+	# Handle shoot
+	if bow_equip:
+		# alleen bij stilstand is schieten mogelijk (and direction == 0)
+		if Input.is_action_just_pressed("attack") and is_on_floor() and can_attack and direction == 0:
+			print("schieten is mogelijk")
+			
+			shoot(bulletDirection)
 	
 	#play animations
 	#if is_on_floor():
@@ -175,7 +197,7 @@ func _physics_process(delta):
 func toggle_damage_collisions():
 	var damage_zone_collision = deal_damage_zone.get_node("CollisionShape2D")
 	# animatie frames / fps
-	var wait_time = 0.6
+	var wait_time = 0.6 
 	damage_zone_collision.disabled = false
 	await get_tree().create_timer(wait_time).timeout
 	damage_zone_collision.disabled = true
@@ -224,3 +246,40 @@ func take_damage_cooldown(wait_time):
 	await get_tree().create_timer(wait_time).timeout
 	
 	can_take_damage = true
+	
+
+func shoot(bulletDirection):
+	
+	
+	
+	print("bullet direction ", bulletDirection)
+	var direction = Vector2(0,0)
+	if bulletDirection == 1:
+		direction = Vector2(1,0)
+	else:
+		direction = Vector2(-1,0)
+	
+	if canShoot:
+		arrow_sound.play()
+		#animated_sprite.play("shoot")
+		canShoot = false
+		shoot_speed_timer.start()
+		
+		var bulletNode = ARROW_BULLET.instantiate()
+
+		bulletNode.set_direction(direction)
+		get_tree().root.add_child(bulletNode)
+		bulletNode.global_position = collision_shape_2d.global_position
+
+
+
+
+func _on_shoot_speed_timer_timeout():
+	canShoot = true
+
+
+#func setup_direction(direction):
+	#bulletDirection = direction
+
+
+
