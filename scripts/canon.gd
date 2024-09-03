@@ -1,7 +1,11 @@
 extends StaticBody2D
 
+
+@export var player_path : NodePath
+var player : Node2D
+
 @export var knockback_strength := 200.0  # De sterkte van de knockback
-@export var knockback_duration := 0.5  # Hoe lang de knockback moet duren
+@export var knockback_duration := 1.0  # Hoe lang de knockback moet duren
 
 
 @onready var Game = get_tree().get_root().get_node("Game")
@@ -19,17 +23,28 @@ func _ready():
 	canon_start_position = global_position
 	cooldown_timer.connect("timeout", Callable(self, "_on_cooldown_timeout"))
 	cooldown_timer.start()  # Start de timer als het niet automatisch gebeurt
-	shoot()
+	#shoot()
+	z_index = 5
+	
+	if player_path:
+		player = get_node(player_path)
+	else:
+		print("CANON: Player path is not set!")
+	
+	
+	
 
 
 func shoot(): 
 	print("canon-shoot")
 	canon_sound.play()
 	var instance = projectile.instantiate()
-	instance.dir = rotation
+	#instance.dir = rotation
+	instance.dir = $canon_gun/Marker_respawn.global_rotation
 	instance.spawnPos = $canon_gun/Marker_respawn.global_position
 	instance.spawnRot = rotation
-	instance.zdex = z_index -1
+	#instance.zdex = z_index -1
+	
 	Game.add_child.call_deferred(instance)
 	apply_knockback()
 
@@ -45,7 +60,9 @@ func apply_knockback():
 	
 func _physics_process(delta):
 	handle_knockback(delta)
-
+	#if player:
+	if is_instance_valid(player):
+		$canon_gun.look_at(player.global_position)
 
 func handle_knockback(delta):
 	if knockback_time_elapsed < knockback_duration:
@@ -58,6 +75,7 @@ func handle_knockback(delta):
 	else:
 		# Zorg ervoor dat we precies op de beginpositie eindigen
 		global_position = canon_start_position
+	
 	
 func _on_cooldown_timeout():
 	print("cooldown canon-shoot")
