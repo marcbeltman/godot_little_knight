@@ -22,3 +22,6 @@ var is_dwarf_chase: bool
 
 var dwarfDamageZone: Area2D
 var dwarfDamageAmount: int
+
+var canon_can_shoot: bool
+

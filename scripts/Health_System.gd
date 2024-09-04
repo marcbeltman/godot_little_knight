@@ -53,6 +53,8 @@ func player_die(body):
 		# gevechts modus uit
 		GameData.weapon_equip = false
 		GameData.bow_equip = false
+		GameData.canon_can_shoot = false
+		print("health system : canon_can_shoot ", GameData.canon_can_shoot )
 		print("health system lives: ", current_lives)
 		#body.get_node("CollisionShape2D").queue_free()
 		die_sound.play()
@@ -106,7 +108,7 @@ func respawn_player(body):
 				#print("CharacterBody2D node niet gevonden")
 				
 			#print("PLAYERBODY BIJ RESPAWN: ", player_instance)
-
+			
 			# belangrijk: laat de bat enemy weer aanvallen
 			GameData.is_bat_chase = true
 			# Update de huidige speler referentie

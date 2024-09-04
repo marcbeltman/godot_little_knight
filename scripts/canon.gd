@@ -13,31 +13,31 @@ extends StaticBody2D
 @onready var cooldown_timer = $Cooldown
 @onready var canon_sound = $CanonSound
 @onready var canon_fire = $AnimatedSprite2D
+@onready var canon_gun = $canon_gun
 
 
 var player: CharacterBody2D
 var canon_start_position: Vector2
 var knockback_time_elapsed: float = 0.0  # Tijd die verstreken is sinds de knockback begon
-
+var offset = Vector2(23,-3)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("KUTZOOI ", GameData.canon_can_shoot)
 	# Sla de beginpositie op bij het laden van de scène
 	canon_start_position = global_position
 	cooldown_timer.connect("timeout", Callable(self, "_on_cooldown_timeout"))
-	cooldown_timer.start()  # Start de timer als het niet automatisch gebeurt
+	#cooldown_timer.start()  # Start de timer als het niet automatisch gebeurt
 	#shoot()
 	z_index = 5
-	
+	#LAAT HET KANON BEGINNEN MET SCHIETEN MOET NAAR EEN AREA 2D!!!
+	GameData.canon_can_shoot = true
+	print("GameData.canon_can_shoot: ", GameData.canon_can_shoot)
 	#if player_path:
 		#player = get_node(player_path)
 	#else:
 		#print("CANON: Player path is not set!")
 	
-	
-	
-
-
 func shoot(): 
 	print("canon-shoot")
 	canon_fire.play()
@@ -63,13 +63,23 @@ func apply_knockback():
 	
 	
 func _physics_process(delta):
+	# Kanon laten schieten of niet
+	if GameData.canon_can_shoot and cooldown_timer.is_stopped():
+		print("Canon can shoot! ", GameData.canon_can_shoot)
+		cooldown_timer.start()
+	if not GameData.canon_can_shoot:
+		cooldown_timer.stop()
+	
 	handle_knockback(delta)
 
+	# kanon explosie laten mee bewegen met de canon-gun
 	player = GameData.playerBody
+	var rotated_offset = offset.rotated(canon_gun.rotation)
+	canon_fire.position = canon_gun.position + rotated_offset
 	
+	# kanon koppelen aan player en spel vrijgeven wanneer player dood gaat
 	if !player:
 		return
-	
 	if player:
 		$canon_gun.look_at(player.global_position)
 
