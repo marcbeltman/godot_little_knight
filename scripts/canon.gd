@@ -4,6 +4,7 @@ extends StaticBody2D
 #@export var player_path : NodePath
 #var player : Node2D
 
+@export var health := 80
 @export var knockback_strength := 200.0  # De sterkte van de knockback
 @export var knockback_duration := 1.0  # Hoe lang de knockback moet duren
 
@@ -12,14 +13,24 @@ extends StaticBody2D
 @onready var projectile = load("res://scenes/canon_projectile.tscn")
 @onready var cooldown_timer = $Cooldown
 @onready var canon_sound = $CanonSound
-@onready var canon_fire = $AnimatedSprite2D
+@onready var canon_fire = $canon_fire
 @onready var canon_gun = $canon_gun
-
+@onready var canon_destroy = $canon_destroy
 
 var player: CharacterBody2D
 var canon_start_position: Vector2
 var knockback_time_elapsed: float = 0.0  # Tijd die verstreken is sinds de knockback begon
 var offset = Vector2(23,-3)
+
+var health_max = health
+var health_min = 0
+var dead : bool = false
+var taking_damage : bool = false
+var damage_te_deal = 20 
+
+
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,7 +42,7 @@ func _ready():
 	#shoot()
 	z_index = 5
 	#LAAT HET KANON BEGINNEN MET SCHIETEN MOET NAAR EEN AREA 2D!!!
-	GameData.canon_can_shoot = true
+	GameData.canon_can_shoot = false
 	print("GameData.canon_can_shoot: ", GameData.canon_can_shoot)
 	#if player_path:
 		#player = get_node(player_path)
@@ -63,15 +74,7 @@ func apply_knockback():
 	
 	
 func _physics_process(delta):
-	# Kanon laten schieten of niet
-	if GameData.canon_can_shoot and cooldown_timer.is_stopped():
-		print("Canon can shoot! ", GameData.canon_can_shoot)
-		cooldown_timer.start()
-	if not GameData.canon_can_shoot:
-		cooldown_timer.stop()
 	
-	handle_knockback(delta)
-
 	# kanon explosie laten mee bewegen met de canon-gun
 	player = GameData.playerBody
 	var rotated_offset = offset.rotated(canon_gun.rotation)
@@ -82,7 +85,27 @@ func _physics_process(delta):
 		return
 	if player:
 		$canon_gun.look_at(player.global_position)
+	
+	# Kanon laten schieten of als het kanon niet dood is en geen schade krijgt
+	if !dead and !taking_damage:
+		if GameData.canon_can_shoot and cooldown_timer.is_stopped():
+			print("Canon can shoot! ", GameData.canon_can_shoot)
+			cooldown_timer.start()
+	
+		if not GameData.canon_can_shoot:
+			cooldown_timer.stop()
+	elif !dead and taking_damage:
+		apply_knockback()
+	elif dead:
+		canon_destroy.play()
+		await get_tree().create_timer(0.6).timeout
+		handle_death()
+	
+	handle_knockback(delta)
 
+
+func handle_death():
+	queue_free()
 		
 
 func handle_knockback(delta):
@@ -102,3 +125,6 @@ func _on_cooldown_timeout():
 	print("cooldown canon-shoot")
 	shoot()
 	
+
+func _on_canon_hitbox_body_entered(body):
+	print("Canon hit by arrow")

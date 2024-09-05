@@ -1334,7 +1334,7 @@ position = Vector2(336, -167)
 
 [node name="Platform_10" parent="World/Objects/platforms" instance=ExtResource("8_xoxdd")]
 z_index = -2
-position = Vector2(266, -141)
+position = Vector2(266, -130)
 
 [node name="Platform_11" parent="World/Objects/platforms" instance=ExtResource("8_xoxdd")]
 position = Vector2(1203, -455)
@@ -1417,7 +1417,7 @@ texture = ExtResource("17_5ci33")
 centered = false
 
 [node name="player" parent="World" instance=ExtResource("18_f1vip")]
-position = Vector2(190, -278)
+position = Vector2(295, -130)
 
 [node name="Heads-Up_Display" parent="." instance=ExtResource("19_h3lci")]
 
@@ -1434,7 +1434,7 @@ right_answer = "A"
 position = Vector2(1551, -467)
 
 [node name="bow_trigger" parent="." instance=ExtResource("22_4ccel")]
-position = Vector2(1519, -465)
+position = Vector2(143, 23)
 
 [node name="canon" parent="." instance=ExtResource("23_t6bkv")]
 position = Vector2(55, -14)

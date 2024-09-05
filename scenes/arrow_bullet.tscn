@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://beaekhvfhnwej"]
+[gd_scene load_steps=5 format=3 uid="uid://beaekhvfhnwej"]
 
 [ext_resource type="Script" path="res://scripts/arrow.gd" id="1_pug64"]
 [ext_resource type="Texture2D" uid="uid://dikf7l42qnau4" path="res://assets/images/arrow_bullet.png" id="2_lmqbj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0al7h"]
 size = Vector2(13, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_exed1"]
+size = Vector2(14, 6)
 
 [node name="Bullet" type="Area2D"]
 script = ExtResource("1_pug64")
@@ -14,5 +17,11 @@ texture = ExtResource("2_lmqbj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_0al7h")
+
+[node name="arrow_deal_damage_area" type="Area2D" parent="."]
+collision_mask = 129
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arrow_deal_damage_area"]
+shape = SubResource("RectangleShape2D_exed1")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
