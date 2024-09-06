@@ -42,7 +42,7 @@ func _ready():
 	#shoot()
 	z_index = 5
 	#LAAT HET KANON BEGINNEN MET SCHIETEN MOET NAAR EEN AREA 2D!!!
-	GameData.canon_can_shoot = false
+	GameData.canon_can_shoot = true
 	print("GameData.canon_can_shoot: ", GameData.canon_can_shoot)
 	#if player_path:
 		#player = get_node(player_path)

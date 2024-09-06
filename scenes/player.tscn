@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://bgg7nwg3nrtcu"]
+[gd_scene load_steps=71 format=3 uid="uid://bgg7nwg3nrtcu"]
 
 [ext_resource type="Texture2D" uid="uid://dfmlv106mrpq2" path="res://assets/sprites/knight.png" id="1_dpp24"]
 [ext_resource type="Script" path="res://scripts/player_knight.gd" id="1_rm2tp"]
@@ -86,6 +86,10 @@ region = Rect2(96, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_h6is2"]
 atlas = ExtResource("1_dpp24")
 region = Rect2(64, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vege3"]
+atlas = ExtResource("4_lmv05")
+region = Rect2(192, 160, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_25i2l"]
 atlas = ExtResource("1_dpp24")
@@ -317,6 +321,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_vege3")
+}],
+"loop": true,
+"name": &"jump_bow",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_25i2l")
 }, {
 "duration": 1.0,
@@ -458,10 +470,8 @@ shootspeed = 2.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_dsvs7")
-animation = &"shoot"
+animation = &"jump_bow"
 autoplay = "idle"
-frame = 3
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 5

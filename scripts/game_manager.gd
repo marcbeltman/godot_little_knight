@@ -9,7 +9,7 @@ signal countdown_player_died()
 @export_group("points")
 #@export var point_value: int = 10
 
-@export_group("countdown")
+@export_group("countdown") 
 @export var duration: int = 50
 @export var redClr : Color = Color(1.0, 0.0, 0.0) # Rood definiëren
 @export var origClr : Color = Color(1.0, 1.1, 1.1) # Voorbeeld originele kleur

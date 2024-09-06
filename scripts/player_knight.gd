@@ -143,9 +143,9 @@ func _physics_process(delta):
 	# Handle shoot
 	if bow_equip:
 		# alleen bij stilstand is schieten mogelijk (and direction == 0)
-		if Input.is_action_just_pressed("attack") and is_on_floor() and can_attack and direction == 0:
+		#if Input.is_action_just_pressed("attack") and is_on_floor() and can_attack and direction == 0:
+		if Input.is_action_just_pressed("attack") and can_attack:
 			print("schieten is mogelijk")
-			
 			shoot(bulletDirection)
 	
 	#play animations
@@ -171,9 +171,15 @@ func _physics_process(delta):
 			elif direction == 0 and !weapon_equip and bow_equip:
 				animated_sprite.play("idle_bow")
 			elif direction != 0:
-				animated_sprite.play("run")
+				if bow_equip:
+					animated_sprite.play("run_bow")
+				else:
+					animated_sprite.play("run")
 	else: 
-		animated_sprite.play("jump")
+		if bow_equip:
+			animated_sprite.play("jump_bow")
+		else:
+			animated_sprite.play("jump")
 
 
 
@@ -216,7 +222,8 @@ func check_hitbox():
 			damage = GameData.batDamageAmount
 		elif hitbox.get_parent() is DwarfEnemy:
 			damage = GameData.dwarfDamageAmount
-		
+		elif hitbox.get_parent() is CanonProjectile:
+			damage = GameData.canonDamageAmount
 		
 		if can_take_damage:
 			take_damage(damage)
