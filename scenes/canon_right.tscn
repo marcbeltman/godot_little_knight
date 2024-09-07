@@ -1,41 +1,41 @@
-[gd_scene load_steps=27 format=3 uid="uid://b57i0n5apka0l"]
+[gd_scene load_steps=27 format=3 uid="uid://37qcmbhk7kk7"]
 
-[ext_resource type="Texture2D" uid="uid://dm7p6dlxsrsce" path="res://assets/images/canon-gun.png" id="1_8xvno"]
-[ext_resource type="Script" path="res://scripts/old/canon.gd" id="1_lljrd"]
-[ext_resource type="Texture2D" uid="uid://cwbbd3gikhqyv" path="res://assets/images/canon-wheel.png" id="2_tyxqd"]
-[ext_resource type="AudioStream" uid="uid://8ggt0bb6iguk" path="res://assets/sounds/canon_sound.mp3" id="4_3uf1m"]
-[ext_resource type="Texture2D" uid="uid://6bmwj7oy80ji" path="res://assets/sprites/canon_explosions.png" id="5_1opn8"]
-[ext_resource type="Texture2D" uid="uid://5hblji5t85ok" path="res://assets/sprites/canon_destroy.png" id="5_3fw8u"]
+[ext_resource type="Script" path="res://scripts/canon_right.gd" id="1_tyhid"]
+[ext_resource type="Texture2D" uid="uid://dm7p6dlxsrsce" path="res://assets/images/canon-gun.png" id="2_ra1xa"]
+[ext_resource type="Texture2D" uid="uid://cwbbd3gikhqyv" path="res://assets/images/canon-wheel.png" id="3_1inki"]
+[ext_resource type="AudioStream" uid="uid://8ggt0bb6iguk" path="res://assets/sounds/canon_sound.mp3" id="4_tl6ux"]
+[ext_resource type="Texture2D" uid="uid://6bmwj7oy80ji" path="res://assets/sprites/canon_explosions.png" id="5_6qn0v"]
+[ext_resource type="Texture2D" uid="uid://5hblji5t85ok" path="res://assets/sprites/canon_destroy.png" id="6_ffr3x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x0ofk"]
 size = Vector2(40, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vjhcw"]
-atlas = ExtResource("5_1opn8")
+atlas = ExtResource("5_6qn0v")
 region = Rect2(64, 36, 32, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kvlax"]
-atlas = ExtResource("5_1opn8")
+atlas = ExtResource("5_6qn0v")
 region = Rect2(0, 0, 32, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_it25f"]
-atlas = ExtResource("5_1opn8")
+atlas = ExtResource("5_6qn0v")
 region = Rect2(32, 0, 32, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5jhpf"]
-atlas = ExtResource("5_1opn8")
+atlas = ExtResource("5_6qn0v")
 region = Rect2(64, 0, 32, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_422eh"]
-atlas = ExtResource("5_1opn8")
+atlas = ExtResource("5_6qn0v")
 region = Rect2(96, 0, 32, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xxpvt"]
-atlas = ExtResource("5_1opn8")
+atlas = ExtResource("5_6qn0v")
 region = Rect2(128, 0, 32, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_et7tq"]
-atlas = ExtResource("5_1opn8")
+atlas = ExtResource("5_6qn0v")
 region = Rect2(160, 0, 32, 36)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wtj7p"]
@@ -71,39 +71,39 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eh58f"]
-atlas = ExtResource("5_3fw8u")
+atlas = ExtResource("6_ffr3x")
 region = Rect2(512, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0mun8"]
-atlas = ExtResource("5_3fw8u")
+atlas = ExtResource("6_ffr3x")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3suhp"]
-atlas = ExtResource("5_3fw8u")
+atlas = ExtResource("6_ffr3x")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fg2k4"]
-atlas = ExtResource("5_3fw8u")
+atlas = ExtResource("6_ffr3x")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fw1of"]
-atlas = ExtResource("5_3fw8u")
+atlas = ExtResource("6_ffr3x")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xirjv"]
-atlas = ExtResource("5_3fw8u")
+atlas = ExtResource("6_ffr3x")
 region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7xts3"]
-atlas = ExtResource("5_3fw8u")
+atlas = ExtResource("6_ffr3x")
 region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_51184"]
-atlas = ExtResource("5_3fw8u")
+atlas = ExtResource("6_ffr3x")
 region = Rect2(384, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mcqyh"]
-atlas = ExtResource("5_3fw8u")
+atlas = ExtResource("6_ffr3x")
 region = Rect2(448, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i3eo6"]
@@ -145,15 +145,15 @@ animations = [{
 radius = 18.0
 height = 54.0
 
-[node name="canon" type="StaticBody2D"]
+[node name="canon_right" type="StaticBody2D"]
 position = Vector2(0, -15)
 collision_layer = 16
 collision_mask = 2
-script = ExtResource("1_lljrd")
+script = ExtResource("1_tyhid")
 
 [node name="canon_gun" type="Sprite2D" parent="."]
 position = Vector2(0, 5)
-texture = ExtResource("1_8xvno")
+texture = ExtResource("2_ra1xa")
 offset = Vector2(0, -5)
 
 [node name="Marker_respawn" type="Marker2D" parent="canon_gun"]
@@ -161,7 +161,7 @@ position = Vector2(8, -5)
 
 [node name="canon_wheel" type="Sprite2D" parent="."]
 position = Vector2(0, 5)
-texture = ExtResource("2_tyxqd")
+texture = ExtResource("3_1inki")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2.5)
@@ -170,7 +170,7 @@ shape = SubResource("RectangleShape2D_x0ofk")
 [node name="Cooldown" type="Timer" parent="."]
 
 [node name="CanonSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_3uf1m")
+stream = ExtResource("4_tl6ux")
 volume_db = -8.411
 pitch_scale = 0.49
 

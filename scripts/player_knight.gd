@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+class_name Player
 
 # Declaratie van signalen
 signal player_knight_died(body)

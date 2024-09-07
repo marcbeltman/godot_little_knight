@@ -1426,7 +1426,7 @@ texture = ExtResource("20_0o5tq")
 centered = false
 
 [node name="player" parent="World" instance=ExtResource("21_sfcha")]
-position = Vector2(735, -45)
+position = Vector2(190, -812)
 
 [node name="Heads-Up_Display" parent="." instance=ExtResource("22_pcuc0")]
 

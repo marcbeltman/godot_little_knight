@@ -53,8 +53,10 @@ func player_die(body):
 		# gevechts modus uit
 		GameData.weapon_equip = false
 		GameData.bow_equip = false
-		GameData.canon_can_shoot = false
-		print("health system : canon_can_shoot ", GameData.canon_can_shoot )
+		#GameData.canon_can_shoot = false
+		GameData.canon_right_can_shoot = false
+		GameData.canon_left_can_shoot = false
+		#print("health system : canon_can_shoot ", GameData.canon_can_shoot )
 		print("health system lives: ", current_lives)
 		#body.get_node("CollisionShape2D").queue_free()
 		die_sound.play()

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfr8vytlfmjbm"]
+
+[ext_resource type="Script" path="res://scripts/old/canon+trigger.gd" id="1_usvxd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8qhhd"]
+size = Vector2(46, 16)
+
+[node name="canon+trigger" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_usvxd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8qhhd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

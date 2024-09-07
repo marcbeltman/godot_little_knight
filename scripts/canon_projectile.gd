@@ -6,7 +6,8 @@ class_name CanonProjectile
 @onready var explosion = $AnimatedSprite2D
 
 #var dir : float
-var dir : float = 3 * PI / 2  # Standaard richting naar rechts (270 graden)
+#var dir : float = 3 * PI / 2  # Standaard richting naar rechts (270 graden)
+var dir : float 
 var spawnPos : Vector2
 var spawnRot : float
 var zdex : int
