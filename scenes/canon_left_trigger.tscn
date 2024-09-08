@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://i11bk4j6ikrd"]
 
-[ext_resource type="Script" path="res://scenes/canon_left_trigger.gd" id="1_qmamv"]
+[ext_resource type="Script" path="res://scripts/canon_left_trigger.gd" id="1_gdfe8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l7ui1"]
 size = Vector2(48, 14)
 
 [node name="canon_left_trigger" type="Area2D"]
 collision_mask = 2
-script = ExtResource("1_qmamv")
+script = ExtResource("1_gdfe8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_l7ui1")
