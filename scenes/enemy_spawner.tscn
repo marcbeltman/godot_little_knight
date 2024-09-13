@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://kalq1bo04a5"]
+
+[ext_resource type="Script" path="res://scripts/enemy_spawner.gd" id="1_nu3x7"]
+[ext_resource type="PackedScene" uid="uid://0qia3v83ig7h" path="res://scenes/bat.tscn" id="2_6tvgd"]
+[ext_resource type="PackedScene" uid="uid://dq4k0nfswtup0" path="res://scenes/dwarf.tscn" id="3_jw35w"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6roru"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"dwarf_spawn",
+"speed": 5.0
+}]
+
+[node name="enemy_spawner" type="Node"]
+script = ExtResource("1_nu3x7")
+bat_scene = ExtResource("2_6tvgd")
+dwarf_scene = ExtResource("3_jw35w")
+
+[node name="BatSpawnPoint_01" type="Marker2D" parent="."]
+
+[node name="BatSpawnPoint_02" type="Marker2D" parent="."]
+
+[node name="BatSpawnPoint_03" type="Marker2D" parent="."]
+
+[node name="BatSpawnPoint_04" type="Marker2D" parent="."]
+
+[node name="DwarfSpawnPoint_01" type="Marker2D" parent="."]
+
+[node name="DwarfSpawnPoint_02" type="Marker2D" parent="."]
+
+[node name="DwarfSpawnPoint_03" type="Marker2D" parent="."]
+
+[node name="DwarfSpawnPoint_04" type="Marker2D" parent="."]
+
+[node name="dwarf_spawn" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6roru")
+animation = &"dwarf_spawn"
