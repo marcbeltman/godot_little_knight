@@ -25,12 +25,18 @@ var damage_to_deal = 10
 # Vlag om bij te houden of de kill_points animatie is afgespeeld
 var kill_points_played = false
 
+
+var game_manager
+
+
+
 func _ready():
 	# belangrijk: start de aanval van de bat enemy
 	GameData.is_bat_chase = true
 	#is_bat_chase = true
 	#_play_random_sound()
-	
+	game_manager = get_node_or_null("/root/Game/GameManager")
+
 
 func _process(delta):
 	# belangrijk: kijk constant of de bat enemy moet aanvallen of niet
@@ -38,17 +44,24 @@ func _process(delta):
 	GameData.batDamageAmount = damage_to_deal
 	GameData.batDamageZone = $BatDealDamageArea
 	
-	# verwijderen van de gestorven bat
+
+	move(delta)
+	handle_animation()
+	
+		# verwijderen van de gestorven bat
 	if is_on_floor() and dead:
 		#play kill_points animatie
 		if not kill_points_played:
 			kill_points.play("kill_points")
 			kill_points_played = true
-			%GameManager.add_point(30)
+			#%GameManager.add_point(30) 
+			if game_manager != null:
+				game_manager.add_point(30)
+			else:
+				print("BAT-ENEMY: GameManager not found in the scene!")
 		await get_tree().create_timer(2.0).timeout
 		self.queue_free()
-	move(delta)
-	handle_animation()
+	
 
 
 func move(delta):
@@ -132,12 +145,6 @@ func _play_random_sound() -> void:
 		#take_damage(damage)
 		#print("bat hit by player")
 
-
-
-
-
-
-		
 func take_damage(damage):
 	health -= damage
 	taking_damage = true
@@ -153,3 +160,8 @@ func _on_bat_hit_box_area_entered(area):
 		take_damage(damage)
 		audio_player.play()
 		print("bat hit by player")
+	elif area == GameData.arrowDamageZone:
+		var damage = GameData.arrowDamageAmount
+		take_damage(damage)
+		audio_player.play()
+		print("bat hit by arrow")

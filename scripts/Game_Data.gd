@@ -27,3 +27,14 @@ var dwarfDamageAmount: int
 var canon_right_can_shoot: bool
 var canon_left_can_shoot: bool
 var canonDamageAmount: int
+
+# arrow propperties
+var arrowDamageZone: Area2D
+var arrowDamageAmount: int
+
+var enemy_spawner: bool
+
+var platform_escape_blink: bool
+var platform_escape_move: bool
+
+var rock_is_falling: bool

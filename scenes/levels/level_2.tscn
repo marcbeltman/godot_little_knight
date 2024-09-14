@@ -1392,18 +1392,12 @@ position = Vector2(562, -271)
 
 [node name="BatEnemy_01" parent="World/Enemies" instance=ExtResource("18_8j4sr")]
 position = Vector2(770, -126)
-collision_layer = 4
-collision_mask = 4
 
 [node name="BatEnemy_02" parent="World/Enemies" instance=ExtResource("18_8j4sr")]
 position = Vector2(625, -175)
-collision_layer = 4
-collision_mask = 4
 
 [node name="BatEnemy_03" parent="World/Enemies" instance=ExtResource("18_8j4sr")]
 position = Vector2(511, -138)
-collision_layer = 4
-collision_mask = 4
 
 [node name="Killzone" parent="World" instance=ExtResource("17_yasml")]
 position = Vector2(-16, 55)

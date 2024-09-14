@@ -13,6 +13,7 @@ size = Vector2(14, 6)
 collision_mask = 129
 script = ExtResource("1_pug64")
 speed = 250
+damage = 20
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_lmqbj")
@@ -21,7 +22,9 @@ texture = ExtResource("2_lmqbj")
 shape = SubResource("RectangleShape2D_0al7h")
 
 [node name="arrow_deal_damage_area" type="Area2D" parent="."]
-collision_mask = 129
+collision_mask = 133
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="arrow_deal_damage_area"]
 shape = SubResource("RectangleShape2D_exed1")
+
+[connection signal="body_entered" from="arrow_deal_damage_area" to="." method="_on_arrow_deal_damage_area_body_entered"]

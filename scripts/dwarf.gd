@@ -29,13 +29,13 @@ var death_animation_playing: bool = false
 var player: CharacterBody2D
 var player_in_area = false
 
-
+var game_manager
 
 
 func _ready():
 	# belangrijk: start de aanval van de bat enemy
 	GameData.is_dwarf_chase = true
-
+	game_manager = get_node_or_null("/root/Game/GameManager")
 
 func _process(delta):
 	if !is_on_floor():
@@ -115,7 +115,10 @@ func handle_animation():
 
 func handle_death():
 	kill_points.play("kill_points")
-	%GameManager.add_point(50)
+	if game_manager != null:
+		game_manager.add_point(30)
+	else:
+		print("DWARF-ENEMY: GameManager not found in the scene!")
 	death_sound.play()
 	await get_tree().create_timer(1.5).timeout
 	self.queue_free()
@@ -135,9 +138,19 @@ func choose(array):
 
 
 func _on_dwarf_hitbox_area_entered(area):
-	var damage = GameData.playerDamageAmount
+	
 	if area == GameData.playerDamageZone:
+		var damage = GameData.playerDamageAmount
 		take_damage(damage)
+	elif area == GameData.arrowDamageZone:
+		var damage = GameData.arrowDamageAmount
+		take_damage(damage)
+
+		
+		
+		
+		
+		
 		
 func take_damage(damage):
 	#var anim_sprite = $AnimatedSprite2D
@@ -159,3 +172,4 @@ func _on_dwarf_deal_damage_area_area_entered(area):
 		attack_sound.play()
 		await get_tree().create_timer(1.0).timeout
 		is_dealing_damage = false
+	
