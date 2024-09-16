@@ -1,0 +1,204 @@
+[gd_scene load_steps=28 format=3 uid="uid://07yrjf3kfnqg"]
+
+[ext_resource type="Script" path="res://scripts/canon_right-static.gd" id="1_mb27l"]
+[ext_resource type="Texture2D" uid="uid://dm7p6dlxsrsce" path="res://assets/images/canon-gun.png" id="2_gx8tm"]
+[ext_resource type="Texture2D" uid="uid://cwbbd3gikhqyv" path="res://assets/images/canon-wheel.png" id="3_q4xjn"]
+[ext_resource type="AudioStream" uid="uid://8ggt0bb6iguk" path="res://assets/sounds/canon_sound.mp3" id="4_hvaws"]
+[ext_resource type="Texture2D" uid="uid://6bmwj7oy80ji" path="res://assets/sprites/canon_explosions.png" id="5_y4cn8"]
+[ext_resource type="Texture2D" uid="uid://5hblji5t85ok" path="res://assets/sprites/canon_destroy.png" id="6_0d6fs"]
+[ext_resource type="PackedScene" uid="uid://c5y73qisbixf0" path="res://scenes/health_bar.tscn" id="7_j4n63"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x0ofk"]
+size = Vector2(40, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjhcw"]
+atlas = ExtResource("5_y4cn8")
+region = Rect2(64, 36, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvlax"]
+atlas = ExtResource("5_y4cn8")
+region = Rect2(0, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_it25f"]
+atlas = ExtResource("5_y4cn8")
+region = Rect2(32, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jhpf"]
+atlas = ExtResource("5_y4cn8")
+region = Rect2(64, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_422eh"]
+atlas = ExtResource("5_y4cn8")
+region = Rect2(96, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxpvt"]
+atlas = ExtResource("5_y4cn8")
+region = Rect2(128, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_et7tq"]
+atlas = ExtResource("5_y4cn8")
+region = Rect2(160, 0, 32, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wtj7p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjhcw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvlax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_it25f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jhpf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_422eh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxpvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_et7tq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjhcw")
+}],
+"loop": false,
+"name": &"canon_fire",
+"speed": 25.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eh58f"]
+atlas = ExtResource("6_0d6fs")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mun8"]
+atlas = ExtResource("6_0d6fs")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3suhp"]
+atlas = ExtResource("6_0d6fs")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fg2k4"]
+atlas = ExtResource("6_0d6fs")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fw1of"]
+atlas = ExtResource("6_0d6fs")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xirjv"]
+atlas = ExtResource("6_0d6fs")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xts3"]
+atlas = ExtResource("6_0d6fs")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51184"]
+atlas = ExtResource("6_0d6fs")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcqyh"]
+atlas = ExtResource("6_0d6fs")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i3eo6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eh58f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mun8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3suhp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fg2k4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fw1of")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xirjv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xts3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51184")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcqyh")
+}],
+"loop": false,
+"name": &"canon_destroy",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2048h"]
+radius = 18.0
+height = 54.0
+
+[node name="canon_right_static" type="StaticBody2D"]
+position = Vector2(0, -15)
+collision_layer = 144
+collision_mask = 2
+script = ExtResource("1_mb27l")
+
+[node name="canon_gun" type="Sprite2D" parent="."]
+position = Vector2(0, 5)
+texture = ExtResource("2_gx8tm")
+offset = Vector2(0, -5)
+
+[node name="Marker_respawn" type="Marker2D" parent="canon_gun"]
+position = Vector2(8, -5)
+
+[node name="canon_wheel" type="Sprite2D" parent="."]
+position = Vector2(0, 5)
+texture = ExtResource("3_q4xjn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_x0ofk")
+disabled = true
+
+[node name="Cooldown" type="Timer" parent="."]
+
+[node name="CanonSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_hvaws")
+volume_db = -8.411
+pitch_scale = 0.49
+
+[node name="canon_fire" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wtj7p")
+animation = &"canon_fire"
+
+[node name="canon_destroy" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -17)
+sprite_frames = SubResource("SpriteFrames_i3eo6")
+animation = &"canon_destroy"
+
+[node name="canon_hitbox" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="canon_hitbox"]
+position = Vector2(0, 2)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_2048h")
+
+[node name="Health_Bar" parent="." instance=ExtResource("7_j4n63")]
+offset_left = -16.0
+offset_top = -17.0
+offset_right = 16.0
+offset_bottom = -12.0
+
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
+[connection signal="body_entered" from="canon_hitbox" to="." method="_on_canon_hitbox_body_entered"]

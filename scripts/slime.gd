@@ -3,7 +3,8 @@ extends Node2D
 #declaratie signaal naar Health_System
 signal player_hit(body)
 
-const SPEED = 60
+const SPEED = 100
+
 
 var direction = 1
 

@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Arrow
+
 @export var speed = 200
 @export var damage = 15
 
@@ -28,5 +30,6 @@ func _physics_process(delta):
 
 
 func _on_arrow_deal_damage_area_body_entered(body):
-	if body is TileMap or body is BatEnemy or body is DwarfEnemy:
+	if body is TileMap or body is BatEnemy or body is DwarfEnemy or body is Canon:
+		print(body)
 		queue_free()
