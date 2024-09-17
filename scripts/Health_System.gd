@@ -78,7 +78,8 @@ func respawn_player(body):
 			# laat de sword_trigger terug komen
 			%GameManager.level_manager.respawn_sword_trigger()
 			# laat de bow_trigger terug komen
-			%GameManager.level_manager.respawn_bow_trigger()
+			%GameManager.level_manager.respawn_bow_trigger_one()
+			%GameManager.level_manager.respawn_bow_trigger_two()
 			# create new player
 			var player_instance = player_scene.instantiate()
 			

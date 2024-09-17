@@ -148,7 +148,8 @@ height = 54.0
 
 [node name="canon_right_static" type="StaticBody2D"]
 position = Vector2(0, -15)
-collision_layer = 144
+disable_mode = 1
+collision_layer = 128
 collision_mask = 2
 script = ExtResource("1_mb27l")
 
@@ -167,7 +168,6 @@ texture = ExtResource("3_q4xjn")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_x0ofk")
-disabled = true
 
 [node name="Cooldown" type="Timer" parent="."]
 
@@ -201,4 +201,4 @@ offset_right = 16.0
 offset_bottom = -12.0
 
 [connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
-[connection signal="body_entered" from="canon_hitbox" to="." method="_on_canon_hitbox_body_entered"]
+[connection signal="area_entered" from="canon_hitbox" to="." method="_on_canon_hitbox_area_entered"]

@@ -1,0 +1,127 @@
+[gd_scene load_steps=19 format=3 uid="uid://bojg8lthh6sku"]
+
+[ext_resource type="Texture2D" uid="uid://gsc7w6lgvc0c" path="res://assets/images/block-rock.png" id="1_0csv6"]
+[ext_resource type="Script" path="res://scripts/rock_block.gd" id="1_rmbj6"]
+[ext_resource type="Texture2D" uid="uid://5hblji5t85ok" path="res://assets/sprites/canon_destroy.png" id="2_dbyam"]
+[ext_resource type="PackedScene" uid="uid://c5y73qisbixf0" path="res://scenes/health_bar.tscn" id="4_wv7x8"]
+[ext_resource type="AudioStream" uid="uid://drok42pryvrsf" path="res://assets/sounds/explosion.wav" id="5_xrtxx"]
+[ext_resource type="AudioStream" uid="uid://dqrvkmr2vy0dh" path="res://assets/sounds/rockBlock_bang.mp3" id="6_gx5lk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lf4tc"]
+size = Vector2(56, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eh58f"]
+atlas = ExtResource("2_dbyam")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mun8"]
+atlas = ExtResource("2_dbyam")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3suhp"]
+atlas = ExtResource("2_dbyam")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fg2k4"]
+atlas = ExtResource("2_dbyam")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fw1of"]
+atlas = ExtResource("2_dbyam")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xirjv"]
+atlas = ExtResource("2_dbyam")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xts3"]
+atlas = ExtResource("2_dbyam")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51184"]
+atlas = ExtResource("2_dbyam")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcqyh"]
+atlas = ExtResource("2_dbyam")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ia38x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eh58f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mun8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3suhp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fg2k4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fw1of")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xirjv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xts3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51184")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcqyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eh58f")
+}],
+"loop": false,
+"name": &"rock_destroy",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3cmc"]
+size = Vector2(48, 32)
+
+[node name="rock_block" type="StaticBody2D"]
+script = ExtResource("1_rmbj6")
+
+[node name="rockBlockDealDamageArea" type="Area2D" parent="."]
+collision_layer = 129
+collision_mask = 130
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rockBlockDealDamageArea"]
+shape = SubResource("RectangleShape2D_lf4tc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0csv6")
+
+[node name="rock_destroy" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ia38x")
+animation = &"rock_destroy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_h3cmc")
+
+[node name="Health_Bar" parent="." instance=ExtResource("4_wv7x8")]
+offset_left = 32.0
+offset_top = -25.0
+offset_right = 70.0
+offset_bottom = -20.0
+
+[node name="explosion_big" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_xrtxx")
+volume_db = 10.13
+pitch_scale = 0.57
+
+[node name="explosion_small" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_gx5lk")
+volume_db = -14.019
+pitch_scale = 2.54
+
+[connection signal="area_entered" from="rockBlockDealDamageArea" to="." method="_on_rock_block_deal_damage_area_area_entered"]
+[connection signal="animation_finished" from="rock_destroy" to="." method="_on_rock_destroy_animation_finished"]

@@ -19,6 +19,9 @@ class_name Canon
 
 
 
+
+
+
 var player: CharacterBody2D
 var canon_start_position: Vector2
 var knockback_time_elapsed: float = 0.0  # Tijd die verstreken is sinds de knockback begon
@@ -36,7 +39,8 @@ func _ready():
 	canon_start_position = global_position
 	cooldown_timer.connect("timeout", Callable(self, "_on_cooldown_timeout"))
 	z_index = 5
-	#GameData.canon_right_static_can_shoot = true
+	#collision_shape_2d.set_physics_process(false)
+	GameData.canon_right_static_can_shoot = true
 
 	
 func shoot(): 
@@ -49,7 +53,7 @@ func shoot():
 	instance.spawnPos = $canon_gun/Marker_respawn.global_position
 	instance.spawnRot = rotation
 	Game.add_child.call_deferred(instance)
-	apply_knockback()
+	#apply_knockback()
 
 
 func apply_knockback():
@@ -83,7 +87,8 @@ func _physics_process(delta):
 		if not GameData.canon_right_static_can_shoot:
 			cooldown_timer.stop()
 	elif !dead and taking_damage:
-		apply_knockback()
+		print("poep")
+		#apply_knockback()
 	elif dead:
 		canon_destroy.play()
 		await get_tree().create_timer(0.6).timeout
@@ -114,15 +119,22 @@ func _on_cooldown_timeout():
 	shoot()
 	
 
-func _on_canon_hitbox_body_entered(body):
-	check_hitbox(body)
-	print("FUCKSEL:" , body)
-	if body is Arrow:
-		print("ARROW HIT CANON")
-		apply_knockback()
-		var damage = GameData.arrowDamageAmount
-		take_damage(damage)
-	
+#func _on_canon_hitbox_body_entered(body):
+	#check_hitbox(body)
+	#print("FUCKSEL:" , body)
+	#if body is Arrow:
+		#print("ARROW HIT CANON")
+		#apply_knockback()
+		#var damage = GameData.arrowDamageAmount
+		#take_damage(damage)
+
+
+func _on_canon_hitbox_area_entered(area):
+	print("ARROW HIT CANON")
+	area.queue_free()
+	var damage = GameData.arrowDamageAmount
+	take_damage(damage)
+
 
 
 func check_hitbox(body):
@@ -136,10 +148,14 @@ func check_hitbox(body):
 			%GameManager.get_node("Health_System").player_die(body)
 		#elif hitbox.get_parent() is Arrow:
 			#print("ARROW HIT CANON")
-			#apply_knockback()
+			#body.queue_free()
 			#var damage = GameData.arrowDamageAmount
 			#take_damage(damage)
-			
+
+
+
+
+
 			
 func take_damage(damage):
 	health -= damage
@@ -148,3 +164,5 @@ func take_damage(damage):
 		health = 0
 		dead = true
 	print(str(self), "current health is ", health)
+
+

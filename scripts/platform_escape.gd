@@ -42,6 +42,7 @@ func _on_area_2d_body_entered(body):
 		# Stel de doelpositie in op de huidige positie + de verplaatsingshoeveelheid
 		target_position = self.position + Vector2(move_amount, 0)
 		is_moving = true  # Zet de beweging aan
+		# zorgt dat platform niet door schuift
 		var child_node = area_2d
 		child_node.queue_free()
 

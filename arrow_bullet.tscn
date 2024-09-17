@@ -10,7 +10,7 @@ size = Vector2(13, 3)
 size = Vector2(14, 6)
 
 [node name="Bullet" type="CharacterBody2D"]
-collision_layer = 129
+collision_mask = 129
 script = ExtResource("1_pug64")
 speed = 250
 damage = 20
@@ -22,7 +22,6 @@ texture = ExtResource("2_lmqbj")
 shape = SubResource("RectangleShape2D_0al7h")
 
 [node name="arrow_deal_damage_area" type="Area2D" parent="."]
-collision_layer = 129
 collision_mask = 133
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="arrow_deal_damage_area"]
