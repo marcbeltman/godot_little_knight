@@ -1384,7 +1384,7 @@ gate_letter = "D"
 [node name="Triggers" type="Node" parent="World/Objects"]
 
 [node name="question_trigger" parent="World/Objects/Triggers" instance=ExtResource("20_anvqt")]
-position = Vector2(694, -76)
+position = Vector2(686, -84)
 
 [node name="TileMap" type="TileMap" parent="World"]
 position = Vector2(83, -128)
@@ -1426,7 +1426,7 @@ texture = ExtResource("20_0o5tq")
 centered = false
 
 [node name="player" parent="World" instance=ExtResource("21_sfcha")]
-position = Vector2(190, -812)
+position = Vector2(737, -48)
 
 [node name="Heads-Up_Display" parent="." instance=ExtResource("22_pcuc0")]
 

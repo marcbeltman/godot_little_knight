@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bpmlhrymp2imp"]
+[gd_scene load_steps=6 format=3 uid="uid://dd63ky7uwcrd7"]
 
-[ext_resource type="Texture2D" uid="uid://bwmfo8a0ifvx8" path="res://assets/images/Backgrounds/backgroundCastles.png" id="1_e5a0a"]
-[ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_tspfn"]
-[ext_resource type="FontFile" uid="uid://cbh3hxq8qdpwb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_51213"]
-[ext_resource type="FontFile" uid="uid://cmfmyu1epvek8" path="res://assets/fonts/PixelOperator8.ttf" id="3_5jub0"]
-[ext_resource type="Texture2D" uid="uid://ca44t75a5yxb3" path="res://assets/images/little-knight-sword.png" id="5_aherv"]
+[ext_resource type="Script" path="res://scripts/you_win.gd" id="1_b0mao"]
+[ext_resource type="Texture2D" uid="uid://bwmfo8a0ifvx8" path="res://assets/images/Backgrounds/backgroundCastles.png" id="2_ww7pd"]
+[ext_resource type="FontFile" uid="uid://cbh3hxq8qdpwb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_glnjk"]
+[ext_resource type="FontFile" uid="uid://cmfmyu1epvek8" path="res://assets/fonts/PixelOperator8.ttf" id="4_2l824"]
+[ext_resource type="Texture2D" uid="uid://ca44t75a5yxb3" path="res://assets/images/little-knight-sword.png" id="5_0dos6"]
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -13,7 +13,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_tspfn")
+script = ExtResource("1_b0mao")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.2, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -24,7 +33,7 @@ offset_top = -188.0
 offset_bottom = 188.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_e5a0a")
+texture = ExtResource("2_ww7pd")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -40,27 +49,10 @@ theme_override_constants/margin_bottom = 12
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="Seperator3" type="Control" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label4" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 0
-theme_override_constants/shadow_offset_y = 0
-theme_override_constants/outline_size = 0
-theme_override_fonts/font = ExtResource("2_51213")
-theme_override_font_sizes/font_size = 20
-text = "PEGO game:"
-horizontal_alignment = 1
-vertical_alignment = 1
+theme_override_constants/separation = 35
 
 [node name="Seperator1" type="Control" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 35)
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
 [node name="Label1" type="Label" parent="MarginContainer/VBoxContainer"]
@@ -70,15 +62,14 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 8
 theme_override_constants/shadow_offset_y = 5
 theme_override_constants/outline_size = 20
-theme_override_fonts/font = ExtResource("2_51213")
+theme_override_fonts/font = ExtResource("3_glnjk")
 theme_override_font_sizes/font_size = 40
-text = "Little-knight
+text = "Congratulations
 "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Seperator4" type="Control" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 15)
+[node name="Seperator3" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="Label3" type="Label" parent="MarginContainer/VBoxContainer"]
@@ -88,28 +79,45 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 8
 theme_override_constants/shadow_offset_y = 8
 theme_override_constants/outline_size = 25
-theme_override_fonts/font = ExtResource("2_51213")
+theme_override_fonts/font = ExtResource("3_glnjk")
 theme_override_font_sizes/font_size = 65
-text = "\"SCIPIO\"
+text = "\"YOU WIN !!!\"
 "
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Seperator2" type="Control" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 220)
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Label_score" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
-theme_override_constants/shadow_offset_y = 0
-theme_override_constants/outline_size = 0
-theme_override_fonts/font = ExtResource("2_51213")
-theme_override_font_sizes/font_size = 20
-text = "The small defender of the WEST"
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("3_glnjk")
+theme_override_font_sizes/font_size = 100
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Seperator4" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("3_glnjk")
+theme_override_font_sizes/font_size = 65
+text = "POINTS
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -123,13 +131,14 @@ theme_override_constants/separation = 32
 alignment = 1
 
 [node name="Seperator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 450)
+custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
 
 [node name="Start_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(120, 50)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_5jub0")
+theme_override_fonts/font = ExtResource("4_2l824")
 theme_override_font_sizes/font_size = 24
 text = "Start Game"
 
@@ -137,11 +146,17 @@ text = "Start Game"
 visible = false
 custom_minimum_size = Vector2(120, 50)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_5jub0")
+theme_override_fonts/font = ExtResource("4_2l824")
 theme_override_font_sizes/font_size = 24
 text = "Exit Game"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(602, 357)
+position = Vector2(960, 377)
 scale = Vector2(0.295288, 0.285714)
-texture = ExtResource("5_aherv")
+texture = ExtResource("5_0dos6")
+flip_h = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(203, 377)
+scale = Vector2(0.295288, 0.285714)
+texture = ExtResource("5_0dos6")

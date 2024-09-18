@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no">
-	<title>beginner tutorial</title>
-	<style>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<title>beginner tutorial</title>
+		<style>
 body {
-	touch-action: none;
-	margin: 0;
-	border: 0 none;
-	padding: 0;
-	text-align: center;
-	background-color: rgb(255, 255, 255);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
+    touch-action: none;
+    margin: 0;
+    border: 0 none;
+    padding: 0;
+    text-align: center;
+    background-color: black;
+    display: flex; /* Nieuw toegevoegd om flexbox te gebruiken */
+    justify-content: center; /* Nieuw toegevoegd om horizontaal te centreren */
+    align-items: center; /* Nieuw toegevoegd om verticaal te centreren */
+    height: 100vh; /* Nieuw toegevoegd om het volledige scherm in hoogte te vullen */
 }
 
 #canvas {
@@ -112,35 +112,36 @@ body {
 	padding: 4px 6px;
 	visibility: visible;
 }
-	</style>
-	<link id='-gd-engine-icon' rel='icon' type='image/png' href='index.icon.png' />
-	<link rel='apple-touch-icon' href='index.apple-touch-icon.png'/>
-</head>
-<body>
-	<canvas id="canvas">
-		HTML5 canvas appears to be unsupported in the current browser.<br>
-		Please try updating or use a different browser.
-	</canvas>
-	<div id="status">
-		<div id="status-progress" style="display: none;" oncontextmenu="event.preventDefault();">
-			<div id ="status-progress-inner"></div>
-		</div>
-		<div id="status-indeterminate" style="display: none;" oncontextmenu="event.preventDefault();">
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-		</div>
-		<div id="status-notice" class="godot" style="display: none;"></div>
-	</div>
+		</style>
+		<link id='-gd-engine-icon' rel='icon' type='image/png' href='index.icon.png' />
+<link rel='apple-touch-icon' href='index.apple-touch-icon.png'/>
 
-	<script src="index.js"></script>
-	<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":1,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":2852928,"index.wasm":35708238},"focusCanvas":true,"gdextensionLibs":[]};
+	</head>
+	<body>
+		<canvas id="canvas">
+			HTML5 canvas appears to be unsupported in the current browser.<br >
+			Please try updating or use a different browser.
+		</canvas>
+		<div id="status">
+			<div id="status-progress" style="display: none;" oncontextmenu="event.preventDefault();">
+				<div id ="status-progress-inner"></div>
+			</div>
+			<div id="status-indeterminate" style="display: none;" oncontextmenu="event.preventDefault();">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<div id="status-notice" class="godot" style="display: none;"></div>
+		</div>
+
+		<script src="index.js"></script>
+		<script>
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":1,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":3782096,"index.wasm":35708238},"focusCanvas":true,"gdextensionLibs":[]};
 const engine = new Engine(GODOT_CONFIG);
 
 (function () {
@@ -245,6 +246,7 @@ const engine = new Engine(GODOT_CONFIG);
 		}, displayFailureNotice);
 	}
 }());
-	</script>
-</body>
+		</script>
+	</body>
 </html>
+
