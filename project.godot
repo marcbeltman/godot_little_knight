@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="beginner tutorial"
-run/main_scene="res://scenes/main_menu/main_menu.tscn"
+config/name="SCIPIO"
+run/main_scene="res://scenes/levels/menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 

@@ -1,63 +1,80 @@
-[gd_scene load_steps=60 format=3 uid="uid://iqwbddd6oupy"]
+[gd_scene load_steps=57 format=3 uid="uid://6snmmvbrdii7"]
 
-[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_flfrg"]
-[ext_resource type="Script" path="res://scripts/Health_System.gd" id="2_3ucpv"]
-[ext_resource type="AudioStream" uid="uid://brermjcwc4ohv" path="res://assets/sounds/die.mp3" id="3_soffu"]
-[ext_resource type="Script" path="res://scripts/Level_Manager.gd" id="4_frvyx"]
-[ext_resource type="AudioStream" uid="uid://bxkrnp0si51pe" path="res://assets/sounds/timesUp.mp3" id="5_5uib8"]
-[ext_resource type="PackedScene" uid="uid://b8x7t2on6faco" path="res://scenes/platform.tscn" id="7_l1rjx"]
-[ext_resource type="PackedScene" uid="uid://6mtpjh17dde1" path="res://scenes/platform_move.tscn" id="8_r2tm5"]
-[ext_resource type="FontFile" uid="uid://cmfmyu1epvek8" path="res://assets/fonts/PixelOperator8.ttf" id="9_xwe6u"]
-[ext_resource type="PackedScene" uid="uid://djem4tmwd3y4u" path="res://scenes/old/gate-A.tscn" id="10_vfrug"]
-[ext_resource type="PackedScene" uid="uid://py8w2w7kv2me" path="res://scenes/gate.tscn" id="11_m8b1f"]
-[ext_resource type="PackedScene" uid="uid://dxobcjeut0me2" path="res://scenes/question_trigger.tscn" id="12_bvrhu"]
-[ext_resource type="Texture2D" uid="uid://cjljfxeec7ev5" path="res://assets/sprites/world_tileset.png" id="13_nqvne"]
-[ext_resource type="Texture2D" uid="uid://c32ggajuawgm7" path="res://assets/sprites/tiny-town.png" id="14_0qf3i"]
-[ext_resource type="Texture2D" uid="uid://mncrlk7k3hgj" path="res://assets/sprites/tiny-dungeon.png" id="15_d5gii"]
-[ext_resource type="Texture2D" uid="uid://cqa6j06abr4fn" path="res://assets/images/parts/C-head-base.PNG" id="15_e6un4"]
-[ext_resource type="PackedScene" uid="uid://cwlfbfcef0p3l" path="res://scenes/slime_red.tscn" id="16_c8coi"]
-[ext_resource type="Texture2D" uid="uid://bjkmp7cvj6odt" path="res://assets/images/parts/D-head-left.PNG" id="16_i18d8"]
-[ext_resource type="Texture2D" uid="uid://dxbcycngwfmn" path="res://assets/images/parts/E-head-right.PNG" id="17_borsk"]
-[ext_resource type="Texture2D" uid="uid://08cof5crqgxh" path="res://assets/images/parts/F-head-back.PNG" id="18_40twr"]
-[ext_resource type="PackedScene" uid="uid://bent2ylxpl4oi" path="res://scenes/killzone.tscn" id="18_k3wp3"]
-[ext_resource type="Texture2D" uid="uid://c7fxkcllc6cc1" path="res://assets/images/test.png" id="19_5q3wm"]
-[ext_resource type="Texture2D" uid="uid://lrag05e440qd" path="res://assets/images/parts/G-plume.PNG" id="19_dou2f"]
-[ext_resource type="Texture2D" uid="uid://dcu1ntgjm72tn" path="res://assets/images/parts/H-hand.PNG" id="19_drten"]
-[ext_resource type="Texture2D" uid="uid://bq52jqhx3bi5l" path="res://assets/images/parts/I-arm.PNG" id="20_74yon"]
-[ext_resource type="PackedScene" uid="uid://bgg7nwg3nrtcu" path="res://scenes/player.tscn" id="20_f4l7d"]
-[ext_resource type="Texture2D" uid="uid://2v1udrx6rbaj" path="res://assets/images/parts/J-sholder.PNG" id="21_pkgwi"]
-[ext_resource type="PackedScene" uid="uid://d0tia5dve0qlo" path="res://scenes/heads_up_display.tscn" id="21_x4wgw"]
-[ext_resource type="Texture2D" uid="uid://bdqpqyxm807hq" path="res://assets/images/parts/K-sholder-knob.PNG" id="22_eryo2"]
-[ext_resource type="PackedScene" uid="uid://bhfpyfnti4k0k" path="res://scenes/dialogues/dialogue.tscn" id="22_vb8u4"]
-[ext_resource type="Texture2D" uid="uid://dtymk0l3dnfml" path="res://assets/images/parts/L-hips.PNG" id="23_5oan6"]
-[ext_resource type="PackedScene" uid="uid://crwe7rhna4063" path="res://scenes/part-3d.tscn" id="23_585tf"]
-[ext_resource type="Texture2D" uid="uid://bx7oo7p1pu8ry" path="res://assets/images/parts/step-01-visor-A.PNG" id="23_dvrvh"]
-[ext_resource type="Texture2D" uid="uid://c4g2pqsy7alc8" path="res://assets/images/parts/B-visor.PNG" id="24_8km2d"]
-[ext_resource type="Texture2D" uid="uid://cop3yoq3gcd0g" path="res://assets/images/parts/step-01-visor-B.PNG" id="24_i6pay"]
-[ext_resource type="Texture2D" uid="uid://bctab0odbm3rd" path="res://assets/images/parts/M-shoe-top.PNG" id="24_n41pv"]
-[ext_resource type="Texture2D" uid="uid://dshd2rx7w2ctf" path="res://assets/images/parts/step-02-helmet-A.PNG" id="24_se4rl"]
-[ext_resource type="PackedScene" uid="uid://bsluv0gv8qwnm" path="res://scenes/direction_arrow.tscn" id="24_uo3dl"]
-[ext_resource type="Texture2D" uid="uid://btikjf8ivrvfh" path="res://assets/images/parts/N-shoe.PNG" id="25_3vqcd"]
-[ext_resource type="Texture2D" uid="uid://dxcp8usbsl7ap" path="res://assets/images/parts/step-02-helmet-B.PNG" id="25_swcfj"]
-[ext_resource type="Texture2D" uid="uid://cda6xdqy2snxv" path="res://assets/images/parts/O-cape.PNG" id="26_u3c6k"]
-[ext_resource type="Texture2D" uid="uid://dip8hmdyalsq8" path="res://assets/images/parts/P-collar.PNG" id="27_gbdpb"]
-[ext_resource type="Texture2D" uid="uid://cx0lgkdif4tcy" path="res://assets/images/parts/step-03-arm-A.PNG" id="27_xvp6q"]
-[ext_resource type="Texture2D" uid="uid://3wfxalnt1do8" path="res://assets/images/parts/Q-blade.PNG" id="28_ipwqv"]
-[ext_resource type="Texture2D" uid="uid://l0oeadru0pjt" path="res://assets/images/parts/step-03-arm-B.PNG" id="28_mqlgk"]
-[ext_resource type="Texture2D" uid="uid://d26u0dn4a6nry" path="res://assets/images/parts/R-handle.PNG" id="29_oafn5"]
-[ext_resource type="Texture2D" uid="uid://dpxw6gpu5gx8c" path="res://assets/images/parts/S-knob-top.PNG" id="30_vjcn4"]
-[ext_resource type="Texture2D" uid="uid://ckkaqacia5io4" path="res://assets/images/parts/T-torso.PNG" id="31_f3uon"]
-[ext_resource type="Texture2D" uid="uid://cu8668kljdi81" path="res://assets/images/parts/step-04-legs-A.PNG" id="32_h5jwr"]
-[ext_resource type="Texture2D" uid="uid://crxajko5ybq6w" path="res://assets/images/parts/step-04-legs-B.PNG" id="33_hgopk"]
-[ext_resource type="Texture2D" uid="uid://cv6juiislv8l4" path="res://assets/images/parts/step-05-cape-A.PNG" id="36_u2feo"]
-[ext_resource type="Texture2D" uid="uid://ciosk3h6elmoe" path="res://assets/images/parts/step-05-cape-B.PNG" id="37_xx58d"]
-[ext_resource type="Texture2D" uid="uid://od15p0s67w62" path="res://assets/images/parts/step-06-sword-A.PNG" id="41_tgnwa"]
-[ext_resource type="Texture2D" uid="uid://kjghy18iojgk" path="res://assets/images/parts/step-06-sword-B.PNG" id="42_cbbox"]
-[ext_resource type="Texture2D" uid="uid://ofr1ulxbnbe4" path="res://assets/images/parts/step-07-final-A.PNG" id="43_s7jhd"]
-[ext_resource type="Texture2D" uid="uid://duylkd1o4anpv" path="res://assets/images/parts/step-07-final-B.PNG" id="45_e6kwi"]
+[ext_resource type="PackedScene" uid="uid://b8x7t2on6faco" path="res://scenes/platform.tscn" id="6_ihbak"]
+[ext_resource type="PackedScene" uid="uid://bsluv0gv8qwnm" path="res://scenes/direction_arrow.tscn" id="8_ccwvr"]
+[ext_resource type="FontFile" uid="uid://cmfmyu1epvek8" path="res://assets/fonts/PixelOperator8.ttf" id="9_yfiik"]
+[ext_resource type="PackedScene" uid="uid://crwe7rhna4063" path="res://scenes/part-3d.tscn" id="10_12fqi"]
+[ext_resource type="Texture2D" uid="uid://bx7oo7p1pu8ry" path="res://assets/images/parts/step-01-visor-A.PNG" id="11_2khfa"]
+[ext_resource type="Texture2D" uid="uid://cop3yoq3gcd0g" path="res://assets/images/parts/step-01-visor-B.PNG" id="12_jn486"]
+[ext_resource type="Texture2D" uid="uid://c4g2pqsy7alc8" path="res://assets/images/parts/B-visor.PNG" id="13_8i7ov"]
+[ext_resource type="Texture2D" uid="uid://cqa6j06abr4fn" path="res://assets/images/parts/C-head-base.PNG" id="14_6hiy4"]
+[ext_resource type="Texture2D" uid="uid://bjkmp7cvj6odt" path="res://assets/images/parts/D-head-left.PNG" id="15_gjxxa"]
+[ext_resource type="Texture2D" uid="uid://dxbcycngwfmn" path="res://assets/images/parts/E-head-right.PNG" id="16_2qdk8"]
+[ext_resource type="Texture2D" uid="uid://08cof5crqgxh" path="res://assets/images/parts/F-head-back.PNG" id="17_o8a6b"]
+[ext_resource type="Texture2D" uid="uid://lrag05e440qd" path="res://assets/images/parts/G-plume.PNG" id="18_jjhi8"]
+[ext_resource type="Texture2D" uid="uid://dshd2rx7w2ctf" path="res://assets/images/parts/step-02-helmet-A.PNG" id="19_w6war"]
+[ext_resource type="Texture2D" uid="uid://dxcp8usbsl7ap" path="res://assets/images/parts/step-02-helmet-B.PNG" id="20_m1aml"]
+[ext_resource type="Texture2D" uid="uid://dcu1ntgjm72tn" path="res://assets/images/parts/H-hand.PNG" id="21_w08nd"]
+[ext_resource type="Texture2D" uid="uid://bq52jqhx3bi5l" path="res://assets/images/parts/I-arm.PNG" id="22_bqxl7"]
+[ext_resource type="Texture2D" uid="uid://2v1udrx6rbaj" path="res://assets/images/parts/J-sholder.PNG" id="23_w4k7s"]
+[ext_resource type="Texture2D" uid="uid://bdqpqyxm807hq" path="res://assets/images/parts/K-sholder-knob.PNG" id="24_rwrb5"]
+[ext_resource type="Texture2D" uid="uid://cx0lgkdif4tcy" path="res://assets/images/parts/step-03-arm-A.PNG" id="25_sioib"]
+[ext_resource type="Texture2D" uid="uid://l0oeadru0pjt" path="res://assets/images/parts/step-03-arm-B.PNG" id="26_l06fm"]
+[ext_resource type="Texture2D" uid="uid://dtymk0l3dnfml" path="res://assets/images/parts/L-hips.PNG" id="27_2q53f"]
+[ext_resource type="Texture2D" uid="uid://bctab0odbm3rd" path="res://assets/images/parts/M-shoe-top.PNG" id="28_3etu3"]
+[ext_resource type="Texture2D" uid="uid://btikjf8ivrvfh" path="res://assets/images/parts/N-shoe.PNG" id="29_v1b30"]
+[ext_resource type="Texture2D" uid="uid://cu8668kljdi81" path="res://assets/images/parts/step-04-legs-A.PNG" id="30_j2dg1"]
+[ext_resource type="Texture2D" uid="uid://crxajko5ybq6w" path="res://assets/images/parts/step-04-legs-B.PNG" id="31_wj7xt"]
+[ext_resource type="Texture2D" uid="uid://cda6xdqy2snxv" path="res://assets/images/parts/O-cape.PNG" id="32_3vlgq"]
+[ext_resource type="Texture2D" uid="uid://dip8hmdyalsq8" path="res://assets/images/parts/P-collar.PNG" id="33_wxlux"]
+[ext_resource type="Texture2D" uid="uid://cv6juiislv8l4" path="res://assets/images/parts/step-05-cape-A.PNG" id="34_cslsy"]
+[ext_resource type="Texture2D" uid="uid://ciosk3h6elmoe" path="res://assets/images/parts/step-05-cape-B.PNG" id="35_vvlav"]
+[ext_resource type="Texture2D" uid="uid://3wfxalnt1do8" path="res://assets/images/parts/Q-blade.PNG" id="36_xeqsu"]
+[ext_resource type="Texture2D" uid="uid://d26u0dn4a6nry" path="res://assets/images/parts/R-handle.PNG" id="37_wrb50"]
+[ext_resource type="Texture2D" uid="uid://dpxw6gpu5gx8c" path="res://assets/images/parts/S-knob-top.PNG" id="38_hefk1"]
+[ext_resource type="Texture2D" uid="uid://od15p0s67w62" path="res://assets/images/parts/step-06-sword-A.PNG" id="39_3p304"]
+[ext_resource type="Texture2D" uid="uid://kjghy18iojgk" path="res://assets/images/parts/step-06-sword-B.PNG" id="40_8cw0a"]
+[ext_resource type="Texture2D" uid="uid://ckkaqacia5io4" path="res://assets/images/parts/T-torso.PNG" id="41_t48u6"]
+[ext_resource type="Texture2D" uid="uid://ofr1ulxbnbe4" path="res://assets/images/parts/step-07-final-A.PNG" id="42_8yk0q"]
+[ext_resource type="PackedScene" uid="uid://ba8bq4ifylh0d" path="res://scenes/gate_bp.tscn" id="43_14mws"]
+[ext_resource type="Texture2D" uid="uid://duylkd1o4anpv" path="res://assets/images/parts/step-07-final-B.PNG" id="43_dx4vp"]
+[ext_resource type="Texture2D" uid="uid://cjljfxeec7ev5" path="res://assets/sprites/world_tileset.png" id="44_e7fxr"]
+[ext_resource type="Texture2D" uid="uid://c32ggajuawgm7" path="res://assets/sprites/tiny-town.png" id="45_4evji"]
+[ext_resource type="Texture2D" uid="uid://mncrlk7k3hgj" path="res://assets/sprites/tiny-dungeon.png" id="46_dmqa0"]
+[ext_resource type="PackedScene" uid="uid://xrm04st1jg84" path="res://scenes/player_BP.tscn" id="49_vumrg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfna1"]
+size = Vector2(20, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qy58n"]
+size = Vector2(20, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wynb0"]
+size = Vector2(15, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qroaj"]
+size = Vector2(20, 302.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ivpge"]
+size = Vector2(20, 95)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r7q4q"]
+size = Vector2(20, 524)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7misx"]
+size = Vector2(20, 127)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0gyeu"]
+size = Vector2(20, 176)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_stc1x"]
+size = Vector2(20, 111.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ibmi"]
+size = Vector2(20, 164)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nimn1"]
-texture = ExtResource("13_nqvne")
+texture = ExtResource("44_e7fxr")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -456,7 +473,7 @@ texture = ExtResource("13_nqvne")
 2:4/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_64y3c"]
-texture = ExtResource("14_0qf3i")
+texture = ExtResource("45_4evji")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -855,7 +872,7 @@ texture = ExtResource("14_0qf3i")
 11:10/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_674nq"]
-texture = ExtResource("15_d5gii")
+texture = ExtResource("46_dmqa0")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -1260,33 +1277,7 @@ sources/1 = SubResource("TileSetAtlasSource_64y3c")
 sources/2 = SubResource("TileSetAtlasSource_674nq")
 
 [node name="Game" type="Node2D"]
-position = Vector2(84, -129)
-
-[node name="GameManager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("1_flfrg")
-duration = 1000
-
-[node name="Health_System" type="Node" parent="GameManager" node_paths=PackedStringArray("level_start_pos_01")]
-script = ExtResource("2_3ucpv")
-level_start_pos_01 = NodePath("../Level_Manager/Player_Start_01")
-
-[node name="die_sound" type="AudioStreamPlayer2D" parent="GameManager/Health_System"]
-position = Vector2(84, -129)
-stream = ExtResource("3_soffu")
-pitch_scale = 2.0
-
-[node name="Level_Manager" type="Node" parent="GameManager"]
-script = ExtResource("4_frvyx")
-
-[node name="Player_Start_01" type="Node2D" parent="GameManager/Level_Manager"]
-position = Vector2(138, -24)
-
-[node name="CountdownTimer" type="Timer" parent="GameManager"]
-autostart = true
-
-[node name="TimesUp" type="AudioStreamPlayer2D" parent="GameManager"]
-stream = ExtResource("5_5uib8")
+position = Vector2(122, -129)
 
 [node name="World" type="Node" parent="."]
 
@@ -1294,358 +1285,404 @@ stream = ExtResource("5_5uib8")
 
 [node name="platforms" type="Node" parent="World/Objects"]
 
-[node name="Platform_static_01" parent="World/Objects/platforms" instance=ExtResource("7_l1rjx")]
-position = Vector2(1237, -467)
+[node name="Platform_static_01" parent="World/Objects/platforms" instance=ExtResource("6_ihbak")]
+position = Vector2(705, -47)
 
-[node name="platform_positions" type="Node2D" parent="World/Objects/platforms"]
+[node name="Platform_static_02" parent="World/Objects/platforms" instance=ExtResource("6_ihbak")]
+position = Vector2(736, -94)
 
-[node name="01_left_limit" type="Marker2D" parent="World/Objects/platforms/platform_positions"]
-position = Vector2(589, -557)
+[node name="Platform_static_03" parent="World/Objects/platforms" instance=ExtResource("6_ihbak")]
+position = Vector2(1501, -116)
 
-[node name="01_right_limit" type="Marker2D" parent="World/Objects/platforms/platform_positions"]
-position = Vector2(612, -552)
+[node name="Platform_static_04" parent="World/Objects/platforms" instance=ExtResource("6_ihbak")]
+position = Vector2(1524, -168)
 
-[node name="02_left_limit" type="Marker2D" parent="World/Objects/platforms/platform_positions"]
-position = Vector2(158, -624)
+[node name="Platform_static_05" parent="World/Objects/platforms" instance=ExtResource("6_ihbak")]
+position = Vector2(1537, -217)
 
-[node name="02_right_limit" type="Marker2D" parent="World/Objects/platforms/platform_positions"]
-position = Vector2(292, -619)
+[node name="Platform_static_10" parent="World/Objects/platforms" instance=ExtResource("6_ihbak")]
+position = Vector2(85, -280)
 
-[node name="platform_move_hor_01" parent="World/Objects/platforms" instance=ExtResource("8_r2tm5")]
-position = Vector2(168, -749)
-speed = 75.0
-left_limit_node = NodePath("../platform_positions/01_left_limit")
-right_limit_node = NodePath("../platform_positions/01_right_limit")
+[node name="Platform_static_11" parent="World/Objects/platforms" instance=ExtResource("6_ihbak")]
+position = Vector2(86, -332)
 
-[node name="Platform_static_02" parent="World/Objects/platforms" instance=ExtResource("7_l1rjx")]
-position = Vector2(1236, -517)
+[node name="Platform_static_12" parent="World/Objects/platforms" instance=ExtResource("6_ihbak")]
+position = Vector2(86, -379)
 
-[node name="Platform_static_03" parent="World/Objects/platforms" instance=ExtResource("7_l1rjx")]
-position = Vector2(1235, -570)
+[node name="Platform_static_13" parent="World/Objects/platforms" instance=ExtResource("6_ihbak")]
+position = Vector2(86, -426)
 
-[node name="Platform_static_04" parent="World/Objects/platforms" instance=ExtResource("7_l1rjx")]
-position = Vector2(1234, -615)
+[node name="Platform_static_14" parent="World/Objects/platforms" instance=ExtResource("6_ihbak")]
+position = Vector2(86, -475)
 
-[node name="platform_move_hor_02" parent="World/Objects/platforms" instance=ExtResource("8_r2tm5")]
-position = Vector2(234, -620)
-left_limit_node = NodePath("../platform_positions/02_left_limit")
-right_limit_node = NodePath("../platform_positions/02_right_limit")
+[node name="Platform_static_15" parent="World/Objects/platforms" instance=ExtResource("6_ihbak")]
+position = Vector2(86, -522)
 
-[node name="Platform_static_05" parent="World/Objects/platforms" instance=ExtResource("7_l1rjx")]
-position = Vector2(269, -666)
+[node name="Platform_static_16" parent="World/Objects/platforms" instance=ExtResource("6_ihbak")]
+position = Vector2(86, -569)
 
-[node name="Labels" type="Node" parent="World/Objects"]
+[node name="Platform_static_06" parent="World/Objects/platforms" instance=ExtResource("6_ihbak")]
+position = Vector2(1020, -284)
 
-[node name="label-parts" type="Node" parent="World/Objects/Labels"]
+[node name="Platform_static_09" parent="World/Objects/platforms" instance=ExtResource("6_ihbak")]
+position = Vector2(391, -281)
 
-[node name="label-part-A" type="Label" parent="World/Objects/Labels/label-parts"]
-offset_left = 292.0
-offset_top = -53.0
-offset_right = 378.0
-offset_bottom = -1.00002
-theme_override_fonts/font = ExtResource("9_xwe6u")
-theme_override_font_sizes/font_size = 16
-text = "A"
-metadata/_edit_use_anchors_ = true
+[node name="Platform_static_07" parent="World/Objects/platforms" instance=ExtResource("6_ihbak")]
+position = Vector2(995, -324)
 
-[node name="label-part-B" type="Label" parent="World/Objects/Labels/label-parts"]
-offset_left = 405.0
-offset_top = -53.0
-offset_right = 491.0
-offset_bottom = -1.00002
-theme_override_fonts/font = ExtResource("9_xwe6u")
-theme_override_font_sizes/font_size = 16
-text = "B"
-metadata/_edit_use_anchors_ = true
+[node name="Platform_static_08" parent="World/Objects/platforms" instance=ExtResource("6_ihbak")]
+position = Vector2(428, -324)
 
-[node name="label-part-C" type="Label" parent="World/Objects/Labels/label-parts"]
-offset_left = 909.0
-offset_top = -51.0
-offset_right = 995.0
-offset_bottom = 0.999989
-theme_override_fonts/font = ExtResource("9_xwe6u")
-theme_override_font_sizes/font_size = 16
-text = "C"
-metadata/_edit_use_anchors_ = true
+[node name="Platform_static_17" parent="World/Objects/platforms" instance=ExtResource("6_ihbak")]
+position = Vector2(530, -626)
 
-[node name="label-part-D" type="Label" parent="World/Objects/Labels/label-parts"]
-offset_left = 1027.0
-offset_top = -51.0001
-offset_right = 1113.0
-offset_bottom = 0.999874
-theme_override_fonts/font = ExtResource("9_xwe6u")
-theme_override_font_sizes/font_size = 16
-text = "D"
-metadata/_edit_use_anchors_ = true
+[node name="Platform_static_19" parent="World/Objects/platforms" instance=ExtResource("6_ihbak")]
+position = Vector2(644, -626)
 
-[node name="label-part-E" type="Label" parent="World/Objects/Labels/label-parts"]
-offset_left = 1122.0
-offset_top = -51.0001
-offset_right = 1208.0
-offset_bottom = 0.999874
-theme_override_fonts/font = ExtResource("9_xwe6u")
-theme_override_font_sizes/font_size = 16
-text = "E"
-metadata/_edit_use_anchors_ = true
+[node name="Platform_static_18" parent="World/Objects/platforms" instance=ExtResource("6_ihbak")]
+position = Vector2(767, -626)
 
-[node name="label-part-F" type="Label" parent="World/Objects/Labels/label-parts"]
-offset_left = 1222.0
-offset_top = -51.0001
-offset_right = 1308.0
-offset_bottom = 0.999874
-theme_override_fonts/font = ExtResource("9_xwe6u")
-theme_override_font_sizes/font_size = 16
-text = "F"
-metadata/_edit_use_anchors_ = true
+[node name="Platform_static_22" parent="World/Objects/platforms" instance=ExtResource("6_ihbak")]
+position = Vector2(1614, -487)
 
-[node name="label-part-G" type="Label" parent="World/Objects/Labels/label-parts"]
-offset_left = 1356.0
-offset_top = -51.0001
-offset_right = 1442.0
-offset_bottom = 0.999874
-theme_override_fonts/font = ExtResource("9_xwe6u")
-theme_override_font_sizes/font_size = 16
-text = "G"
-metadata/_edit_use_anchors_ = true
+[node name="Platform_static_23" parent="World/Objects/platforms" instance=ExtResource("6_ihbak")]
+position = Vector2(1669, -441)
 
-[node name="label-part-H" type="Label" parent="World/Objects/Labels/label-parts"]
-offset_left = 1860.0
-offset_top = -45.0
-offset_right = 1946.0
-offset_bottom = 6.99997
-theme_override_fonts/font = ExtResource("9_xwe6u")
-theme_override_font_sizes/font_size = 16
-text = "H"
-metadata/_edit_use_anchors_ = true
+[node name="Platform_static_24" parent="World/Objects/platforms" instance=ExtResource("6_ihbak")]
+position = Vector2(2004, -358)
 
-[node name="label-part-I" type="Label" parent="World/Objects/Labels/label-parts"]
-offset_left = 1990.0
-offset_top = -45.0
-offset_right = 2076.0
-offset_bottom = 6.99997
-theme_override_fonts/font = ExtResource("9_xwe6u")
-theme_override_font_sizes/font_size = 16
-text = "I"
-metadata/_edit_use_anchors_ = true
+[node name="Platform_static_25" parent="World/Objects/platforms" instance=ExtResource("6_ihbak")]
+position = Vector2(1954, -317)
 
-[node name="label-part-J" type="Label" parent="World/Objects/Labels/label-parts"]
-offset_left = 2132.0
-offset_top = -45.0
-offset_right = 2218.0
-offset_bottom = 6.99997
-theme_override_fonts/font = ExtResource("9_xwe6u")
-theme_override_font_sizes/font_size = 16
-text = "J"
-metadata/_edit_use_anchors_ = true
+[node name="Platform_static_26" parent="World/Objects/platforms" instance=ExtResource("6_ihbak")]
+position = Vector2(2001, -275)
 
-[node name="label-part-K" type="Label" parent="World/Objects/Labels/label-parts"]
-offset_left = 2244.0
-offset_top = -45.0
-offset_right = 2330.0
-offset_bottom = 6.99997
-theme_override_fonts/font = ExtResource("9_xwe6u")
-theme_override_font_sizes/font_size = 16
-text = "K"
-metadata/_edit_use_anchors_ = true
+[node name="Platform_static_27" parent="World/Objects/platforms" instance=ExtResource("6_ihbak")]
+position = Vector2(1956, -238)
 
-[node name="label-part-L" type="Label" parent="World/Objects/Labels/label-parts"]
-offset_left = 2852.0
-offset_top = -46.0
-offset_right = 2938.0
-offset_bottom = 5.99997
-theme_override_fonts/font = ExtResource("9_xwe6u")
-theme_override_font_sizes/font_size = 16
-text = "L"
-metadata/_edit_use_anchors_ = true
+[node name="Platform_static_28" parent="World/Objects/platforms" instance=ExtResource("6_ihbak")]
+position = Vector2(2229, -112)
 
-[node name="label-part-M" type="Label" parent="World/Objects/Labels/label-parts"]
-offset_left = 2994.0
-offset_top = -45.0
-offset_right = 3080.0
-offset_bottom = 6.99997
-theme_override_fonts/font = ExtResource("9_xwe6u")
-theme_override_font_sizes/font_size = 16
-text = "M"
-metadata/_edit_use_anchors_ = true
+[node name="Platform_static_29" parent="World/Objects/platforms" instance=ExtResource("6_ihbak")]
+position = Vector2(2206, -159)
 
-[node name="label-part-N" type="Label" parent="World/Objects/Labels/label-parts"]
-offset_left = 3140.0
-offset_top = -45.0
-offset_right = 3226.0
-offset_bottom = 6.99997
-theme_override_fonts/font = ExtResource("9_xwe6u")
-theme_override_font_sizes/font_size = 16
-text = "N"
-metadata/_edit_use_anchors_ = true
+[node name="Platform_static_20" parent="World/Objects/platforms" instance=ExtResource("6_ihbak")]
+position = Vector2(1360, -584)
 
-[node name="label-part-O" type="Label" parent="World/Objects/Labels/label-parts"]
-offset_left = 3604.0
-offset_top = -45.0
-offset_right = 3690.0
-offset_bottom = 6.99997
-theme_override_fonts/font = ExtResource("9_xwe6u")
-theme_override_font_sizes/font_size = 16
-text = "O"
-metadata/_edit_use_anchors_ = true
+[node name="Platform_static_21" parent="World/Objects/platforms" instance=ExtResource("6_ihbak")]
+position = Vector2(1360, -584)
 
-[node name="label-part-P" type="Label" parent="World/Objects/Labels/label-parts"]
-offset_left = 3720.0
-offset_top = -45.0
-offset_right = 3806.0
-offset_bottom = 6.99997
-theme_override_fonts/font = ExtResource("9_xwe6u")
-theme_override_font_sizes/font_size = 16
-text = "P"
-metadata/_edit_use_anchors_ = true
+[node name="Gates" type="Node" parent="World/Objects"]
 
-[node name="label-part-Q" type="Label" parent="World/Objects/Labels/label-parts"]
-offset_left = 4228.0
-offset_top = -45.0
-offset_right = 4314.0
-offset_bottom = 6.99997
-theme_override_fonts/font = ExtResource("9_xwe6u")
-theme_override_font_sizes/font_size = 16
-text = "Q"
-metadata/_edit_use_anchors_ = true
+[node name="Gate-exit-A" parent="World/Objects/Gates" instance=ExtResource("43_14mws")]
+position = Vector2(73, -39)
 
-[node name="label-part-R" type="Label" parent="World/Objects/Labels/label-parts"]
-offset_left = 4356.0
-offset_top = -45.0
-offset_right = 4442.0
-offset_bottom = 6.99997
-theme_override_fonts/font = ExtResource("9_xwe6u")
-theme_override_font_sizes/font_size = 16
-text = "R"
-metadata/_edit_use_anchors_ = true
+[node name="Gate-exit-B" parent="World/Objects/Gates" instance=ExtResource("43_14mws")]
+position = Vector2(2492, -103)
 
-[node name="label-part-S" type="Label" parent="World/Objects/Labels/label-parts"]
-offset_left = 4484.0
-offset_top = -45.0
-offset_right = 4570.0
-offset_bottom = 6.99997
-theme_override_fonts/font = ExtResource("9_xwe6u")
-theme_override_font_sizes/font_size = 16
-text = "S"
-metadata/_edit_use_anchors_ = true
+[node name="Triggers" type="Node" parent="World/Objects"]
 
-[node name="label-part-T" type="Label" parent="World/Objects/Labels/label-parts"]
-offset_left = 5060.0
-offset_top = -45.0
-offset_right = 5146.0
-offset_bottom = 6.99997
-theme_override_fonts/font = ExtResource("9_xwe6u")
-theme_override_font_sizes/font_size = 16
-text = "T"
-metadata/_edit_use_anchors_ = true
+[node name="blokker-01" type="StaticBody2D" parent="World/Objects/Triggers"]
 
-[node name="label-parts-01" type="Label" parent="World/Objects/Labels"]
-offset_left = 162.0
-offset_top = -97.0
-offset_right = 248.0
-offset_bottom = -45.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Objects/Triggers/blokker-01"]
+position = Vector2(6, -71)
+shape = SubResource("RectangleShape2D_dfna1")
+
+[node name="blokker-02" type="StaticBody2D" parent="World/Objects/Triggers"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Objects/Triggers/blokker-02"]
+position = Vector2(789, -63)
+shape = SubResource("RectangleShape2D_qy58n")
+
+[node name="blokker-03" type="StaticBody2D" parent="World/Objects/Triggers"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Objects/Triggers/blokker-03"]
+position = Vector2(1121.5, -95)
+shape = SubResource("RectangleShape2D_wynb0")
+
+[node name="blokker-04" type="StaticBody2D" parent="World/Objects/Triggers"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Objects/Triggers/blokker-04"]
+position = Vector2(1630, -230.75)
+shape = SubResource("RectangleShape2D_qroaj")
+
+[node name="blokker-05" type="StaticBody2D" parent="World/Objects/Triggers"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Objects/Triggers/blokker-05"]
+position = Vector2(941, -303)
+shape = SubResource("RectangleShape2D_ivpge")
+
+[node name="blokker-06" type="StaticBody2D" parent="World/Objects/Triggers"]
+position = Vector2(-472, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Objects/Triggers/blokker-06"]
+position = Vector2(941, -303)
+shape = SubResource("RectangleShape2D_ivpge")
+
+[node name="blokker-07" type="StaticBody2D" parent="World/Objects/Triggers"]
+position = Vector2(-75, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Objects/Triggers/blokker-07"]
+position = Vector2(80, -512)
+shape = SubResource("RectangleShape2D_r7q4q")
+
+[node name="blokker-08" type="StaticBody2D" parent="World/Objects/Triggers"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Objects/Triggers/blokker-08"]
+position = Vector2(1551, -462)
+shape = SubResource("RectangleShape2D_7misx")
+
+[node name="blokker-09" type="StaticBody2D" parent="World/Objects/Triggers"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Objects/Triggers/blokker-09"]
+position = Vector2(1845, -295)
+shape = SubResource("RectangleShape2D_0gyeu")
+
+[node name="blokker-10" type="StaticBody2D" parent="World/Objects/Triggers"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Objects/Triggers/blokker-10"]
+position = Vector2(2118, -135.25)
+shape = SubResource("RectangleShape2D_stc1x")
+
+[node name="blokker-11" type="StaticBody2D" parent="World/Objects/Triggers"]
+position = Vector2(2566, -89)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Objects/Triggers/blokker-11"]
+position = Vector2(-30, -72)
+shape = SubResource("RectangleShape2D_8ibmi")
+
+[node name="Build-steps" type="Node" parent="World/Objects"]
+
+[node name="Step-01-visor" type="Node" parent="World/Objects/Build-steps"]
+
+[node name="label-step-01" type="Label" parent="World/Objects/Build-steps/Step-01-visor"]
+offset_left = 69.0
+offset_top = -88.0
+offset_right = 247.0
+offset_bottom = -36.0
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
-text = "Parts"
-metadata/_edit_use_anchors_ = true
-
-[node name="step-01-visor" type="Node" parent="World/Objects/Labels"]
-
-[node name="label-step-01" type="Label" parent="World/Objects/Labels/step-01-visor"]
-offset_left = 469.0
-offset_top = -96.5
-offset_right = 555.0
-offset_bottom = -44.5
-theme_override_fonts/font = ExtResource("9_xwe6u")
-theme_override_font_sizes/font_size = 8
-text = "Step 1
+text = "Step 1  \"Visor\"
 "
 metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
 
-[node name="label-step-01-A" type="Label" parent="World/Objects/Labels/step-01-visor"]
-offset_left = 577.0
-offset_top = -56.0
-offset_right = 663.0
-offset_bottom = -4.00002
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-step-01-A" type="Label" parent="World/Objects/Build-steps/Step-01-visor/label-step-01"]
+layout_mode = 0
+offset_left = 411.189
+offset_top = 46.2372
+offset_right = 497.189
+offset_bottom = 98.2372
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "A
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-step-01-B" type="Label" parent="World/Objects/Labels/step-01-visor"]
-offset_left = 648.0
-offset_top = -80.0
-offset_right = 734.0
-offset_bottom = -28.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-step-01-B" type="Label" parent="World/Objects/Build-steps/Step-01-visor/label-step-01"]
+layout_mode = 0
+offset_left = 482.189
+offset_top = 22.2372
+offset_right = 568.189
+offset_bottom = 74.2372
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "B
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-parts-02" type="Label" parent="World/Objects/Labels"]
-offset_left = 779.0
-offset_top = -96.0
-offset_right = 865.0
-offset_bottom = -44.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-parts" type="Label" parent="World/Objects/Build-steps/Step-01-visor/label-step-01"]
+layout_mode = 0
+offset_left = 140.0
+offset_right = 226.0
+offset_bottom = 52.0
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "Parts"
 metadata/_edit_use_anchors_ = true
 
-[node name="step-02-helmet" type="Node" parent="World/Objects/Labels"]
-
-[node name="label-step-02" type="Label" parent="World/Objects/Labels/step-02-helmet"]
-offset_left = 1425.0
-offset_top = -97.0
-offset_right = 1511.0
-offset_bottom = -45.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-visor" type="Label" parent="World/Objects/Build-steps/Step-01-visor/label-step-01"]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 35.0
+offset_right = 616.0
+offset_bottom = 87.0
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
-text = "Step 2
+text = "\"Visor\""
+metadata/_edit_use_anchors_ = true
+
+[node name="label-part-A" type="Label" parent="World/Objects/Build-steps/Step-01-visor/label-step-01"]
+layout_mode = 0
+offset_left = 219.0
+offset_top = 43.0
+offset_right = 305.0
+offset_bottom = 95.0
+theme_override_fonts/font = ExtResource("9_yfiik")
+theme_override_font_sizes/font_size = 16
+text = "A"
+metadata/_edit_use_anchors_ = true
+
+[node name="label-part-B" type="Label" parent="World/Objects/Build-steps/Step-01-visor/label-step-01"]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 43.0
+offset_right = 388.0
+offset_bottom = 95.0
+theme_override_fonts/font = ExtResource("9_yfiik")
+theme_override_font_sizes/font_size = 16
+text = "B"
+metadata/_edit_use_anchors_ = true
+
+[node name="step-01-visor-A2" parent="World/Objects/Build-steps/Step-01-visor/label-step-01" instance=ExtResource("10_12fqi")]
+position = Vector2(442.189, 2.23718)
+scale = Vector2(0.125156, 0.135593)
+texture = ExtResource("11_2khfa")
+
+[node name="step-01-visor-B2" parent="World/Objects/Build-steps/Step-01-visor/label-step-01" instance=ExtResource("10_12fqi")]
+position = Vector2(528.189, 12.2372)
+scale = Vector2(0.125156, 0.135593)
+texture = ExtResource("12_jn486")
+
+[node name="part-A" parent="World/Objects/Build-steps/Step-01-visor/label-step-01" instance=ExtResource("10_12fqi")]
+position = Vector2(231.9, 4.20004)
+scale = Vector2(0.09, 0.09)
+
+[node name="part-B" parent="World/Objects/Build-steps/Step-01-visor/label-step-01" instance=ExtResource("10_12fqi")]
+position = Vector2(307, 4.99997)
+scale = Vector2(0.09, 0.098)
+texture = ExtResource("13_8i7ov")
+
+[node name="direction_arrow-01" parent="World/Objects/Build-steps/Step-01-visor/label-step-01" instance=ExtResource("8_ccwvr")]
+position = Vector2(112, 4)
+
+[node name="direction_arrow-02" parent="World/Objects/Build-steps/Step-01-visor/label-step-01" instance=ExtResource("8_ccwvr")]
+position = Vector2(364, 5)
+
+[node name="Step-02-helmet" type="Node" parent="World/Objects/Build-steps"]
+
+[node name="label-step-02" type="Label" parent="World/Objects/Build-steps/Step-02-helmet"]
+offset_left = 614.0
+offset_top = -193.0
+offset_right = 711.0
+offset_bottom = -141.0
+theme_override_fonts/font = ExtResource("9_yfiik")
+theme_override_font_sizes/font_size = 8
+text = "Step 2 \"Helmet\""
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="label-part-C" type="Label" parent="World/Objects/Build-steps/Step-02-helmet/label-step-02"]
+layout_mode = 0
+offset_left = 227.0
+offset_top = 35.0
+offset_right = 313.0
+offset_bottom = 87.0
+theme_override_fonts/font = ExtResource("9_yfiik")
+theme_override_font_sizes/font_size = 16
+text = "C"
+metadata/_edit_use_anchors_ = true
+
+[node name="label-part-D" type="Label" parent="World/Objects/Build-steps/Step-02-helmet/label-step-02"]
+layout_mode = 0
+offset_left = 289.92
+offset_top = 35.064
+offset_right = 375.92
+offset_bottom = 87.064
+theme_override_fonts/font = ExtResource("9_yfiik")
+theme_override_font_sizes/font_size = 16
+text = "D"
+metadata/_edit_use_anchors_ = true
+
+[node name="label-part-E" type="Label" parent="World/Objects/Build-steps/Step-02-helmet/label-step-02"]
+layout_mode = 0
+offset_left = 345.92
+offset_top = 35.064
+offset_right = 431.92
+offset_bottom = 87.064
+theme_override_fonts/font = ExtResource("9_yfiik")
+theme_override_font_sizes/font_size = 16
+text = "E"
+metadata/_edit_use_anchors_ = true
+
+[node name="label-part-F" type="Label" parent="World/Objects/Build-steps/Step-02-helmet/label-step-02"]
+layout_mode = 0
+offset_left = 406.92
+offset_top = 37.064
+offset_right = 492.92
+offset_bottom = 89.064
+theme_override_fonts/font = ExtResource("9_yfiik")
+theme_override_font_sizes/font_size = 16
+text = "F"
+metadata/_edit_use_anchors_ = true
+
+[node name="label-part-G" type="Label" parent="World/Objects/Build-steps/Step-02-helmet/label-step-02"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 36.0
+offset_right = 574.0
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("9_yfiik")
+theme_override_font_sizes/font_size = 16
+text = "G"
+metadata/_edit_use_anchors_ = true
+
+[node name="label-parts" type="Label" parent="World/Objects/Build-steps/Step-02-helmet/label-step-02"]
+layout_mode = 0
+offset_left = 142.0
+offset_top = -1.0
+offset_right = 228.0
+offset_bottom = 51.0
+theme_override_fonts/font = ExtResource("9_yfiik")
+theme_override_font_sizes/font_size = 8
+text = "Parts
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-step-02-A-B" type="Label" parent="World/Objects/Labels/step-02-helmet"]
-offset_left = 1504.0
-offset_top = -60.0
-offset_right = 1590.0
-offset_bottom = -8.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-step-02-A-B" type="Label" parent="World/Objects/Build-steps/Step-02-helmet/label-step-02"]
+layout_mode = 0
+offset_left = 604.854
+offset_top = 77.2372
+offset_right = 690.854
+offset_bottom = 129.237
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "A/B
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-step-02-C" type="Label" parent="World/Objects/Labels/step-02-helmet"]
-offset_left = 1570.0
-offset_top = -57.0
-offset_right = 1656.0
-offset_bottom = -5.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-step-02-C" type="Label" parent="World/Objects/Build-steps/Step-02-helmet/label-step-02"]
+layout_mode = 0
+offset_left = 670.854
+offset_top = 80.2372
+offset_right = 756.854
+offset_bottom = 132.237
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "C
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-step-02-D" type="Label" parent="World/Objects/Labels/step-02-helmet"]
-offset_left = 1609.0
-offset_top = -51.0
-offset_right = 1695.0
-offset_bottom = 1.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-step-02-D" type="Label" parent="World/Objects/Build-steps/Step-02-helmet/label-step-02"]
+layout_mode = 0
+offset_left = 709.854
+offset_top = 86.2372
+offset_right = 795.854
+offset_bottom = 138.237
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "D
 
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-step-02-E" type="Label" parent="World/Objects/Labels/step-02-helmet"]
-offset_left = 1527.0
-offset_top = -126.0
-offset_right = 1613.0
-offset_bottom = -74.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-step-02-E" type="Label" parent="World/Objects/Build-steps/Step-02-helmet/label-step-02"]
+layout_mode = 0
+offset_left = 627.854
+offset_top = 11.2372
+offset_right = 713.854
+offset_bottom = 63.2372
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "E
 
@@ -1653,12 +1690,13 @@ text = "E
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-step-02-F" type="Label" parent="World/Objects/Labels/step-02-helmet"]
-offset_left = 1616.0
-offset_top = -129.0
-offset_right = 1702.0
-offset_bottom = -77.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-step-02-F" type="Label" parent="World/Objects/Build-steps/Step-02-helmet/label-step-02"]
+layout_mode = 0
+offset_left = 716.854
+offset_top = 8.23718
+offset_right = 802.854
+offset_bottom = 60.2372
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "F
 
@@ -1667,12 +1705,13 @@ text = "F
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-step-02-G" type="Label" parent="World/Objects/Labels/step-02-helmet"]
-offset_left = 1575.0
-offset_top = -153.0
-offset_right = 1661.0
-offset_bottom = -101.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-step-02-G" type="Label" parent="World/Objects/Build-steps/Step-02-helmet/label-step-02"]
+layout_mode = 0
+offset_left = 675.854
+offset_top = -15.7628
+offset_right = 761.854
+offset_bottom = 36.2372
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "G
 
@@ -1681,12 +1720,13 @@ text = "G
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-helmet" type="Label" parent="World/Objects/Labels/step-02-helmet"]
-offset_left = 1658.0
-offset_top = -55.0
-offset_right = 1744.0
-offset_bottom = -3.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-helmet" type="Label" parent="World/Objects/Build-steps/Step-02-helmet/label-step-02"]
+layout_mode = 0
+offset_left = 758.854
+offset_top = 82.2372
+offset_right = 844.854
+offset_bottom = 134.237
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "\"Helmet\"
 
@@ -1695,79 +1735,171 @@ text = "\"Helmet\"
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-parts-03" type="Label" parent="World/Objects/Labels"]
-offset_left = 1739.0
-offset_top = -96.0
-offset_right = 1825.0
-offset_bottom = -44.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="part-C" parent="World/Objects/Build-steps/Step-02-helmet/label-step-02" instance=ExtResource("10_12fqi")]
+position = Vector2(235, -4.99998)
+scale = Vector2(0.08, 0.087)
+texture = ExtResource("14_6hiy4")
+
+[node name="part-D" parent="World/Objects/Build-steps/Step-02-helmet/label-step-02" instance=ExtResource("10_12fqi")]
+position = Vector2(293.92, 6.06401)
+scale = Vector2(0.08, 0.087)
+texture = ExtResource("15_gjxxa")
+
+[node name="part-E" parent="World/Objects/Build-steps/Step-02-helmet/label-step-02" instance=ExtResource("10_12fqi")]
+position = Vector2(355.92, 9.06401)
+scale = Vector2(0.08, 0.087)
+texture = ExtResource("16_2qdk8")
+
+[node name="part-F" parent="World/Objects/Build-steps/Step-02-helmet/label-step-02" instance=ExtResource("10_12fqi")]
+position = Vector2(423.92, 8.06401)
+scale = Vector2(0.08, 0.087)
+texture = ExtResource("17_o8a6b")
+
+[node name="part-G" parent="World/Objects/Build-steps/Step-02-helmet/label-step-02" instance=ExtResource("10_12fqi")]
+position = Vector2(491, 3.00002)
+scale = Vector2(0.08, 0.087)
+texture = ExtResource("18_jjhi8")
+
+[node name="step-02-helmet-A" parent="World/Objects/Build-steps/Step-02-helmet/label-step-02" instance=ExtResource("10_12fqi")]
+position = Vector2(671.854, 41.2372)
+scale = Vector2(0.125156, 0.135593)
+texture = ExtResource("19_w6war")
+
+[node name="step-02-helmet-B" parent="World/Objects/Build-steps/Step-02-helmet/label-step-02" instance=ExtResource("10_12fqi")]
+position = Vector2(785.854, 40.2372)
+scale = Vector2(0.125156, 0.135593)
+texture = ExtResource("20_m1aml")
+
+[node name="direction_arrow16" parent="World/Objects/Build-steps/Step-02-helmet/label-step-02" instance=ExtResource("8_ccwvr")]
+position = Vector2(114, 3)
+
+[node name="direction_arrow17" parent="World/Objects/Build-steps/Step-02-helmet/label-step-02" instance=ExtResource("8_ccwvr")]
+position = Vector2(565, 37)
+rotation = 0.436332
+
+[node name="Step-03-arms" type="Node" parent="World/Objects/Build-steps"]
+
+[node name="label-step-03" type="Label" parent="World/Objects/Build-steps/Step-03-arms"]
+offset_left = 1529.0
+offset_top = -323.763
+offset_right = 1615.0
+offset_bottom = -271.763
+theme_override_fonts/font = ExtResource("9_yfiik")
+theme_override_font_sizes/font_size = 8
+text = "Step 3 \"Arms\"
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="label-parts-03" type="Label" parent="World/Objects/Build-steps/Step-03-arms/label-step-03"]
+layout_mode = 0
+offset_left = -77.0
+offset_top = -0.237
+offset_right = 9.0
+offset_bottom = 51.763
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "Parts"
 metadata/_edit_use_anchors_ = true
 
-[node name="step-03-arm" type="Node" parent="World/Objects/Labels"]
-
-[node name="label-step-03" type="Label" parent="World/Objects/Labels/step-03-arm"]
-offset_left = 2330.0
-offset_top = -97.0
-offset_right = 2416.0
-offset_bottom = -45.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
-theme_override_font_sizes/font_size = 8
-text = "Step 3
-"
+[node name="label-part-H" type="Label" parent="World/Objects/Build-steps/Step-03-arms/label-step-03"]
+layout_mode = 0
+offset_left = -141.0
+offset_top = 37.763
+offset_right = -55.0
+offset_bottom = 89.763
+theme_override_fonts/font = ExtResource("9_yfiik")
+theme_override_font_sizes/font_size = 16
+text = "H"
 metadata/_edit_use_anchors_ = true
 
-[node name="label-step-03-H" type="Label" parent="World/Objects/Labels/step-03-arm"]
-offset_left = 2438.0
-offset_top = -57.0
-offset_right = 2524.0
-offset_bottom = -5.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-part-I" type="Label" parent="World/Objects/Build-steps/Step-03-arms/label-step-03"]
+layout_mode = 0
+offset_left = -229.08
+offset_top = 37.827
+offset_right = -143.08
+offset_bottom = 89.827
+theme_override_fonts/font = ExtResource("9_yfiik")
+theme_override_font_sizes/font_size = 16
+text = "I"
+metadata/_edit_use_anchors_ = true
+
+[node name="label-part-J" type="Label" parent="World/Objects/Build-steps/Step-03-arms/label-step-03"]
+layout_mode = 0
+offset_left = -321.0
+offset_top = 37.763
+offset_right = -235.0
+offset_bottom = 89.763
+theme_override_fonts/font = ExtResource("9_yfiik")
+theme_override_font_sizes/font_size = 16
+text = "J"
+metadata/_edit_use_anchors_ = true
+
+[node name="label-part-K" type="Label" parent="World/Objects/Build-steps/Step-03-arms/label-step-03"]
+layout_mode = 0
+offset_left = -401.0
+offset_top = 36.763
+offset_right = -315.0
+offset_bottom = 88.763
+theme_override_fonts/font = ExtResource("9_yfiik")
+theme_override_font_sizes/font_size = 16
+text = "K"
+metadata/_edit_use_anchors_ = true
+
+[node name="label-step-03-H" type="Label" parent="World/Objects/Build-steps/Step-03-arms/label-step-03"]
+layout_mode = 0
+offset_left = -707.811
+offset_top = -71.9998
+offset_right = -621.811
+offset_bottom = -19.9998
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "H
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-step-03-I" type="Label" parent="World/Objects/Labels/step-03-arm"]
-offset_left = 2484.0
-offset_top = -72.0
-offset_right = 2570.0
-offset_bottom = -20.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-step-03-I" type="Label" parent="World/Objects/Build-steps/Step-03-arms/label-step-03"]
+layout_mode = 0
+offset_left = -661.811
+offset_top = -86.9998
+offset_right = -575.811
+offset_bottom = -34.9998
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "I
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-step-03-J" type="Label" parent="World/Objects/Labels/step-03-arm"]
-offset_left = 2526.0
-offset_top = -78.0
-offset_right = 2612.0
-offset_bottom = -26.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-step-03-J" type="Label" parent="World/Objects/Build-steps/Step-03-arms/label-step-03"]
+layout_mode = 0
+offset_left = -619.811
+offset_top = -92.9998
+offset_right = -533.811
+offset_bottom = -40.9998
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "J
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-step-03-K" type="Label" parent="World/Objects/Labels/step-03-arm"]
-offset_left = 2562.0
-offset_top = -95.0
-offset_right = 2648.0
-offset_bottom = -43.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-step-03-K" type="Label" parent="World/Objects/Build-steps/Step-03-arms/label-step-03"]
+layout_mode = 0
+offset_left = -583.0
+offset_top = -112.237
+offset_right = -497.0
+offset_bottom = -60.2369
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "K
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-arm" type="Label" parent="World/Objects/Labels/step-03-arm"]
-offset_left = 2625.0
-offset_top = -67.0
-offset_right = 2711.0
-offset_bottom = -15.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-arm" type="Label" parent="World/Objects/Build-steps/Step-03-arms/label-step-03"]
+layout_mode = 0
+offset_left = -874.811
+offset_top = -74.9998
+offset_right = -788.811
+offset_bottom = -22.9998
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "\"Arm\" x2
 
@@ -1776,69 +1908,143 @@ text = "\"Arm\" x2
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-parts-04" type="Label" parent="World/Objects/Labels"]
-offset_left = 2734.0
-offset_top = -95.0
-offset_right = 2820.0
-offset_bottom = -43.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="part-H" parent="World/Objects/Build-steps/Step-03-arms/label-step-03" instance=ExtResource("10_12fqi")]
+position = Vector2(-134.08, -4.17294)
+scale = Vector2(0.08, 0.087)
+texture = ExtResource("21_w08nd")
+
+[node name="part-I" parent="World/Objects/Build-steps/Step-03-arms/label-step-03" instance=ExtResource("10_12fqi")]
+position = Vector2(-215, -0.236938)
+scale = Vector2(0.08, 0.087)
+texture = ExtResource("22_bqxl7")
+
+[node name="part-J" parent="World/Objects/Build-steps/Step-03-arms/label-step-03" instance=ExtResource("10_12fqi")]
+position = Vector2(-300.08, 0.827057)
+scale = Vector2(0.08, 0.087)
+texture = ExtResource("23_w4k7s")
+
+[node name="part-K" parent="World/Objects/Build-steps/Step-03-arms/label-step-03" instance=ExtResource("10_12fqi")]
+position = Vector2(-395.08, -3.17294)
+scale = Vector2(0.08, 0.087)
+texture = ExtResource("24_rwrb5")
+
+[node name="step-03-arm-A" parent="World/Objects/Build-steps/Step-03-arms/label-step-03" instance=ExtResource("10_12fqi")]
+position = Vector2(-641.811, -113)
+scale = Vector2(0.125156, 0.135593)
+texture = ExtResource("25_sioib")
+
+[node name="step-03-arm-B" parent="World/Objects/Build-steps/Step-03-arms/label-step-03" instance=ExtResource("10_12fqi")]
+position = Vector2(-851.811, -109)
+scale = Vector2(0.125156, 0.135593)
+texture = ExtResource("26_l06fm")
+
+[node name="direction_arrow5" parent="World/Objects/Build-steps/Step-03-arms/label-step-03" instance=ExtResource("8_ccwvr")]
+visible = false
+position = Vector2(-477, -26.237)
+rotation = 0.523599
+flip_h = true
+
+[node name="direction_arrow6" parent="World/Objects/Build-steps/Step-03-arms/label-step-03" instance=ExtResource("8_ccwvr")]
+position = Vector2(-20, 3)
+flip_h = true
+
+[node name="direction_arrow7" parent="World/Objects/Build-steps/Step-03-arms/label-step-03" instance=ExtResource("8_ccwvr")]
+position = Vector2(-768, -96.2369)
+flip_h = true
+
+[node name="Step-04-legs" type="Node" parent="World/Objects/Build-steps"]
+
+[node name="label-part-L" type="Label" parent="World/Objects/Build-steps/Step-04-legs"]
+offset_left = 146.92
+offset_top = -285.933
+offset_right = 232.92
+offset_bottom = -233.933
+theme_override_fonts/font = ExtResource("9_yfiik")
+theme_override_font_sizes/font_size = 16
+text = "L"
+metadata/_edit_use_anchors_ = true
+
+[node name="label-part-M" type="Label" parent="World/Objects/Build-steps/Step-04-legs"]
+offset_left = 237.92
+offset_top = -286.933
+offset_right = 323.92
+offset_bottom = -234.933
+theme_override_fonts/font = ExtResource("9_yfiik")
+theme_override_font_sizes/font_size = 16
+text = "M"
+metadata/_edit_use_anchors_ = true
+
+[node name="label-part-N" type="Label" parent="World/Objects/Build-steps/Step-04-legs"]
+offset_left = 316.92
+offset_top = -285.933
+offset_right = 402.92
+offset_bottom = -233.933
+theme_override_fonts/font = ExtResource("9_yfiik")
+theme_override_font_sizes/font_size = 16
+text = "N"
+metadata/_edit_use_anchors_ = true
+
+[node name="label-parts-04" type="Label" parent="World/Objects/Build-steps/Step-04-legs"]
+offset_left = 423.0
+offset_top = -425.0
+offset_right = 509.0
+offset_bottom = -373.0
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "Parts"
 metadata/_edit_use_anchors_ = true
 
-[node name="step-04-legs" type="Node" parent="World/Objects/Labels"]
-
-[node name="label-step-04" type="Label" parent="World/Objects/Labels/step-04-legs"]
-offset_left = 3206.0
-offset_top = -97.0
-offset_right = 3292.0
-offset_bottom = -45.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-step-04" type="Label" parent="World/Objects/Build-steps/Step-04-legs"]
+offset_left = 512.0
+offset_top = -424.5
+offset_right = 598.0
+offset_bottom = -372.5
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
-text = "Step 4
+text = "Step 4 \"Legs\"
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-step-04-L" type="Label" parent="World/Objects/Labels/step-04-legs"]
-offset_left = 3306.19
-offset_top = -49.7628
-offset_right = 3392.19
-offset_bottom = 2.23718
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-step-04-L" type="Label" parent="World/Objects/Build-steps/Step-04-legs"]
+offset_left = 147.189
+offset_top = -412.763
+offset_right = 233.189
+offset_bottom = -360.763
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "L
 
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-step-04-M" type="Label" parent="World/Objects/Labels/step-04-legs"]
-offset_left = 3354.19
-offset_top = -117.763
-offset_right = 3440.19
-offset_bottom = -65.7628
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-step-04-M" type="Label" parent="World/Objects/Build-steps/Step-04-legs"]
+offset_left = 195.189
+offset_top = -480.763
+offset_right = 281.189
+offset_bottom = -428.763
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "M
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-step-04-N" type="Label" parent="World/Objects/Labels/step-04-legs"]
-offset_left = 3336.19
-offset_top = -155.763
-offset_right = 3422.19
-offset_bottom = -103.763
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-step-04-N" type="Label" parent="World/Objects/Build-steps/Step-04-legs"]
+offset_left = 177.189
+offset_top = -518.763
+offset_right = 263.189
+offset_bottom = -466.763
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "N
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-legs" type="Label" parent="World/Objects/Labels/step-04-legs"]
-offset_left = 3414.19
-offset_top = -57.7628
-offset_right = 3500.19
-offset_bottom = -5.76282
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-legs" type="Label" parent="World/Objects/Build-steps/Step-04-legs"]
+offset_left = 239.189
+offset_top = -418.763
+offset_right = 325.189
+offset_bottom = -366.763
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "\"Legs\" 
 
@@ -1847,58 +2053,137 @@ text = "\"Legs\"
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-parts-05" type="Label" parent="World/Objects/Labels"]
-offset_left = 3489.0
-offset_top = -93.0
-offset_right = 3575.0
-offset_bottom = -41.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
-theme_override_font_sizes/font_size = 8
-text = "Parts"
-metadata/_edit_use_anchors_ = true
+[node name="part-L" parent="World/Objects/Build-steps/Step-04-legs" instance=ExtResource("10_12fqi")]
+position = Vector2(145.92, -331.933)
+scale = Vector2(0.08, 0.087)
+texture = ExtResource("27_2q53f")
 
-[node name="step-05-cape" type="Node" parent="World/Objects/Labels"]
+[node name="part-M" parent="World/Objects/Build-steps/Step-04-legs" instance=ExtResource("10_12fqi")]
+position = Vector2(244.92, -335.936)
+scale = Vector2(0.08, 0.087)
+texture = ExtResource("28_3etu3")
 
-[node name="label-step-05" type="Label" parent="World/Objects/Labels/step-05-cape"]
-offset_left = 3835.0
-offset_top = -95.0
-offset_right = 3921.0
-offset_bottom = -43.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="part-N" parent="World/Objects/Build-steps/Step-04-legs" instance=ExtResource("10_12fqi")]
+position = Vector2(335.92, -328.933)
+scale = Vector2(0.08, 0.087)
+texture = ExtResource("29_v1b30")
+
+[node name="step-04-legs-A" parent="World/Objects/Build-steps/Step-04-legs" instance=ExtResource("10_12fqi")]
+position = Vector2(164.189, -465.763)
+scale = Vector2(0.125156, 0.135593)
+texture = ExtResource("30_j2dg1")
+
+[node name="direction_arrow7" parent="World/Objects/Build-steps/Step-04-legs" instance=ExtResource("8_ccwvr")]
+position = Vector2(503, -661)
+
+[node name="direction_arrow8" parent="World/Objects/Build-steps/Step-04-legs" instance=ExtResource("8_ccwvr")]
+position = Vector2(483, -420)
+flip_h = true
+
+[node name="step-04-legs-B" parent="World/Objects/Build-steps/Step-04-legs" instance=ExtResource("10_12fqi")]
+position = Vector2(264, -465)
+scale = Vector2(0.125156, 0.135593)
+texture = ExtResource("31_wj7xt")
+
+[node name="Step-05-cape" type="Node" parent="World/Objects/Build-steps"]
+
+[node name="label-step-06" type="Label" parent="World/Objects/Build-steps/Step-05-cape"]
+offset_left = 71.0
+offset_top = -665.5
+offset_right = 159.0
+offset_bottom = -613.5
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
-text = "Step 5
+text = "Step 5  \"Cape\"
 
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-step-05-O" type="Label" parent="World/Objects/Labels/step-05-cape"]
-offset_left = 3947.0
-offset_top = -43.0
-offset_right = 4033.0
-offset_bottom = 9.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-part-O2" type="Label" parent="World/Objects/Build-steps/Step-05-cape"]
+offset_left = 282.92
+offset_top = -637.52
+offset_right = 368.92
+offset_bottom = -585.52
+theme_override_fonts/font = ExtResource("9_yfiik")
+theme_override_font_sizes/font_size = 16
+text = "O"
+metadata/_edit_use_anchors_ = true
+
+[node name="label-part-P2" type="Label" parent="World/Objects/Build-steps/Step-05-cape"]
+offset_left = 398.92
+offset_top = -637.52
+offset_right = 484.92
+offset_bottom = -585.52
+theme_override_fonts/font = ExtResource("9_yfiik")
+theme_override_font_sizes/font_size = 16
+text = "P"
+metadata/_edit_use_anchors_ = true
+
+[node name="label-parts-08" type="Label" parent="World/Objects/Build-steps/Step-05-cape"]
+offset_left = 208.0
+offset_top = -665.0
+offset_right = 294.0
+offset_bottom = -613.0
+theme_override_fonts/font = ExtResource("9_yfiik")
+theme_override_font_sizes/font_size = 8
+text = "Parts"
+metadata/_edit_use_anchors_ = true
+
+[node name="label-step-05-O2" type="Label" parent="World/Objects/Build-steps/Step-05-cape"]
+offset_left = 584.189
+offset_top = -552.763
+offset_right = 670.189
+offset_bottom = -500.763
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "O
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-step-05-P" type="Label" parent="World/Objects/Labels/step-05-cape"]
-offset_left = 3971.0
-offset_top = -150.0
-offset_right = 4057.0
-offset_bottom = -98.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-step-05-P2" type="Label" parent="World/Objects/Build-steps/Step-05-cape"]
+offset_left = 608.189
+offset_top = -659.763
+offset_right = 694.189
+offset_bottom = -607.763
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "P
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-cape" type="Label" parent="World/Objects/Labels/step-05-cape"]
-offset_left = 4009.0
-offset_top = -46.0
-offset_right = 4095.0
-offset_bottom = 6.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="part-O2" parent="World/Objects/Build-steps/Step-05-cape" instance=ExtResource("10_12fqi")]
+position = Vector2(307.92, -669.52)
+scale = Vector2(0.08, 0.09)
+texture = ExtResource("32_3vlgq")
+
+[node name="part-P2" parent="World/Objects/Build-steps/Step-05-cape" instance=ExtResource("10_12fqi")]
+position = Vector2(419, -674)
+scale = Vector2(0.08, 0.09)
+texture = ExtResource("33_wxlux")
+
+[node name="step-05-cape-A2" parent="World/Objects/Build-steps/Step-05-cape" instance=ExtResource("10_12fqi")]
+position = Vector2(588.189, -599.763)
+scale = Vector2(0.125156, 0.135593)
+texture = ExtResource("34_cslsy")
+
+[node name="step-05-cape-B2" parent="World/Objects/Build-steps/Step-05-cape" instance=ExtResource("10_12fqi")]
+position = Vector2(703.189, -599.763)
+scale = Vector2(0.125156, 0.135593)
+texture = ExtResource("35_vvlav")
+
+[node name="direction_arrow17" parent="World/Objects/Build-steps/Step-05-cape" instance=ExtResource("8_ccwvr")]
+position = Vector2(1356, -672)
+rotation = 0.523599
+
+[node name="direction_arrow18" parent="World/Objects/Build-steps/Step-05-cape" instance=ExtResource("8_ccwvr")]
+position = Vector2(182, -661.5)
+
+[node name="label-cape" type="Label" parent="World/Objects/Build-steps/Step-05-cape"]
+offset_left = 688.0
+offset_top = -555.0
+offset_right = 774.0
+offset_bottom = -503.0
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "\"Cape\" 
 
@@ -1907,59 +2192,99 @@ text = "\"Cape\"
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="step-06-sword" type="Node" parent="World/Objects/Labels"]
+[node name="Step-06-sword" type="Node" parent="World/Objects/Build-steps"]
 
-[node name="label-step-06" type="Label" parent="World/Objects/Labels/step-06-sword"]
-offset_left = 4585.0
-offset_top = -94.0
-offset_right = 4671.0
-offset_bottom = -42.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-part-Q" type="Label" parent="World/Objects/Build-steps/Step-06-sword"]
+offset_left = 1049.92
+offset_top = -637.936
+offset_right = 1135.92
+offset_bottom = -585.936
+theme_override_fonts/font = ExtResource("9_yfiik")
+theme_override_font_sizes/font_size = 16
+text = "Q"
+metadata/_edit_use_anchors_ = true
+
+[node name="label-part-R" type="Label" parent="World/Objects/Build-steps/Step-06-sword"]
+offset_left = 1158.92
+offset_top = -637.936
+offset_right = 1244.92
+offset_bottom = -585.936
+theme_override_fonts/font = ExtResource("9_yfiik")
+theme_override_font_sizes/font_size = 16
+text = "R"
+metadata/_edit_use_anchors_ = true
+
+[node name="label-part-S" type="Label" parent="World/Objects/Build-steps/Step-06-sword"]
+offset_left = 1261.92
+offset_top = -637.936
+offset_right = 1347.92
+offset_bottom = -585.936
+theme_override_fonts/font = ExtResource("9_yfiik")
+theme_override_font_sizes/font_size = 16
+text = "S"
+metadata/_edit_use_anchors_ = true
+
+[node name="label-parts-06" type="Label" parent="World/Objects/Build-steps/Step-06-sword"]
+offset_left = 968.0
+offset_top = -677.0
+offset_right = 1054.0
+offset_bottom = -625.0
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
-text = "Step 6
+text = "Parts"
+metadata/_edit_use_anchors_ = true
+
+[node name="label-step-06" type="Label" parent="World/Objects/Build-steps/Step-06-sword"]
+offset_left = 827.0
+offset_top = -676.5
+offset_right = 920.0
+offset_bottom = -624.5
+theme_override_fonts/font = ExtResource("9_yfiik")
+theme_override_font_sizes/font_size = 8
+text = "Step 6 \"Sword\"
 
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-step-06-Q" type="Label" parent="World/Objects/Labels/step-06-sword"]
-offset_left = 4690.0
-offset_top = -56.0
-offset_right = 4776.0
-offset_bottom = -4.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-step-06-Q" type="Label" parent="World/Objects/Build-steps/Step-06-sword"]
+offset_left = 1438.19
+offset_top = -565.763
+offset_right = 1524.19
+offset_bottom = -513.763
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "Q
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-step-06-R" type="Label" parent="World/Objects/Labels/step-06-sword"]
-offset_left = 4749.0
-offset_top = -98.0
-offset_right = 4835.0
-offset_bottom = -46.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-step-06-R" type="Label" parent="World/Objects/Build-steps/Step-06-sword"]
+offset_left = 1497.19
+offset_top = -607.763
+offset_right = 1583.19
+offset_bottom = -555.763
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "R
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-step-06-S" type="Label" parent="World/Objects/Labels/step-06-sword"]
-offset_left = 4775.0
-offset_top = -144.0
-offset_right = 4861.0
-offset_bottom = -92.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-step-06-S" type="Label" parent="World/Objects/Build-steps/Step-06-sword"]
+offset_left = 1523.19
+offset_top = -653.763
+offset_right = 1609.19
+offset_bottom = -601.763
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "S
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-sword" type="Label" parent="World/Objects/Labels/step-06-sword"]
-offset_left = 4849.0
-offset_top = -59.0
-offset_right = 4935.0
-offset_bottom = -7.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-sword" type="Label" parent="World/Objects/Build-steps/Step-06-sword"]
+offset_left = 1597.19
+offset_top = -568.763
+offset_right = 1683.19
+offset_bottom = -516.763
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "\"Sword\" 
 
@@ -1968,101 +2293,140 @@ text = "\"Sword\"
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-parts-06" type="Label" parent="World/Objects"]
-offset_left = 4098.0
-offset_top = -95.0
-offset_right = 4184.0
-offset_bottom = -43.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-parts-07" type="Label" parent="World/Objects/Build-steps/Step-06-sword"]
+offset_left = 1856.0
+offset_top = -459.0
+offset_right = 1942.0
+offset_bottom = -407.0
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
-text = "Parts"
+text = "Part"
 metadata/_edit_use_anchors_ = true
 
-[node name="step-07-final" type="Node" parent="World/Objects"]
+[node name="part-Q" parent="World/Objects/Build-steps/Step-06-sword" instance=ExtResource("10_12fqi")]
+position = Vector2(1057.92, -671.936)
+scale = Vector2(0.08, 0.087)
+texture = ExtResource("36_xeqsu")
 
-[node name="label-step-07" type="Label" parent="World/Objects/step-07-final"]
-offset_left = 5165.0
-offset_top = -90.7628
-offset_right = 5251.0
-offset_bottom = -38.7628
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="part-R" parent="World/Objects/Build-steps/Step-06-sword" instance=ExtResource("10_12fqi")]
+position = Vector2(1163.92, -678.936)
+scale = Vector2(0.08, 0.087)
+texture = ExtResource("37_wrb50")
+
+[node name="part-S" parent="World/Objects/Build-steps/Step-06-sword" instance=ExtResource("10_12fqi")]
+position = Vector2(1266.92, -680.936)
+scale = Vector2(0.08, 0.087)
+texture = ExtResource("38_hefk1")
+
+[node name="step-06-Sword-A" parent="World/Objects/Build-steps/Step-06-sword" instance=ExtResource("10_12fqi")]
+position = Vector2(1454.19, -596.763)
+scale = Vector2(0.125156, 0.135593)
+texture = ExtResource("39_3p304")
+
+[node name="step-06-Sword-B" parent="World/Objects/Build-steps/Step-06-sword" instance=ExtResource("10_12fqi")]
+position = Vector2(1597.19, -598.763)
+scale = Vector2(0.125156, 0.135593)
+texture = ExtResource("40_8cw0a")
+
+[node name="direction_arrow12" parent="World/Objects/Build-steps/Step-06-sword" instance=ExtResource("8_ccwvr")]
+position = Vector2(942, -672.5)
+
+[node name="Step-07-final" type="Node" parent="World/Objects/Build-steps"]
+
+[node name="label-part-T" type="Label" parent="World/Objects/Build-steps/Step-07-final"]
+offset_left = 1917.0
+offset_top = -430.0
+offset_right = 2003.0
+offset_bottom = -378.0
+theme_override_fonts/font = ExtResource("9_yfiik")
+theme_override_font_sizes/font_size = 16
+text = "T"
+metadata/_edit_use_anchors_ = true
+
+[node name="label-step-07" type="Label" parent="World/Objects/Build-steps/Step-07-final"]
+offset_left = 1722.0
+offset_top = -458.5
+offset_right = 1809.0
+offset_bottom = -406.5
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
-text = "Step 7
+text = "Step 7 \"Final\"
 
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-step-07-T" type="Label" parent="World/Objects/step-07-final"]
-offset_left = 5287.0
-offset_top = -73.0
-offset_right = 5373.0
-offset_bottom = -21.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-step-07-T" type="Label" parent="World/Objects/Build-steps/Step-07-final"]
+offset_left = 2098.0
+offset_top = -299.0
+offset_right = 2184.0
+offset_bottom = -247.0
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "T
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-step-07-legs" type="Label" parent="World/Objects/step-07-final"]
-offset_left = 5251.0
-offset_top = -51.0
-offset_right = 5337.0
-offset_bottom = 1.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-step-07-legs" type="Label" parent="World/Objects/Build-steps/Step-07-final"]
+offset_left = 2022.0
+offset_top = -255.0
+offset_right = 2108.0
+offset_bottom = -203.0
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "\"Legs\"
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-step-07-sword" type="Label" parent="World/Objects/step-07-final"]
-offset_left = 5329.0
-offset_top = -52.0
-offset_right = 5415.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-step-07-sword" type="Label" parent="World/Objects/Build-steps/Step-07-final"]
+offset_left = 2124.0
+offset_top = -243.0
+offset_right = 2210.0
+offset_bottom = -191.0
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "\"Sword\"
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-step-07-arms" type="Label" parent="World/Objects/step-07-final"]
-offset_left = 5334.0
-offset_top = -81.0
-offset_right = 5420.0
-offset_bottom = -29.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-step-07-arms" type="Label" parent="World/Objects/Build-steps/Step-07-final"]
+offset_left = 1972.0
+offset_top = -336.0
+offset_right = 2058.0
+offset_bottom = -284.0
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "\"Arms\"
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-step-07-cape" type="Label" parent="World/Objects/step-07-final"]
-offset_left = 5249.0
-offset_top = -108.0
-offset_right = 5335.0
-offset_bottom = -56.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-step-07-cape" type="Label" parent="World/Objects/Build-steps/Step-07-final"]
+offset_left = 2131.0
+offset_top = -367.0
+offset_right = 2217.0
+offset_bottom = -315.0
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "\"Cape\"
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-step-07-helmet" type="Label" parent="World/Objects/step-07-final"]
-offset_left = 5238.0
-offset_top = -135.0
-offset_right = 5324.0
-offset_bottom = -83.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-step-07-helmet" type="Label" parent="World/Objects/Build-steps/Step-07-final"]
+offset_left = 2135.0
+offset_top = -415.0
+offset_right = 2221.0
+offset_bottom = -363.0
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "\"Helmet\"
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-final" type="Label" parent="World/Objects/step-07-final"]
-offset_left = 5416.0
-offset_top = -49.0
-offset_right = 5502.0
-offset_bottom = 3.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
+[node name="label-final" type="Label" parent="World/Objects/Build-steps/Step-07-final"]
+offset_left = 2314.0
+offset_top = -128.0
+offset_right = 2400.0
+offset_bottom = -76.0
+theme_override_fonts/font = ExtResource("9_yfiik")
 theme_override_font_sizes/font_size = 8
 text = "\"Final\" 
 
@@ -2071,301 +2435,38 @@ text = "\"Final\"
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="label-parts-07" type="Label" parent="World/Objects"]
-offset_left = 4945.0
-offset_top = -95.0
-offset_right = 5031.0
-offset_bottom = -43.0
-theme_override_fonts/font = ExtResource("9_xwe6u")
-theme_override_font_sizes/font_size = 8
-text = "Parts"
-metadata/_edit_use_anchors_ = true
+[node name="part-T" parent="World/Objects/Build-steps/Step-07-final" instance=ExtResource("10_12fqi")]
+position = Vector2(1935, -456)
+scale = Vector2(0.08, 0.087)
+texture = ExtResource("41_t48u6")
 
-[node name="Gates" type="Node" parent="World/Objects"]
+[node name="step-07-final-A" parent="World/Objects/Build-steps/Step-07-final" instance=ExtResource("10_12fqi")]
+z_index = -1
+position = Vector2(2110, -335)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("42_8yk0q")
 
-[node name="Gate_A" parent="World/Objects/Gates" instance=ExtResource("10_vfrug")]
-position = Vector2(249, -727)
-gate_letter = "A"
+[node name="direction_arrow13" parent="World/Objects/Build-steps/Step-07-final" instance=ExtResource("8_ccwvr")]
+position = Vector2(1833, -454.5)
 
-[node name="Gate_B" parent="World/Objects/Gates" instance=ExtResource("11_m8b1f")]
-position = Vector2(51, -39)
+[node name="direction_arrow14" parent="World/Objects/Build-steps/Step-07-final" instance=ExtResource("8_ccwvr")]
+position = Vector2(2008, -433)
+rotation = 0.523599
 
-[node name="Gate_C" parent="World/Objects/Gates" instance=ExtResource("11_m8b1f")]
-position = Vector2(770, -649)
-gate_letter = "C"
-
-[node name="Gate_D" parent="World/Objects/Gates" instance=ExtResource("11_m8b1f")]
-position = Vector2(48, -647)
-gate_letter = "D"
-right_gate = true
-
-[node name="Triggers" type="Node" parent="World/Objects"]
-
-[node name="question_trigger" parent="World/Objects/Triggers" instance=ExtResource("12_bvrhu")]
-position = Vector2(185, -608)
-
-[node name="Parts" type="Node" parent="World/Objects"]
-
-[node name="part-A" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(306, -99)
-scale = Vector2(0.125156, 0.135593)
-
-[node name="part-B" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(407, -95)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("24_8km2d")
-
-[node name="part-B2" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(307, -227)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("24_8km2d")
-
-[node name="part-C" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(917, -107)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("15_e6un4")
-
-[node name="part-D" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(1030, -95.0001)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("16_i18d8")
-
-[node name="part-E" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(1130, -95.0001)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("17_borsk")
-
-[node name="part-F" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(1242, -96.0001)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("18_40twr")
-
-[node name="part-G" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(1350, -92.0001)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("19_dou2f")
-
-[node name="part-H" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(1869, -103)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("19_drten")
-
-[node name="part-I" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(2003, -98)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("20_74yon")
-
-[node name="part-J" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(2134, -99)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("21_pkgwi")
-
-[node name="part-K" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(2249, -104)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("22_eryo2")
-
-[node name="part-L" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(2872, -104)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("23_5oan6")
-
-[node name="part-M" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(2996, -104)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("24_n41pv")
-
-[node name="part-N" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(3129, -97)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("25_3vqcd")
-
-[node name="part-O" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(3593, -86)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("26_u3c6k")
-
-[node name="part-P" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(3741, -100)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("27_gbdpb")
-
-[node name="part-Q" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(4236, -94)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("28_ipwqv")
-
-[node name="part-R" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(4361, -101)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("29_oafn5")
-
-[node name="part-S" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(4489, -103)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("30_vjcn4")
-
-[node name="part-T" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(5081, -86)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("31_f3uon")
-
-[node name="step-01-visor-A" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(608, -100)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("23_dvrvh")
-
-[node name="step-01-visor-B" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(694, -90)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("24_i6pay")
-
-[node name="step-02-helmet-A" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(1571, -96)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("24_se4rl")
-
-[node name="step-02-helmet-B" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(1685, -97)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("25_swcfj")
-
-[node name="step-03-arm-A" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(2504, -98)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("27_xvp6q")
-
-[node name="step-03-arm-B" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(2662, -101)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("28_mqlgk")
-
-[node name="step-04-legs-A" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(3323.19, -102.763)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("32_h5jwr")
-
-[node name="step-04-legs-B" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(3426.19, -100.763)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("33_hgopk")
-
-[node name="step-05-cape-A" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(3951, -90)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("36_u2feo")
-
-[node name="step-05-cape-B" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(4040, -78)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("37_xx58d")
-
-[node name="step-06-Sword-A" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(4706, -87)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("41_tgnwa")
-
-[node name="step-06-Sword-B" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(4849, -89)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("42_cbbox")
-
-[node name="step-07-final-A" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(5312, -87.7628)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("43_s7jhd")
-
-[node name="step-07-final-B" parent="World/Objects/Parts" instance=ExtResource("23_585tf")]
-position = Vector2(5440, -91)
-scale = Vector2(0.125156, 0.135593)
-texture = ExtResource("45_e6kwi")
-
-[node name="Arrows" type="Node" parent="World/Objects"]
-
-[node name="direction_arrow1" parent="World/Objects/Arrows" instance=ExtResource("24_uo3dl")]
-position = Vector2(216, -92)
-
-[node name="direction_arrow2" parent="World/Objects/Arrows" instance=ExtResource("24_uo3dl")]
-position = Vector2(526, -91.5)
-
-[node name="direction_arrow3" parent="World/Objects/Arrows" instance=ExtResource("24_uo3dl")]
-position = Vector2(832, -92)
-
-[node name="direction_arrow4" parent="World/Objects/Arrows" instance=ExtResource("24_uo3dl")]
-position = Vector2(1484, -93)
-
-[node name="direction_arrow5" parent="World/Objects/Arrows" instance=ExtResource("24_uo3dl")]
-position = Vector2(1792, -92)
-
-[node name="direction_arrow6" parent="World/Objects/Arrows" instance=ExtResource("24_uo3dl")]
-position = Vector2(2388, -93)
-
-[node name="direction_arrow7" parent="World/Objects/Arrows" instance=ExtResource("24_uo3dl")]
-position = Vector2(2787, -90)
-
-[node name="direction_arrow8" parent="World/Objects/Arrows" instance=ExtResource("24_uo3dl")]
-position = Vector2(3263, -94)
-
-[node name="direction_arrow9" parent="World/Objects/Arrows" instance=ExtResource("24_uo3dl")]
-position = Vector2(3540, -88)
-
-[node name="direction_arrow10" parent="World/Objects/Arrows" instance=ExtResource("24_uo3dl")]
-position = Vector2(3892, -91)
-
-[node name="direction_arrow11" parent="World/Objects/Arrows" instance=ExtResource("24_uo3dl")]
-position = Vector2(4149, -90)
-
-[node name="direction_arrow12" parent="World/Objects/Arrows" instance=ExtResource("24_uo3dl")]
-position = Vector2(4643, -90)
-
-[node name="direction_arrow13" parent="World/Objects/Arrows" instance=ExtResource("24_uo3dl")]
-position = Vector2(5220, -86.7628)
-
-[node name="direction_arrow14" parent="World/Objects/Arrows" instance=ExtResource("24_uo3dl")]
-position = Vector2(4996, -90)
+[node name="step-07-final-B" parent="World/Objects/Build-steps/Step-07-final" instance=ExtResource("10_12fqi")]
+position = Vector2(2283, -200)
+scale = Vector2(0.3, 0.326)
+texture = ExtResource("43_dx4vp")
 
 [node name="TileMap" type="TileMap" parent="World"]
-position = Vector2(83, -127)
+position = Vector2(122, -127)
 tile_set = SubResource("TileSet_dyiks")
 format = 2
 layer_0/name = "Background"
 layer_1/name = "Midground"
-layer_1/tile_data = PackedInt32Array(-720901, 0, 0, -720900, 0, 0, -720899, 0, 0, -720898, 0, 0, -720897, 0, 0, -786432, 0, 0, -851968, 196608, 8, -917504, 196608, 7, -1048576, 131072, 4, 524285, 0, 0, 524286, 0, 0, 524287, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458783, 0, 0, 458786, 0, 0, 458787, 0, 0, 458788, 0, 0, 458789, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 458774, 0, 0, 524284, 0, 0, 458775, 0, 0, 458776, 0, 0, 458777, 0, 0, 458778, 0, 0, 458779, 0, 0, 458780, 0, 0, 458781, 0, 0, 458782, 0, 0, 458784, 0, 0, 458785, 0, 0, 458790, 0, 0, 458791, 0, 0, 458792, 0, 0, 458793, 0, 0, 458794, 0, 0, 458795, 0, 0, 458796, 0, 0, 458797, 0, 0, 458798, 0, 0, 458799, 0, 0, 458800, 0, 0, 458801, 0, 0, 458802, 0, 0, 458803, 0, 0, 524283, 0, 0, 524282, 0, 0, 458804, 0, 0, 458805, 0, 0, 458806, 0, 0, 458807, 0, 0, 458808, 0, 0, 458809, 0, 0, 458810, 0, 0, 458811, 0, 0, 458812, 0, 0, 458813, 0, 0, 458814, 0, 0, 458815, 0, 0, 458816, 0, 0, 458817, 0, 0, 458818, 0, 0, 458819, 0, 0, 458820, 0, 0, 458821, 0, 0, 458822, 0, 0, 458823, 0, 0, 458824, 0, 0, 458825, 0, 0, 458826, 0, 0, 458827, 0, 0, 458828, 0, 0, 458829, 0, 0, 458830, 0, 0, 458831, 0, 0, 458832, 0, 0, 458833, 0, 0, 458834, 0, 0, 458835, 0, 0, 458836, 0, 0, 458837, 0, 0, 458838, 0, 0, 458839, 0, 0, 458840, 0, 0, 458841, 0, 0, 458842, 0, 0, 458843, 0, 0, 458844, 0, 0, 458845, 0, 0, 458846, 0, 0, 458847, 0, 0, 458848, 0, 0, 458849, 0, 0, 458850, 0, 0, 458851, 0, 0, 458852, 0, 0, 458853, 0, 0, 458854, 0, 0, 458855, 0, 0, 458856, 0, 0, 458857, 0, 0, 458858, 0, 0, 458859, 0, 0, 458860, 0, 0, 458861, 0, 0, 458862, 0, 0, 458863, 0, 0, 458864, 0, 0, 458865, 0, 0, 458866, 0, 0, 458867, 0, 0, 458868, 0, 0, 458869, 0, 0, 458870, 0, 0, 458871, 0, 0, 458872, 0, 0, 458873, 0, 0, 458874, 0, 0, 458875, 0, 0, 458876, 0, 0, 458877, 0, 0, 458878, 0, 0, 458879, 0, 0, 458880, 0, 0, 458881, 0, 0, 458882, 0, 0, 458883, 0, 0, 458884, 0, 0, 458885, 0, 0, 458886, 0, 0, 458887, 0, 0, 458888, 0, 0, 458889, 0, 0, 458890, 0, 0, 458891, 0, 0, 458892, 0, 0, 458893, 0, 0, 458894, 0, 0, 458895, 0, 0, 458896, 0, 0, 458897, 0, 0, 458898, 0, 0, 458899, 0, 0, 458900, 0, 0, 458901, 0, 0, 458902, 0, 0, 458903, 0, 0, 458904, 0, 0, 458905, 0, 0, 458906, 0, 0, 458907, 0, 0, 458908, 0, 0, 458909, 0, 0, 458910, 0, 0, 458911, 0, 0, 458912, 0, 0, 458913, 0, 0, 458914, 0, 0, 458915, 0, 0, 458916, 0, 0, 458917, 0, 0, 458918, 0, 0, 458919, 0, 0, 458920, 0, 0, 458921, 0, 0, 458922, 0, 0, 458923, 0, 0, 458924, 0, 0, 458925, 0, 0, 458926, 0, 0, 458927, 0, 0, 458928, 0, 0, 458929, 0, 0, 458930, 0, 0, 458931, 0, 0, 458932, 0, 0, 458933, 0, 0, 458934, 0, 0, 458935, 0, 0, 458936, 0, 0, 458937, 0, 0, 458938, 0, 0, 458939, 0, 0, 458940, 0, 0, 458941, 0, 0, 458942, 0, 0, 458943, 0, 0, 458944, 0, 0, 458945, 0, 0, 458946, 0, 0, 458947, 0, 0, 458948, 0, 0, 458949, 0, 0, 458950, 0, 0, 458951, 0, 0, 458952, 0, 0, 458953, 0, 0, 458954, 0, 0, 458955, 0, 0, 458956, 0, 0, 458957, 0, 0, 458958, 0, 0, 458959, 0, 0, 458960, 0, 0, 458961, 0, 0, 458962, 0, 0, 458963, 0, 0, 458964, 0, 0, 458965, 0, 0, 458966, 0, 0, 458967, 0, 0, 458968, 0, 0, 458969, 0, 0, 458970, 0, 0, 458971, 0, 0, 458972, 0, 0, 458973, 0, 0, 458974, 0, 0, 458975, 0, 0, 458976, 0, 0, 458977, 0, 0, 458978, 0, 0, 458979, 0, 0, 458980, 0, 0, 458981, 0, 0, 458982, 0, 0, 458983, 0, 0, 458984, 0, 0, 458985, 0, 0, 458986, 0, 0, 458987, 0, 0, 458988, 0, 0, 458989, 0, 0, 458990, 0, 0, 458991, 0, 0, 458992, 0, 0, 458993, 0, 0, 458994, 0, 0, 458995, 0, 0, 458996, 0, 0, 458997, 0, 0, 458998, 0, 0, 458999, 0, 0, 459000, 0, 0, 459001, 0, 0, 459002, 0, 0, 459003, 0, 0, 459004, 0, 0, 459005, 0, 0, 459006, 0, 0, 459007, 0, 0, 459008, 0, 0, 459009, 0, 0, 459010, 0, 0, 459011, 0, 0, 459012, 0, 0, 459013, 0, 0, 459014, 0, 0, 459015, 0, 0, 459016, 0, 0, 459017, 0, 0, 459018, 0, 0, 459019, 0, 0, 459020, 0, 0, 459021, 0, 0, 459022, 0, 0, 459023, 0, 0, 459024, 0, 0, 459025, 0, 0, 459026, 0, 0, 459027, 0, 0, 459028, 0, 0, 459029, 0, 0, 459030, 0, 0, 459031, 0, 0, 459032, 0, 0, 459033, 0, 0, 459034, 0, 0, 459035, 0, 0, 459036, 0, 0, 459037, 0, 0, 459038, 0, 0, 459039, 0, 0, 459040, 0, 0, 459041, 0, 0, 459042, 0, 0, 459043, 0, 0, 459044, 0, 0, 459045, 0, 0, 459046, 0, 0, 459047, 0, 0, 459048, 0, 0, 459049, 0, 0, 459050, 0, 0, 459051, 0, 0, 459052, 0, 0, 459053, 0, 0, 459054, 0, 0, 459055, 0, 0, 459056, 0, 0, 459057, 0, 0, 459058, 0, 0, 459059, 0, 0, 459060, 0, 0, 459061, 0, 0, 459062, 0, 0, 459063, 0, 0, 459064, 0, 0, 459065, 0, 0, -65542, 65536, 1, -65541, 0, 1, -65540, 0, 1, -65539, 65536, 1, -65538, 0, 1, -65537, 65536, 0, -131072, 65536, 0, -131071, 65536, 1, -131070, 0, 1, -131069, 65536, 1, -131068, 0, 1, -131067, 65536, 0, -131066, 0, 1, -131065, 65536, 1, -131064, 65536, 0, -131063, 0, 1, -131062, 65536, 1, -131061, 0, 1, -131060, 0, 1, -131059, 0, 1, -131058, 65536, 0, -131057, 65536, 0, -131056, 65536, 1, -131055, 65536, 0, -131054, 0, 1, -131053, 0, 1, -131052, 65536, 0, -131051, 0, 1, -131050, 65536, 1, -131049, 0, 1, -131048, 65536, 1, -131047, 0, 1, -131046, 0, 1, -131045, 65536, 1, 459066, 0, 0, 459067, 0, 0, 459068, 0, 0, 459069, 0, 0, 459070, 0, 0, 459071, 0, 0, 459072, 0, 0, 459073, 0, 0, 459074, 0, 0, 459075, 0, 0, 459076, 0, 0, 459077, 0, 0, 459078, 0, 0, 459079, 0, 0, 459080, 0, 0, 459081, 0, 0, 459082, 0, 0, 459083, 0, 0, 459084, 0, 0, 459085, 0, 0, 459086, 0, 0, 459087, 0, 0, 459088, 0, 0, 459089, 0, 0, 459090, 0, 0, 459091, 0, 0, 459092, 0, 0)
+layer_1/tile_data = PackedInt32Array(524285, 0, 0, 524286, 0, 0, 524287, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458783, 0, 0, 458786, 0, 0, 458787, 0, 0, 458788, 0, 0, 458789, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 458774, 0, 0, 524284, 0, 0, 458775, 0, 0, 458776, 0, 0, 458777, 0, 0, 458778, 0, 0, 458779, 0, 0, 458780, 0, 0, 458781, 0, 0, 458782, 0, 0, 458784, 0, 0, 458785, 0, 0, 458790, 0, 0, 458791, 0, 0, 458792, 0, 0, 458793, 0, 0, 458794, 0, 0, 458795, 0, 0, 458796, 0, 0, 458797, 0, 0, 524283, 0, 0, 524282, 0, 0, 41, 0, 0, 42, 0, 0, 43, 0, 0, 44, 0, 0, 45, 0, 0, 46, 0, 0, 47, 0, 0, 48, 0, 0, 49, 0, 0, 50, 0, 0, 51, 0, 0, 52, 0, 0, 53, 0, 0, 54, 0, 0, 55, 0, 0, 56, 0, 0, 57, 0, 0, 58, 0, 0, 59, 0, 0, 60, 0, 0, 61, 0, 0, 62, 0, 0, 196671, 0, 0, 196672, 0, 0, 196673, 0, 0, 196674, 0, 0, 196675, 0, 0, 196676, 0, 0, 196677, 0, 0, 196678, 0, 0, 196679, 0, 0, 196680, 0, 0, 196681, 0, 0, 196682, 0, 0, 196683, 0, 0, 196684, 0, 0, 196685, 0, 0, 196686, 0, 0, 196687, 0, 0, 196688, 0, 0, 196689, 0, 0, 196690, 0, 0, 196691, 0, 0, 196692, 0, 0, 196693, 0, 0, 196694, 0, 0, 196695, 0, 0, 196696, 0, 0, -524236, 0, 0, -524235, 0, 0, -524234, 0, 0, -524233, 0, 0, -524232, 0, 0, -524231, 0, 0, -524230, 0, 0, -524229, 0, 0, -524228, 0, 0, -524227, 0, 0, -524226, 0, 0, -524225, 0, 0, -524224, 0, 0, -524223, 0, 0, -524222, 0, 0, -524221, 0, 0, -524220, 0, 0, -524219, 0, 0, -524218, 0, 0, -524217, 0, 0, -524216, 0, 0, -524215, 0, 0, -524214, 0, 0, -524213, 0, 0, -524212, 0, 0, -524211, 0, 0, -524210, 0, 0, -524209, 0, 0, -524208, 0, 0, -524207, 0, 0, -524206, 0, 0, -524205, 0, 0, -524204, 0, 0, -524203, 0, 0, 393257, 196608, 8, 327721, 196608, 7, 196649, 131072, 4, 262187, 131072, 4, 393259, 196608, 8, 196653, 131072, 4, 327725, 196608, 7, 393261, 196608, 8, 327724, 131072, 4, 131136, 196608, 8, 64, 131072, 4, -65471, 131072, 4, 65601, 196608, 7, 131137, 196608, 7, 196697, 0, 0, 196698, 0, 0, 196699, 0, 0, 196700, 0, 0, 196701, 0, 0, 196702, 0, 0, 131161, 196608, 8, 89, 131072, 4, 65627, 131072, 4, 131165, 196608, 8, 65629, 196608, 8, 93, 196608, 8, -130979, 131072, 4, -983009, 0, 0, -983008, 0, 0, -983007, 0, 0, -983006, 0, 0, -983005, 0, 0, -983004, 0, 0, -983003, 0, 0, -983002, 0, 0, -983001, 0, 0, -983000, 0, 0, -982999, 0, 0, -982998, 0, 0, -982997, 0, 0, -982996, 0, 0, -982995, 0, 0, -982994, 0, 0, -982993, 0, 0, -982992, 0, 0, -982991, 0, 0, -982990, 0, 0, -982989, 0, 0, -524244, 0, 0, -524243, 0, 0, -524242, 0, 0, -524241, 0, 0, -524240, 0, 0, -524239, 0, 0, -524238, 0, 0, -524237, 0, 0, -589773, 196608, 8, -720845, 131072, 4, -655311, 131072, 4, -589776, 196608, 7, -655312, 196608, 7, -720848, 196608, 7, -851920, 131072, 4, -589778, 196608, 8, -589777, 196608, 8, -655313, 196608, 8, -786385, 131072, 4, -720850, 131072, 4, -983019, 0, 0, -983018, 0, 0, -983017, 0, 0, -983016, 0, 0, -983015, 0, 0, -983014, 0, 0, -983013, 0, 0, -983012, 0, 0, -983011, 0, 0, -983010, 0, 0, -458757, 0, 0, -458756, 0, 0, -458755, 0, 0, -458754, 0, 0, -458753, 0, 0, -524288, 0, 0, -524287, 0, 0, -524286, 0, 0, -524285, 0, 0, -524284, 0, 0, -524283, 0, 0, -524282, 0, 0, -524281, 0, 0, -524280, 0, 0, -524279, 0, 0, -524278, 0, 0, -524277, 0, 0, -524276, 0, 0, -524275, 0, 0, -524274, 0, 0, -524273, 0, 0, -524272, 0, 0, -524271, 0, 0, -524270, 0, 0, -524269, 0, 0, -524268, 0, 0, -720875, 131072, 4, -655339, 196608, 8, -589803, 196608, 8, -524267, 0, 0, -524266, 0, 0, -786409, 131072, 4, -655337, 196608, 8, -589801, 196608, 8, -524265, 0, 0, -655336, 131072, 4, -524264, 0, 0, -851943, 131072, 4, -720871, 196608, 8, -655335, 196608, 8, -589799, 196608, 8, -524263, 0, 0, -524262, 0, 0, -1966079, 0, 0, -1966078, 0, 0, -1966077, 0, 0, -1966076, 0, 0, -1966075, 0, 0, -1966074, 0, 0, -1966073, 0, 0, -1966072, 0, 0, -1966071, 0, 0, -1966070, 0, 0, -1966069, 0, 0, -1966068, 0, 0, -1966067, 0, 0, -1966066, 0, 0, -1966065, 0, 0, -1966064, 0, 0, -1966063, 0, 0, -1966062, 0, 0, -1966061, 0, 0, -1966060, 0, 0, -1966059, 0, 0, -1966058, 0, 0, -1966057, 0, 0, -1966056, 0, 0, -1966029, 0, 0, -1966028, 0, 0, -1966027, 0, 0, -1966026, 0, 0, -1966025, 0, 0, -1966024, 0, 0, -1966023, 0, 0, -1966022, 0, 0, -1966021, 0, 0, -1966020, 0, 0, -1966019, 0, 0, -1966018, 0, 0, -1966017, 0, 0, -1966016, 0, 0, -1966015, 0, 0, -1966014, 0, 0, -1966013, 0, 0, -1966012, 0, 0, -1966011, 0, 0, -1966010, 0, 0, -1966009, 0, 0, -1966008, 0, 0, -1966036, 0, 0, -1966035, 0, 0, -1966034, 0, 0, -1966033, 0, 0, -1966032, 0, 0, -1966031, 0, 0, -1966030, 0, 0, -1703855, 0, 0, -1703854, 0, 0, -1703853, 0, 0, -1703852, 0, 0, -1703851, 0, 0, -1703850, 0, 0, -1703849, 0, 0, -1703848, 0, 0, -1703847, 0, 0, -1114012, 0, 0, -1114011, 0, 0, -1114010, 0, 0, -1114009, 0, 0, -1114008, 0, 0, -1114007, 0, 0, -1114006, 0, 0, -1114005, 0, 0, -1114004, 0, 0, -1114003, 0, 0, -1114002, 0, 0, -1114001, 0, 0, -1114000, 0, 0, -1113999, 0, 0, -1113998, 0, 0, 196736, 0, 0, 196737, 0, 0, 196738, 0, 0, 196739, 0, 0, 196740, 0, 0, 196741, 0, 0, 196742, 0, 0, 196743, 0, 0, 196744, 0, 0, 196745, 0, 0, 196746, 0, 0, 196747, 0, 0, 196748, 0, 0, 196749, 0, 0, 196750, 0, 0, 196751, 0, 0, 196752, 0, 0, 196753, 0, 0, 196754, 0, 0, 196755, 0, 0, 196756, 0, 0, -327569, 0, 0, -327568, 0, 0, -327567, 0, 0, -327566, 0, 0, -327565, 0, 0, -327564, 0, 0, -327563, 0, 0, -327562, 0, 0, -327561, 0, 0, -327560, 0, 0, -327559, 0, 0, -327558, 0, 0, -327557, 0, 0, -327556, 0, 0, -327555, 0, 0, -327554, 0, 0, -327553, 0, 0, -327552, 0, 0, -327570, 0, 0, 196735, 0, 0, 196734, 0, 0, 196733, 0, 0, 196732, 0, 0, 196757, 0, 0, 196758, 0, 0, 196759, 0, 0, 196760, 0, 0, 196762, 0, 0, 196761, 0, 0, -327571, 0, 0, -327572, 0, 0, -327573, 0, 0, -393108, 196608, 8, -458644, 196608, 7, -524180, 196608, 8, -655252, 131072, 4, -458643, 131072, 4, -393106, 196608, 8, -458642, 196608, 7, -589714, 131072, 4, -458641, 131072, 4, 131196, 196608, 8, 65660, 196608, 7, -65412, 131072, 4, 131197, 196608, 8, 125, 131072, 4, 131198, 196608, 8, 126, 131072, 4, 131200, 196608, 8, 128, 131072, 4, 524281, 0, 0, 524280, 0, 0, -458758, 0, 0, -458759, 0, 0, -458760, 0, 0, 327674, 196608, 8, 458746, 196608, 8, 327673, 131072, 4, 458745, 196608, 7, 196602, 131072, 4, 393210, 196608, 8, -589830, 131072, 4, -524295, 196608, 8, -589831, 196608, 7, -655367, 196608, 8, -786439, 131072, 4, 131223, 196608, 8, 65687, 196608, 7, 151, 196608, 7, -130921, 131072, 4, 65686, 131072, 4, 131224, 196608, 8, 65688, 196608, 7, -65384, 131072, 4, 131225, 196608, 8, 153, 131072, 4, 196763, 0, 0, 196764, 0, 0, 196765, 0, 0, 196766, 0, 0, 196767, 0, 0, 196768, 0, 0, 131227, 196608, 8, 65691, 196608, 7, -65381, 131072, 4, 196670, 0, 0, -1114013, 0, 0, -1114014, 0, 0, -1114015, 0, 0, -1114016, 0, 0, -1114017, 0, 0, -1114018, 0, 0, -1114019, 0, 0, -1114020, 0, 0, -1114021, 0, 0, -1114022, 0, 0, -1114023, 0, 0, -1114024, 0, 0, -1114026, 0, 0, -1114025, 0, 0, -1114027, 0, 0, -1179559, 196608, 7, -1245095, 196608, 7, -1376167, 131072, 4, -1179560, 196608, 8, -1245096, 131072, 8, -1310632, 196608, 7, -1441704, 131072, 4, -1179562, 196608, 8, -1310634, 131072, 4)
 layer_2/name = "foreground"
 layer_2/tile_data = PackedInt32Array()
 
-[node name="Enemies" type="Node" parent="World"]
-
-[node name="slime_red" parent="World/Enemies" instance=ExtResource("16_c8coi")]
-position = Vector2(378, -575)
-
-[node name="Killzone" parent="World" instance=ExtResource("18_k3wp3")]
-position = Vector2(-16, 55)
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="World"]
-visible = false
-scale = Vector2(0.8, 0.8)
-transform = Transform2D(0.8, 0, 0, 0.8, 0, 0)
-scroll_offset = Vector2(244.93, 282.032)
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="World/ParallaxBackground"]
-motion_scale = Vector2(0.2, 0.2)
-motion_mirroring = Vector2(1024, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="World/ParallaxBackground/ParallaxLayer"]
-texture = ExtResource("19_5q3wm")
-centered = false
-
-[node name="player" parent="World" instance=ExtResource("20_f4l7d")]
-position = Vector2(167, -16)
-
-[node name="Heads-Up_Display" parent="." instance=ExtResource("21_x4wgw")]
-
-[node name="Dialogue" parent="Heads-Up_Display" instance=ExtResource("22_vb8u4")]
-titel = "Thema: De Bijbel."
-question = "Vraag 01: uit hoeveel boeken bestaat de bijbel?"
-answer_A = " A) De bijbel bestaat uit 12 boeken."
-answer_B = "  B) Het aantal boeken in de bijbel is 60."
-answer_C = "  C) Er staan 53 boeken in de bijbel."
-answer_D = "  D) 66 boeken zijn er terug te vinden in de bijbel."
-right_answer = " D"
+[node name="player" parent="World" instance=ExtResource("49_vumrg")]
+position = Vector2(171, -23)

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://8s4ykn6seoex"]
+
+[ext_resource type="Script" path="res://scripts/trigger_step_sound.gd" id="1_1lu85"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b381h"]
+size = Vector2(34, 135)
+
+[node name="trigger-step-sound" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_1lu85")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7, 57.5)
+shape = SubResource("RectangleShape2D_b381h")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

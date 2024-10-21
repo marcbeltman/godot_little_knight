@@ -45,7 +45,7 @@ func _ready():
 
 
 func _on_timer_timeout():
-	#print ("test")
+	#print ("countdown deactivated")
 	countdown()
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://3g3cufe7v0fi"]
+[gd_scene load_steps=30 format=3 uid="uid://3g3cufe7v0fi"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_6n7e8"]
 [ext_resource type="Script" path="res://scripts/Health_System.gd" id="2_i53e0"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://bgg7nwg3nrtcu" path="res://scenes/player.tscn" id="20_knana"]
 [ext_resource type="PackedScene" uid="uid://bhfpyfnti4k0k" path="res://scenes/dialogues/dialogue.tscn" id="22_vnsnx"]
 [ext_resource type="PackedScene" uid="uid://dkgg5c4n1g8p6" path="res://scenes/sword_trigger.tscn" id="23_jk85u"]
+[ext_resource type="PackedScene" uid="uid://bsluv0gv8qwnm" path="res://scenes/direction_arrow.tscn" id="25_wm4x4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nimn1"]
 texture = ExtResource("12_m058r")
@@ -1442,3 +1443,6 @@ collision_mask = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BatOnlyCollision"]
 polygon = PackedVector2Array(375, 88, 375, 97, 1044, 100, 1044, -11, 587, -13, 587, -107, 376, -106, 376, 79, 342, 79, 342, -122, 610, -121, 609, -25, 1058, -23, 1059, 114, 358, 112, 358, 86)
+
+[node name="direction_arrow" parent="." instance=ExtResource("25_wm4x4")]
+position = Vector2(-22, -245)

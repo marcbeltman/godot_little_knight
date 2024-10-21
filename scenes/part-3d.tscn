@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://crwe7rhna4063"]
+
+[ext_resource type="Texture2D" uid="uid://bkqco4lhjvjfb" path="res://assets/images/parts/A-visor.PNG" id="1_etdfr"]
+
+[node name="part" type="Sprite2D"]
+texture = ExtResource("1_etdfr")

@@ -1,0 +1,197 @@
+[gd_scene load_steps=6 format=3 uid="uid://bfqlgcpxcswpl"]
+
+[ext_resource type="Script" path="res://scripts/buy_menu.gd" id="1_ch88m"]
+[ext_resource type="Texture2D" uid="uid://bwmfo8a0ifvx8" path="res://assets/images/Backgrounds/backgroundCastles.png" id="2_uiy7u"]
+[ext_resource type="FontFile" uid="uid://cbh3hxq8qdpwb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_6mr27"]
+[ext_resource type="Texture2D" uid="uid://dq1exl05txow2" path="res://assets/images/scipio.PNG" id="4_tn44n"]
+[ext_resource type="FontFile" uid="uid://cmfmyu1epvek8" path="res://assets/fonts/PixelOperator8.ttf" id="5_vhjjy"]
+
+[node name="Buy_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ch88m")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -188.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_uiy7u")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Seperator-01" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Label-maintitle" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("3_6mr27")
+theme_override_font_sizes/font_size = 65
+text = "\"SCIPIO\"
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Seperator-02" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="Label-subtitle" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("3_6mr27")
+theme_override_font_sizes/font_size = 20
+text = "The small defender in 3D"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="VBoxContainer-01" type="VBoxContainer" parent="MarginContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Seperator-01" type="Control" parent="MarginContainer/HBoxContainer2/VBoxContainer-01"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="RichTextLabel-text-01" type="RichTextLabel" parent="MarginContainer/HBoxContainer2/VBoxContainer-01"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 5
+theme_override_fonts/normal_font = ExtResource("3_6mr27")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "This part is still under construction so send us an email with your details
+"
+scroll_active = false
+
+[node name="Seperator-02" type="Control" parent="MarginContainer/HBoxContainer2/VBoxContainer-01"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="RichTextLabel-text-02" type="RichTextLabel" parent="MarginContainer/HBoxContainer2/VBoxContainer-01"]
+visible = false
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 5
+theme_override_fonts/normal_font = ExtResource("3_6mr27")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Price  [color=red]€9.95[/color]
+Size 13cm x 6.5cm
+
+"
+scroll_active = false
+
+[node name="Seperator-03" type="Control" parent="MarginContainer/HBoxContainer2/VBoxContainer-01"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Label-text-03" type="Label" parent="MarginContainer/HBoxContainer2/VBoxContainer-01"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("3_6mr27")
+theme_override_font_sizes/font_size = 20
+text = "marcbeltman@hotmail.com"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Seperator01" type="Control" parent="MarginContainer/HBoxContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="TextureRect-image" type="TextureRect" parent="MarginContainer/HBoxContainer2/VBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("4_tn44n")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Seperator-01" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 375)
+layout_mode = 2
+
+[node name="Buy_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(120, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_vhjjy")
+theme_override_font_sizes/font_size = 24
+text = "Buy"
+
+[node name="Build_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(120, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_vhjjy")
+theme_override_font_sizes/font_size = 24
+text = "Build Instructions"
+
+[node name="Back_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_vhjjy")
+theme_override_font_sizes/font_size = 24
+text = "Back"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Back_Button" to="." method="_on_back_button_pressed"]

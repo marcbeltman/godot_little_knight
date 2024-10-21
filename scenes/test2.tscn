@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhonrl05ugt3p"]
+
+[ext_resource type="Texture2D" uid="uid://c7fxkcllc6cc1" path="res://assets/images/test.png" id="1_2i1mr"]
+
+[node name="ColorRect" type="ColorRect"]
+offset_right = 757.0
+offset_bottom = 476.0
+
+[node name="Test" type="Sprite2D" parent="."]
+position = Vector2(407, 258)
+texture = ExtResource("1_2i1mr")
