@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://biy8pm7ygixku"]
+
+[ext_resource type="Texture2D" uid="uid://dn35uxsqfpvxp" path="res://assets/images/controls/keyboard_arrow_left.png" id="1_mm24e"]
+[ext_resource type="Texture2D" uid="uid://46pt7s01v63n" path="res://assets/images/controls/keyboard_arrow_right.png" id="2_onmef"]
+[ext_resource type="Texture2D" uid="uid://4wnr7bcijcbb" path="res://assets/images/controls/keyboard_arrow_up.png" id="3_2nbsv"]
+[ext_resource type="Texture2D" uid="uid://c162oboabsuie" path="res://assets/images/controls/keyboard_space.png" id="4_6usg6"]
+
+[node name="input_controls" type="TextureRect"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="left" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(7, -8)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_mm24e")
+
+[node name="right" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(26, -8)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_onmef")
+
+[node name="up" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(17, -26)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_2nbsv")
+
+[node name="space" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(17, 10)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_6usg6")

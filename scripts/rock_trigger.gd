@@ -13,7 +13,7 @@ func _on_body_entered(body):
 	if not has_played_sound:
 		audio_stream_player.play()
 		has_played_sound = true
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(1.2).timeout
 	GameData.rock_is_falling = true
 
 

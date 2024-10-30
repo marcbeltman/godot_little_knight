@@ -21,6 +21,10 @@ Music="*res://scenes/music.tscn"
 TransitionScreen="*res://scenes/transition_screen.tscn"
 GameData="*res://scripts/Game_Data.gd"
 
+[filesystem]
+
+import/fbx/enabled=false
+
 [input]
 
 jump={
