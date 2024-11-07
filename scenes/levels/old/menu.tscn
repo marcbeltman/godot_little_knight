@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=3 uid="uid://ch7ayyxuew7rm"]
+
+[ext_resource type="PackedScene" uid="uid://waf7b87nntd1" path="res://scenes/levels/old/start_menu.tscn" id="1_yycju"]
+[ext_resource type="PackedScene" uid="uid://behcmffnr7qq3" path="res://scenes/levels/old/play_menu.tscn" id="2_uxjnr"]
+[ext_resource type="PackedScene" uid="uid://38lt48lnig3b" path="res://scenes/levels/old/toy_menu.tscn" id="3_ihoku"]
+[ext_resource type="PackedScene" uid="uid://bfqlgcpxcswpl" path="res://scenes/levels/buy_menu.tscn" id="4_uualy"]
+[ext_resource type="PackedScene" uid="uid://fdr5pp7tjnea" path="res://scenes/levels/old/lederboard_menu.tscn" id="5_3d352"]
+
+[node name="Menu" type="Node"]
+
+[node name="Start_Menu" parent="." instance=ExtResource("1_yycju")]
+
+[node name="Play_Menu" parent="." instance=ExtResource("2_uxjnr")]
+
+[node name="Toy_Menu" parent="." instance=ExtResource("3_ihoku")]
+
+[node name="Buy_Menu" parent="." instance=ExtResource("4_uualy")]
+
+[node name="Leaderboard_Menu" parent="." instance=ExtResource("5_3d352")]

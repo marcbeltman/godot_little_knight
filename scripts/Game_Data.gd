@@ -1,5 +1,6 @@
 extends Node
 
+var player_name: String
 var score = 0
 
 # Check of de player in gevechtsmodus moet gaan

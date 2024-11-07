@@ -1,0 +1,140 @@
+[gd_scene load_steps=6 format=3 uid="uid://ushvat1wv7vx"]
+
+[ext_resource type="Script" path="res://scripts/play_menu_test.gd" id="1_sp8kf"]
+[ext_resource type="Texture2D" uid="uid://bwmfo8a0ifvx8" path="res://assets/images/Backgrounds/backgroundCastles.png" id="2_7qcih"]
+[ext_resource type="FontFile" uid="uid://cbh3hxq8qdpwb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_3ek0q"]
+[ext_resource type="FontFile" uid="uid://cmfmyu1epvek8" path="res://assets/fonts/PixelOperator8.ttf" id="4_qroho"]
+[ext_resource type="Texture2D" uid="uid://ca44t75a5yxb3" path="res://assets/images/little-knight-sword.png" id="5_12ya4"]
+
+[node name="Play_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sp8kf")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -188.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7qcih")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Seperator1" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+
+[node name="Label_message" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_3ek0q")
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+
+[node name="Seperator2" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Label_playername" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("3_3ek0q")
+theme_override_font_sizes/font_size = 40
+text = "Playername:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Seperator4" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(425, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Seperator4" type="Control" parent="MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 225)
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("4_qroho")
+theme_override_font_sizes/font_size = 24
+placeholder_text = "Name:"
+alignment = 1
+
+[node name="Seperator5" type="Control" parent="MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Play_Button" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer3"]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qroho")
+theme_override_font_sizes/font_size = 24
+text = "Play"
+
+[node name="Leaderboard_Button" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer3"]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qroho")
+theme_override_font_sizes/font_size = 24
+text = "Leaderboard"
+
+[node name="Toy_Button" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer3"]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qroho")
+theme_override_font_sizes/font_size = 24
+text = "Scipio 3D"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(602, 330)
+scale = Vector2(0.295288, 0.285714)
+texture = ExtResource("5_12ya4")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer3/Play_Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer3/Leaderboard_Button" to="." method="_on_leaderboard_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer3/Toy_Button" to="." method="_on_toy_button_pressed"]

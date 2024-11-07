@@ -1,6 +1,5 @@
 extends Area2D
 
-#@onready var start_menu = preload("res://scenes/levels/menu.tscn") as PackedScene
 @onready var open_gate_sound = $open_gate_sound
 @onready var right_gate_sound = $right_gate_sound
 @onready var animated_sprite = $AnimatedSprite2D
@@ -46,7 +45,5 @@ func next_level(body):
 	print("BACK TO MENU")
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
-	#get_tree().change_scene_to_packed(start_menu)
-	get_tree().change_scene_to_file("res://scenes/levels/menu.tscn")
-	
+	get_tree().change_scene_to_file("res://scenes/levels/toy_menu_test.tscn")
 	

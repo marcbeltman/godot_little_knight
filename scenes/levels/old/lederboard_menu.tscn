@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://fdr5pp7tjnea"]
+
+[ext_resource type="Script" path="res://scripts/lederboard_menu.gd" id="1_l1286"]
+[ext_resource type="Texture2D" uid="uid://bwmfo8a0ifvx8" path="res://assets/images/Backgrounds/backgroundCastles.png" id="2_6j4qj"]
+[ext_resource type="FontFile" uid="uid://cmfmyu1epvek8" path="res://assets/fonts/PixelOperator8.ttf" id="4_dxx12"]
+[ext_resource type="PackedScene" uid="uid://dgygkbtm0burn" path="res://addons/quiver_leaderboards/leaderboard_ui.tscn" id="4_xi1r4"]
+
+[node name="Leaderboard_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l1286")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -188.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6j4qj")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 150
+theme_override_constants/margin_bottom = 100
+
+[node name="LeaderboardUI" parent="MarginContainer" instance=ExtResource("4_xi1r4")]
+layout_mode = 2
+leaderboard_id = "scipio-leaderboard-BeYE"
+current_player_highlight_color = Color(0.29219, 0.29219, 0.29219, 1)
+
+[node name="Button_back" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.5
+offset_top = -72.0
+offset_right = 22.5
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_dxx12")
+text = "Back"
+
+[connection signal="pressed" from="Button_back" to="." method="_on_button_back_pressed"]

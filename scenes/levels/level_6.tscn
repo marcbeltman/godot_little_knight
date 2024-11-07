@@ -52,10 +52,10 @@ layout_mode = 2
 theme_override_constants/separation = 35
 
 [node name="Seperator1" type="Control" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
-[node name="Label1" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Label_Congrats" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -70,9 +70,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Seperator3" type="Control" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 
-[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Label_you_win" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -87,7 +88,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Seperator2" type="Control" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 30)
+visible = false
 layout_mode = 2
 
 [node name="Label_score" type="Label" parent="MarginContainer/VBoxContainer"]
@@ -105,6 +106,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Seperator4" type="Control" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 
 [node name="Label4" type="Label" parent="MarginContainer/VBoxContainer"]
@@ -134,29 +136,30 @@ alignment = 1
 custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
 
-[node name="Start_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-visible = false
+[node name="Button_leaderboard" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(120, 50)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_2l824")
 theme_override_font_sizes/font_size = 24
-text = "Start Game"
+text = "Leaderboard"
 
-[node name="Exit_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-visible = false
+[node name="Button_back" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(120, 50)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_2l824")
 theme_override_font_sizes/font_size = 24
-text = "Exit Game"
+text = "Back"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(960, 377)
+[node name="Sprite_knight_right" type="Sprite2D" parent="."]
+position = Vector2(960, 333)
 scale = Vector2(0.295288, 0.285714)
 texture = ExtResource("5_0dos6")
 flip_h = true
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(203, 377)
+[node name="Sprite_knight_left" type="Sprite2D" parent="."]
+position = Vector2(203, 333)
 scale = Vector2(0.295288, 0.285714)
 texture = ExtResource("5_0dos6")
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Button_leaderboard" to="." method="_on_button_leaderboard_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Button_back" to="." method="_on_button_back_pressed"]

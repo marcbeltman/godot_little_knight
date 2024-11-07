@@ -47,6 +47,11 @@ func next_level(body):
 	print(current_scene_file)
 	var next_level_number = current_scene_file.to_int() + 1
 	print(next_level_number)
+	
+	## SCORE EN PLAYERNAME NAAR QUIVER LEADERBOARD
+	if next_level_number == 6:
+		await Leaderboards.post_guest_score("scipio-leaderboard-BeYE", GameData.score, GameData.player_name)
+	
 	var next_level_path = FILE_BEGIN + str(next_level_number) + ".tscn"
 	print(next_level_path)
 	get_tree().change_scene_to_file(next_level_path)

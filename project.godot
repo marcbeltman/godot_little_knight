@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="SCIPIO"
-run/main_scene="res://scenes/levels/menu.tscn"
+run/main_scene="res://scenes/levels/start_menu_test.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,12 @@ config/icon="res://icon.svg"
 Music="*res://scenes/music.tscn"
 TransitionScreen="*res://scenes/transition_screen.tscn"
 GameData="*res://scripts/Game_Data.gd"
+Leaderboards="*res://addons/quiver_leaderboards/leaderboards.tscn"
+PlayerAccounts="*res://addons/quiver_player_accounts/player_accounts.tscn"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/quiver_leaderboards/plugin.cfg", "res://addons/quiver_player_accounts/plugin.cfg")
 
 [filesystem]
 
@@ -54,6 +60,10 @@ attack={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
+
+[quiver]
+
+general/auth_token="qxmeIjj2iNVLglW1eF0Zv93OJSliFXZjSUFBj1Gr"
 
 [rendering]
 

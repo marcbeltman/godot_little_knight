@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxro28iaigri3"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_6xb0w"]
+[ext_resource type="PackedScene" uid="uid://waf7b87nntd1" path="res://scenes/levels/old/start_menu.tscn" id="2_7jm4l"]
+[ext_resource type="PackedScene" uid="uid://behcmffnr7qq3" path="res://scenes/levels/old/play_menu.tscn" id="3_nkh4n"]
+
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6xb0w")
+
+[node name="Start_Menu" parent="." instance=ExtResource("2_7jm4l")]
+layout_mode = 1
+script = null
+
+[node name="Play_Menu" parent="." instance=ExtResource("3_nkh4n")]
+layout_mode = 1
+script = null
