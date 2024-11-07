@@ -6,12 +6,13 @@ extends Control
 
 func _on_back_button_pressed():
 	print("back-button pressed")
+	TransitionScreen.transition()  # Start de overgang
+	await TransitionScreen.on_transition_finished  # Wacht tot de overgang klaar is
 	show_menu(toy_menu)
 
 
 func show_menu(menu_to_show: Control):
-	TransitionScreen.transition()  # Start de overgang
-	await TransitionScreen.on_transition_finished  # Wacht tot de overgang klaar is
+
   
 # Maak beide menus onzichtbaar
 	toy_menu.visible = false

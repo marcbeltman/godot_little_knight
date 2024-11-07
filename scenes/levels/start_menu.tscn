@@ -43,6 +43,7 @@ layout_mode = 2
 theme_override_constants/separation = 10
 
 [node name="Seperator3" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
 [node name="Label4" type="Label" parent="MarginContainer/VBoxContainer"]
@@ -96,7 +97,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Seperator2" type="Control" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 200)
+custom_minimum_size = Vector2(0, 215)
 layout_mode = 2
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
@@ -133,17 +134,9 @@ theme_override_fonts/font = ExtResource("3_7j1ae")
 theme_override_font_sizes/font_size = 24
 text = "Start Game"
 
-[node name="Toy_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(120, 50)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_7j1ae")
-theme_override_font_sizes/font_size = 24
-text = "Scipio 3D"
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(602, 330)
+position = Vector2(602, 346)
 scale = Vector2(0.295288, 0.285714)
 texture = ExtResource("4_xw6ss")
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Start_Button" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Toy_Button" to="." method="_on_toy_button_pressed"]
