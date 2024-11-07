@@ -1423,6 +1423,15 @@ position = Vector2(94, -372)
 [node name="Heads-Up_Display" parent="." instance=ExtResource("19_6iivd")]
 
 [node name="Dialogue" parent="Heads-Up_Display" instance=ExtResource("22_vnsnx")]
+titel = "Thema: Democratie"
+question = "Vraag 02: Wat betekent de rechtsstaat in een democratie?"
+answer_A = " A) Dat de overheid de macht heeft om wetten naar eigen inzicht te veranderen."
+answer_B = "  B) Dat de meerderheid altijd gelijk heeft."
+answer_C = "  C) Dat iedereen gelijk is voor de wet en de rechten van burgers worden beschermd."
+answer_D = "  D) Dat religieuze leiders de wetten maken."
+right_answer = " C"
+
+[node name="Dialogue_old" parent="Heads-Up_Display" instance=ExtResource("22_vnsnx")]
 titel = "Thema: De Bijbel."
 question = "Vraag 02: uit welke categoriën bestaat het Nieuwe Testament?"
 answer_A = " A) De Wet, Evangeliën, Openbaringen en Psalmen."

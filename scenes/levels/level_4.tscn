@@ -1457,13 +1457,22 @@ position = Vector2(500, -50)
 
 [node name="Heads-Up_Display" parent="." instance=ExtResource("19_h3lci")]
 
-[node name="Dialogue" parent="Heads-Up_Display" instance=ExtResource("20_8r7sv")]
+[node name="Dialogue_old" parent="Heads-Up_Display" instance=ExtResource("20_8r7sv")]
 titel = "Thema: De Bijbel."
 question = "Vraag 04: uit hoeveel boeken bestaat het Oude Testament en Nieuwe Testament?"
 answer_A = " A) Het Oude Testament heeft 23 boeken en het Nieuwe Testament heeft 43 boeken."
 answer_B = "  B) Het Oude Testament heeft 33 boeken en het Nieuwe Testament heeft 33 boeken."
 answer_C = "  C) Het Oude Testament heeft 34 boeken en het Nieuwe Testament heeft 32 boeken."
 answer_D = "  D) Het Oude Testament heeft 39 boeken en het Nieuwe Testament heeft 27 boeken."
+right_answer = "D"
+
+[node name="Dialogue" parent="Heads-Up_Display" instance=ExtResource("20_8r7sv")]
+titel = "Thema: Democratie"
+question = "Vraag 04: Welke waarde beschermt de persoonlijke vrijheid en het recht op een eerlijk proces in een westerse democratie?"
+answer_A = " A) Sociale rechtvaardigheid."
+answer_B = "  B) Nationale veiligheid."
+answer_C = "  C) Collectivisme."
+answer_D = "  D) Individuele vrijheden en rechten."
 right_answer = "D"
 
 [node name="sword_trigger" parent="." instance=ExtResource("21_jbogf")]

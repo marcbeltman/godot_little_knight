@@ -1561,6 +1561,15 @@ position = Vector2(170, -60)
 [node name="Heads-Up_Display" parent="." instance=ExtResource("20_c7dxf")]
 
 [node name="Dialogue" parent="Heads-Up_Display" instance=ExtResource("21_8me11")]
+titel = "Thema: Democratie"
+question = "Vraag 05: Wat wordt bedoeld met pluralisme in een democratische samenleving?"
+answer_A = " A) Dat een land slechts één politieke partij toestaat."
+answer_B = "  B) Dat verschillende etnische, religieuze en politieke groepen naast elkaar bestaan met respect en tolerantie."
+answer_C = "  C) Dat de meerderheid altijd de rechten van minderheden mag beperken."
+answer_D = "  D) Dat religie en politiek strikt gescheiden zijn."
+right_answer = "B"
+
+[node name="Dialogue_old" parent="Heads-Up_Display" instance=ExtResource("21_8me11")]
 titel = "Thema: De Bijbel."
 question = "Vraag 05: Welke zijn de twee belangrijkste talen, waarin de Bijbel oorspronkelijk is geschreven?"
 answer_A = " A) Het Oude Testament is oorspronkelijk geschreven in het latijn en het Nieuwe Testament in het hebreeuws."

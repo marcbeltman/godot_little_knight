@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://bpo7cgwa17hpm"]
+[gd_scene load_steps=71 format=3 uid="uid://bpo7cgwa17hpm"]
 
 [ext_resource type="PackedScene" uid="uid://ba8bq4ifylh0d" path="res://scenes/gate_bp.tscn" id="2_ooff5"]
 [ext_resource type="AudioStream" uid="uid://1of82tco7m1x" path="res://assets/sounds/build-steps/helmet.mp3" id="5_t64sd"]
@@ -49,7 +49,13 @@
 [ext_resource type="Texture2D" uid="uid://cjljfxeec7ev5" path="res://assets/sprites/world_tileset.png" id="47_dy54g"]
 [ext_resource type="Texture2D" uid="uid://c32ggajuawgm7" path="res://assets/sprites/tiny-town.png" id="48_75gls"]
 [ext_resource type="Texture2D" uid="uid://mncrlk7k3hgj" path="res://assets/sprites/tiny-dungeon.png" id="49_emwk8"]
+[ext_resource type="Texture2D" uid="uid://sqljgqfntdsv" path="res://assets/images/dialogue_box_yellow.png" id="52_rfbmd"]
+[ext_resource type="FontFile" uid="uid://n6yurq8tww7" path="res://assets/fonts/Joystick.otf" id="52_vp4yc"]
+[ext_resource type="Texture2D" uid="uid://bcmmnrvtlcfnx" path="res://assets/images/symbol-remove-burr.PNG" id="53_dvute"]
 [ext_resource type="PackedScene" uid="uid://xrm04st1jg84" path="res://scenes/player_BP.tscn" id="53_yak45"]
+[ext_resource type="Texture2D" uid="uid://dtwik51vsw14n" path="res://assets/images/exit.PNG" id="54_sm0uc"]
+[ext_resource type="PackedScene" uid="uid://bkvccmrc3f8ht" path="res://scenes/build_trigger.tscn" id="55_wfpbd"]
+[ext_resource type="Script" path="res://scripts/BuidTip.gd" id="56_h2s8u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dfna1"]
 size = Vector2(20, 112)
@@ -1460,7 +1466,7 @@ position = Vector2(-30, -72)
 shape = SubResource("RectangleShape2D_8ibmi")
 
 [node name="trigger-step-sound-1" parent="World/Objects/Triggers" instance=ExtResource("43_vb2tc")]
-position = Vector2(207, -139)
+position = Vector2(242, -139)
 sound_effect = ExtResource("44_stcpd")
 
 [node name="trigger-step-sound-2" parent="World/Objects/Triggers" instance=ExtResource("43_vb2tc")]
@@ -1490,6 +1496,9 @@ sound_effect = ExtResource("10_rado4")
 [node name="trigger-step-sound-8" parent="World/Objects/Triggers" instance=ExtResource("43_vb2tc")]
 position = Vector2(2331, -201)
 sound_effect = ExtResource("10_6sxv0")
+
+[node name="build_trigger" parent="World/Objects/Triggers" instance=ExtResource("55_wfpbd")]
+position = Vector2(151, -30)
 
 [node name="Build-steps" type="Node" parent="World/Objects"]
 
@@ -2551,7 +2560,7 @@ offset_bottom = -133.0
 theme_override_constants/line_spacing = 5
 theme_override_fonts/font = ExtResource("8_ifg03")
 text = "Build Instructions
-for the  \"Scipio\" 
+for the \"Scipio\" 
 construction kit"
 horizontal_alignment = 1
 autowrap_mode = 3
@@ -2567,4 +2576,68 @@ layer_2/name = "foreground"
 layer_2/tile_data = PackedInt32Array()
 
 [node name="player" parent="World" instance=ExtResource("53_yak45")]
-position = Vector2(171, -23)
+position = Vector2(121, -17)
+
+[node name="BuidTip" type="CanvasLayer" parent="."]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="BuidTip"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -363.0
+offset_top = 64.0
+offset_right = 347.0
+offset_bottom = 448.0
+grow_horizontal = 2
+texture = ExtResource("52_rfbmd")
+region_rect = Rect2(0.190002, 0, 31.4854, 32)
+patch_margin_left = 1
+patch_margin_right = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BuidTip/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -267.0
+offset_top = 35.0
+offset_right = 224.0
+offset_bottom = 163.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0.321569, 0.321569, 0.321569, 1)
+theme_override_fonts/normal_font = ExtResource("52_vp4yc")
+theme_override_font_sizes/normal_font_size = 32
+text = "Check your kit and remove any burrs from the parts to ensure a good connection."
+fit_content = true
+
+[node name="TextureRect" type="TextureRect" parent="BuidTip/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -522.0
+offset_top = -130.0
+offset_right = -94.0
+offset_bottom = 161.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("53_dvute")
+
+[node name="TextureButton" type="TextureButton" parent="BuidTip/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -33.0
+offset_top = -12.0
+offset_right = 17.0
+offset_bottom = 38.0
+grow_horizontal = 0
+texture_normal = ExtResource("54_sm0uc")
+texture_pressed = ExtResource("54_sm0uc")
+texture_hover = ExtResource("54_sm0uc")
+script = ExtResource("56_h2s8u")
+
+[connection signal="pressed" from="BuidTip/NinePatchRect/TextureButton" to="BuidTip/NinePatchRect/TextureButton" method="_on_pressed"]

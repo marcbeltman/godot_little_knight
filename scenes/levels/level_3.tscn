@@ -1431,6 +1431,15 @@ position = Vector2(737, -48)
 [node name="Heads-Up_Display" parent="." instance=ExtResource("22_pcuc0")]
 
 [node name="Dialogue" parent="Heads-Up_Display" instance=ExtResource("23_cegq8")]
+titel = "Thema: Democratie"
+question = "Vraag 03: Waarom zijn vrije en eerlijke verkiezingen belangrijk in een democratie?"
+answer_A = " A) Omdat ze de bevolking in staat stellen om hun leiders te kiezen en controle uit te oefenen over de overheid."
+answer_B = "  B) Omdat ze de macht van de rijken vergroten."
+answer_C = "  C) Omdat ze de invloed van internationale organisaties beperken."
+answer_D = "  D) Omdat ze economische groei bevorderen."
+right_answer = "A"
+
+[node name="Dialogue_old" parent="Heads-Up_Display" instance=ExtResource("23_cegq8")]
 titel = "Thema: De Bijbel."
 question = "Vraag 03: uit welke categoriën bestaat het Oude Testament?"
 answer_A = " A) De Wet, Historische boeken, Poëzie en wijsheids boeken en de Profeten boeken."
