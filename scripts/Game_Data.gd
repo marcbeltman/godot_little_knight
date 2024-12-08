@@ -1,5 +1,7 @@
 extends Node
 
+var gemstone = {}
+
 var player_name: String
 var score = 0
 

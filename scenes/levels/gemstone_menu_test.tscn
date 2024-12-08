@@ -1,0 +1,194 @@
+[gd_scene load_steps=10 format=3 uid="uid://s1x4al4e1ppn"]
+
+[ext_resource type="Script" path="res://scripts/gemstone_menu_test.gd" id="1_5foc3"]
+[ext_resource type="Texture2D" uid="uid://bwmfo8a0ifvx8" path="res://assets/images/Backgrounds/backgroundCastles.png" id="2_pgo83"]
+[ext_resource type="FontFile" uid="uid://cbh3hxq8qdpwb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_mbjb7"]
+[ext_resource type="FontFile" uid="uid://cmfmyu1epvek8" path="res://assets/fonts/PixelOperator8.ttf" id="5_6xyki"]
+[ext_resource type="Texture2D" uid="uid://ca44t75a5yxb3" path="res://assets/images/little-knight-sword.png" id="5_7iqyi"]
+[ext_resource type="Texture2D" uid="uid://cmyws1cfo3cx5" path="res://assets/images/gemstone/big/gemstone-04-green.png" id="5_ua3y6"]
+[ext_resource type="Texture2D" uid="uid://c8sioqob6612l" path="res://assets/images/gemstone/big/gemstone-02-blue.png" id="6_7heap"]
+[ext_resource type="Script" path="res://scenes/gemstone/gem_menu_sprite.gd" id="6_djbqq"]
+[ext_resource type="Texture2D" uid="uid://c30qkh64m7sof" path="res://assets/images/gemstone/big/gemstone-03-red.png" id="7_1qtkg"]
+
+[node name="Gemstone_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5foc3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -188.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_pgo83")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Seperator1" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("3_mbjb7")
+theme_override_font_sizes/font_size = 65
+text = "\"SCIPIO\"
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Seperator2" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Label_Gemstone_Setup" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("3_mbjb7")
+theme_override_font_sizes/font_size = 40
+text = "Gemstone Setup"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Seperator4" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(425, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Seperator4" type="Control" parent="MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 225)
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("5_6xyki")
+theme_override_font_sizes/font_size = 24
+placeholder_text = "GemstoneSN:"
+alignment = 1
+
+[node name="Seperator5" type="Control" parent="MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="LineEdit2" type="LineEdit" parent="MarginContainer/VBoxContainer2"]
+visible = false
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("5_6xyki")
+theme_override_font_sizes/font_size = 24
+placeholder_text = "GemstoneSN:"
+alignment = 1
+
+[node name="Seperator6" type="Control" parent="MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Get_Button" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer3"]
+visible = false
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_6xyki")
+theme_override_font_sizes/font_size = 24
+text = "Connect"
+
+[node name="Post_Button" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer3"]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_6xyki")
+theme_override_font_sizes/font_size = 24
+text = "Connect"
+
+[node name="Back_Button" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer3"]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_6xyki")
+theme_override_font_sizes/font_size = 24
+text = "Back"
+
+[node name="Label_message" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.769479, 0.0334345, 1.92523e-07, 1)
+theme_override_fonts/font = ExtResource("3_mbjb7")
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+
+[node name="gemstone_green" type="Sprite2D" parent="."]
+position = Vector2(171, 199)
+scale = Vector2(0.7, 0.677)
+texture = ExtResource("5_ua3y6")
+script = ExtResource("6_djbqq")
+
+[node name="gemstone_purple" type="Sprite2D" parent="."]
+position = Vector2(855, 509)
+scale = Vector2(0.8, 0.776)
+texture = ExtResource("6_7heap")
+script = ExtResource("6_djbqq")
+
+[node name="gemstone_red" type="Sprite2D" parent="."]
+position = Vector2(1002, 122)
+scale = Vector2(0.5, 0.485)
+texture = ExtResource("7_1qtkg")
+script = ExtResource("6_djbqq")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(317, 486)
+scale = Vector2(0.295288, 0.285714)
+texture = ExtResource("5_7iqyi")
+
+[node name="HTTPRequest_POST" type="HTTPRequest" parent="."]
+
+[node name="HTTPRequest_GET" type="HTTPRequest" parent="."]
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer3/Get_Button" to="." method="_on_get_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer3/Post_Button" to="." method="_on_post_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer3/Back_Button" to="." method="_on_back_button_pressed"]

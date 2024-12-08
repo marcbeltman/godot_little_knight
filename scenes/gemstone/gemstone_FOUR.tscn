@@ -1,0 +1,100 @@
+[gd_scene load_steps=9 format=3 uid="uid://c5kfq0dc6xnvk"]
+
+[ext_resource type="Script" path="res://scripts/gemstone.gd" id="1_458m8"]
+[ext_resource type="Texture2D" uid="uid://pes8gl1ineyo" path="res://assets/images/gemstone/gemstone-04_blue.png" id="2_5li64"]
+[ext_resource type="AudioStream" uid="uid://divet40l1dpm2" path="res://assets/sounds/gemstone.ogg" id="3_68qnt"]
+[ext_resource type="FontFile" uid="uid://cbh3hxq8qdpwb" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_huy64"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lp8l1"]
+size = Vector2(14, 14)
+
+[sub_resource type="Animation" id="Animation_mslvo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Kill_Point_Sound:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_cg33t"]
+resource_name = "kill_points"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Kill_Points:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Kill_Point_Sound:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4dswc"]
+_data = {
+"RESET": SubResource("Animation_mslvo"),
+"kill_points": SubResource("Animation_cg33t")
+}
+
+[node name="Gemstone_four" type="Area2D"]
+position = Vector2(0, -7)
+collision_mask = 2
+script = ExtResource("1_458m8")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5li64")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lp8l1")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_68qnt")
+
+[node name="Kill_Points" type="RichTextLabel" parent="."]
+offset_left = -5.0
+offset_top = -6.0
+offset_right = 33.0
+offset_bottom = 11.0
+scale = Vector2(1e-05, 1e-05)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 0
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("4_huy64")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "
++100"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4dswc")
+}
+
+[node name="Kill_Point_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_68qnt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

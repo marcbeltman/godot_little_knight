@@ -43,7 +43,7 @@ layout_mode = 2
 theme_override_constants/separation = 10
 
 [node name="Seperator1" type="Control" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 75)
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
 [node name="Label_message" type="Label" parent="MarginContainer/VBoxContainer"]
@@ -84,7 +84,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="Seperator4" type="Control" parent="MarginContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(0, 225)
+custom_minimum_size = Vector2(0, 175)
 layout_mode = 2
 
 [node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer2"]
@@ -129,6 +129,13 @@ theme_override_fonts/font = ExtResource("4_qroho")
 theme_override_font_sizes/font_size = 24
 text = "Scipio 3D"
 
+[node name="Gemstone_Button" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer3"]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qroho")
+theme_override_font_sizes/font_size = 24
+text = "Gemstone"
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(602, 330)
@@ -138,3 +145,4 @@ texture = ExtResource("5_12ya4")
 [connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer3/Play_Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer3/Leaderboard_Button" to="." method="_on_leaderboard_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer3/Toy_Button" to="." method="_on_toy_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer3/Gemstone_Button" to="." method="_on_gemstone_button_pressed"]
