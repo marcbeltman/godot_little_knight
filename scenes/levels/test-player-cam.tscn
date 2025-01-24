@@ -1,40 +1,30 @@
-[gd_scene load_steps=37 format=3 uid="uid://cju36f8v8eryy"]
+[gd_scene load_steps=27 format=3 uid="uid://cgq6ww330x74c"]
 
-[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_fffre"]
-[ext_resource type="Script" path="res://scripts/Health_System.gd" id="2_jwcso"]
-[ext_resource type="AudioStream" uid="uid://brermjcwc4ohv" path="res://assets/sounds/die.mp3" id="3_bkaxx"]
-[ext_resource type="Script" path="res://scripts/Level_Manager.gd" id="4_32kes"]
-[ext_resource type="AudioStream" uid="uid://bxkrnp0si51pe" path="res://assets/sounds/timesUp.mp3" id="5_iyado"]
-[ext_resource type="PackedScene" uid="uid://dpwu711vr4kwh" path="res://scenes/coin.tscn" id="6_mtb3i"]
-[ext_resource type="PackedScene" uid="uid://b8x7t2on6faco" path="res://scenes/platform.tscn" id="7_c8b0t"]
-[ext_resource type="PackedScene" uid="uid://6mtpjh17dde1" path="res://scenes/platform_move.tscn" id="8_p06oy"]
-[ext_resource type="FontFile" uid="uid://cmfmyu1epvek8" path="res://assets/fonts/PixelOperator8.ttf" id="9_sf5j6"]
-[ext_resource type="PackedScene" uid="uid://djem4tmwd3y4u" path="res://scenes/old/gate-A.tscn" id="10_mh1rn"]
-[ext_resource type="PackedScene" uid="uid://py8w2w7kv2me" path="res://scenes/gate.tscn" id="11_ig6pe"]
-[ext_resource type="Texture2D" uid="uid://cjljfxeec7ev5" path="res://assets/sprites/world_tileset.png" id="12_ts1qh"]
-[ext_resource type="Texture2D" uid="uid://c32ggajuawgm7" path="res://assets/sprites/tiny-town.png" id="13_cstv7"]
-[ext_resource type="Texture2D" uid="uid://mncrlk7k3hgj" path="res://assets/sprites/tiny-dungeon.png" id="14_mqt7m"]
-[ext_resource type="PackedScene" uid="uid://cwlfbfcef0p3l" path="res://scenes/slime_red.tscn" id="15_n555e"]
-[ext_resource type="PackedScene" uid="uid://tw5chfgikrve" path="res://scenes/slime_green.tscn" id="16_u8sno"]
-[ext_resource type="PackedScene" uid="uid://bent2ylxpl4oi" path="res://scenes/killzone.tscn" id="17_mecyw"]
-[ext_resource type="Texture2D" uid="uid://5k1i2qks33k3" path="res://assets/images/Backgrounds/backgroundEmpty.png" id="18_qg7a6"]
-[ext_resource type="PackedScene" uid="uid://dxobcjeut0me2" path="res://scenes/question_trigger.tscn" id="19_p385n"]
-[ext_resource type="PackedScene" uid="uid://d0tia5dve0qlo" path="res://scenes/heads_up_display.tscn" id="20_y1mui"]
-[ext_resource type="PackedScene" uid="uid://bhfpyfnti4k0k" path="res://scenes/dialogues/dialogue.tscn" id="21_xksu5"]
-[ext_resource type="PackedScene" uid="uid://bgg7nwg3nrtcu" path="res://scenes/player.tscn" id="22_sqpml"]
-[ext_resource type="PackedScene" uid="uid://onko4l4lwwdx" path="res://scenes/dialogues/instructions.tscn" id="23_uc104"]
-[ext_resource type="PackedScene" uid="uid://c36v6infyeq3v" path="res://scenes/instructions_trigger.tscn" id="23_y5ngq"]
-[ext_resource type="PackedScene" uid="uid://bsluv0gv8qwnm" path="res://scenes/direction_arrow.tscn" id="25_3rvvy"]
-[ext_resource type="PackedScene" uid="uid://biy8pm7ygixku" path="res://scenes/controls.tscn" id="26_cq6x1"]
-[ext_resource type="PackedScene" uid="uid://bn5unj7fvqk7u" path="res://scenes/gemstone/gemstone.tscn" id="27_1u3c4"]
-[ext_resource type="PackedScene" uid="uid://6aju1nv12q7a" path="res://scenes/gemstone/gemstone_ONE.tscn" id="27_h5aai"]
-[ext_resource type="PackedScene" uid="uid://blewo7oi0y2jk" path="res://scenes/gemstone/gemstone_TWO.tscn" id="28_lncfi"]
-[ext_resource type="PackedScene" uid="uid://bvmtgan1q6kfd" path="res://scenes/gemstone/gemstone_THREE.tscn" id="29_g41u7"]
-[ext_resource type="PackedScene" uid="uid://c5kfq0dc6xnvk" path="res://scenes/gemstone/gemstone_FOUR.tscn" id="30_yw62w"]
-[ext_resource type="PackedScene" uid="uid://c1fk755tsre0m" path="res://scenes/gemstone/gemstone_FIVE.tscn" id="31_sdf8h"]
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_l78h5"]
+[ext_resource type="Script" path="res://scripts/Health_System.gd" id="2_mjhhs"]
+[ext_resource type="AudioStream" uid="uid://brermjcwc4ohv" path="res://assets/sounds/die.mp3" id="3_f5sqr"]
+[ext_resource type="Script" path="res://scripts/Level_Manager.gd" id="4_djp6b"]
+[ext_resource type="AudioStream" uid="uid://bxkrnp0si51pe" path="res://assets/sounds/timesUp.mp3" id="5_yx834"]
+[ext_resource type="PackedScene" uid="uid://dpwu711vr4kwh" path="res://scenes/coin.tscn" id="6_lcnlk"]
+[ext_resource type="PackedScene" uid="uid://b8x7t2on6faco" path="res://scenes/platform.tscn" id="7_afk2j"]
+[ext_resource type="PackedScene" uid="uid://6mtpjh17dde1" path="res://scenes/platform_move.tscn" id="8_gy47i"]
+[ext_resource type="FontFile" uid="uid://cmfmyu1epvek8" path="res://assets/fonts/PixelOperator8.ttf" id="9_nyonc"]
+[ext_resource type="PackedScene" uid="uid://djem4tmwd3y4u" path="res://scenes/old/gate-A.tscn" id="10_o5qox"]
+[ext_resource type="PackedScene" uid="uid://py8w2w7kv2me" path="res://scenes/gate.tscn" id="11_itm7u"]
+[ext_resource type="PackedScene" uid="uid://dxobcjeut0me2" path="res://scenes/question_trigger.tscn" id="12_vugse"]
+[ext_resource type="Texture2D" uid="uid://cjljfxeec7ev5" path="res://assets/sprites/world_tileset.png" id="13_52327"]
+[ext_resource type="Texture2D" uid="uid://c32ggajuawgm7" path="res://assets/sprites/tiny-town.png" id="14_fgcgv"]
+[ext_resource type="Texture2D" uid="uid://mncrlk7k3hgj" path="res://assets/sprites/tiny-dungeon.png" id="15_sxjko"]
+[ext_resource type="PackedScene" uid="uid://cwlfbfcef0p3l" path="res://scenes/slime_red.tscn" id="16_s6xe1"]
+[ext_resource type="PackedScene" uid="uid://tw5chfgikrve" path="res://scenes/slime_green.tscn" id="17_l18h2"]
+[ext_resource type="PackedScene" uid="uid://bent2ylxpl4oi" path="res://scenes/killzone.tscn" id="18_slgk1"]
+[ext_resource type="Texture2D" uid="uid://5k1i2qks33k3" path="res://assets/images/Backgrounds/backgroundEmpty.png" id="19_r1htx"]
+[ext_resource type="PackedScene" uid="uid://d0tia5dve0qlo" path="res://scenes/heads_up_display.tscn" id="21_6ob0m"]
+[ext_resource type="PackedScene" uid="uid://cqfphu48kibam" path="res://scenes/test-player.tscn" id="22_usj8e"]
+[ext_resource type="PackedScene" uid="uid://bhfpyfnti4k0k" path="res://scenes/dialogues/dialogue.tscn" id="22_uxcy6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nimn1"]
-texture = ExtResource("12_ts1qh")
+texture = ExtResource("13_52327")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -433,7 +423,7 @@ texture = ExtResource("12_ts1qh")
 2:4/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_64y3c"]
-texture = ExtResource("13_cstv7")
+texture = ExtResource("14_fgcgv")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -832,7 +822,7 @@ texture = ExtResource("13_cstv7")
 11:10/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_674nq"]
-texture = ExtResource("14_mqt7m")
+texture = ExtResource("15_sxjko")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -1241,20 +1231,20 @@ position = Vector2(84, -129)
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("1_fffre")
+script = ExtResource("1_l78h5")
 duration = 101
 
 [node name="Health_System" type="Node" parent="GameManager" node_paths=PackedStringArray("level_start_pos_01")]
-script = ExtResource("2_jwcso")
+script = ExtResource("2_mjhhs")
 level_start_pos_01 = NodePath("../Level_Manager/Player_Start_01")
 
 [node name="die_sound" type="AudioStreamPlayer2D" parent="GameManager/Health_System"]
 position = Vector2(84, -129)
-stream = ExtResource("3_bkaxx")
+stream = ExtResource("3_f5sqr")
 pitch_scale = 2.0
 
 [node name="Level_Manager" type="Node" parent="GameManager"]
-script = ExtResource("4_32kes")
+script = ExtResource("4_djp6b")
 
 [node name="Player_Start_01" type="Node2D" parent="GameManager/Level_Manager"]
 position = Vector2(109, -73)
@@ -1263,7 +1253,7 @@ position = Vector2(109, -73)
 autostart = true
 
 [node name="TimesUp" type="AudioStreamPlayer2D" parent="GameManager"]
-stream = ExtResource("5_iyado")
+stream = ExtResource("5_yx834")
 
 [node name="World" type="Node" parent="."]
 
@@ -1271,39 +1261,39 @@ stream = ExtResource("5_iyado")
 
 [node name="coins" type="Node" parent="World/Objects"]
 
-[node name="coin1" parent="World/Objects/coins" instance=ExtResource("6_mtb3i")]
+[node name="coin1" parent="World/Objects/coins" instance=ExtResource("6_lcnlk")]
 position = Vector2(475, -70)
 
-[node name="coin2" parent="World/Objects/coins" instance=ExtResource("6_mtb3i")]
-position = Vector2(380, -98)
+[node name="coin2" parent="World/Objects/coins" instance=ExtResource("6_lcnlk")]
+position = Vector2(290, -98)
 
-[node name="coin3" parent="World/Objects/coins" instance=ExtResource("6_mtb3i")]
+[node name="coin3" parent="World/Objects/coins" instance=ExtResource("6_lcnlk")]
 position = Vector2(673, -80)
 
-[node name="coin4" parent="World/Objects/coins" instance=ExtResource("6_mtb3i")]
+[node name="coin4" parent="World/Objects/coins" instance=ExtResource("6_lcnlk")]
 position = Vector2(626, -241)
 
-[node name="coin5" parent="World/Objects/coins" instance=ExtResource("6_mtb3i")]
-position = Vector2(166, -278)
+[node name="coin5" parent="World/Objects/coins" instance=ExtResource("6_lcnlk")]
+position = Vector2(298, -282)
 
-[node name="coin6" parent="World/Objects/coins" instance=ExtResource("6_mtb3i")]
-position = Vector2(109, -331)
+[node name="coin6" parent="World/Objects/coins" instance=ExtResource("6_lcnlk")]
+position = Vector2(355, -187)
 
-[node name="coin7" parent="World/Objects/coins" instance=ExtResource("6_mtb3i")]
+[node name="coin7" parent="World/Objects/coins" instance=ExtResource("6_lcnlk")]
 position = Vector2(797, -48)
 
-[node name="coin8" parent="World/Objects/coins" instance=ExtResource("6_mtb3i")]
+[node name="coin8" parent="World/Objects/coins" instance=ExtResource("6_lcnlk")]
 position = Vector2(523, -289)
 
-[node name="coin9" parent="World/Objects/coins" instance=ExtResource("6_mtb3i")]
+[node name="coin9" parent="World/Objects/coins" instance=ExtResource("6_lcnlk")]
 position = Vector2(177, -223)
 
-[node name="coin10" parent="World/Objects/coins" instance=ExtResource("6_mtb3i")]
-position = Vector2(635, -108)
+[node name="coin10" parent="World/Objects/coins" instance=ExtResource("6_lcnlk")]
+position = Vector2(519, -189)
 
 [node name="platforms" type="Node" parent="World/Objects"]
 
-[node name="Platform_static_01" parent="World/Objects/platforms" instance=ExtResource("7_c8b0t")]
+[node name="Platform_static_01" parent="World/Objects/platforms" instance=ExtResource("7_afk2j")]
 position = Vector2(693, -118)
 
 [node name="platform_positions" type="Node2D" parent="World/Objects/platforms"]
@@ -1320,164 +1310,107 @@ position = Vector2(149, -320)
 [node name="02_right_limit" type="Marker2D" parent="World/Objects/platforms/platform_positions"]
 position = Vector2(283, -315)
 
-[node name="platform_move_hor_01" parent="World/Objects/platforms" instance=ExtResource("8_p06oy")]
+[node name="platform_move_hor_01" parent="World/Objects/platforms" instance=ExtResource("8_gy47i")]
 position = Vector2(567, -79)
 speed = 75.0
 left_limit_node = NodePath("../platform_positions/01_left_limit")
 right_limit_node = NodePath("../platform_positions/01_right_limit")
 
-[node name="Platform_static_02" parent="World/Objects/platforms" instance=ExtResource("7_c8b0t")]
+[node name="Platform_static_02" parent="World/Objects/platforms" instance=ExtResource("7_afk2j")]
 position = Vector2(579, -200)
 
-[node name="Platform_static_03" parent="World/Objects/platforms" instance=ExtResource("7_c8b0t")]
+[node name="Platform_static_03" parent="World/Objects/platforms" instance=ExtResource("7_afk2j")]
 position = Vector2(522, -246)
 
-[node name="Platform_static_04" parent="World/Objects/platforms" instance=ExtResource("7_c8b0t")]
+[node name="Platform_static_04" parent="World/Objects/platforms" instance=ExtResource("7_afk2j")]
 position = Vector2(248, -228)
 
-[node name="platform_move_hor_02" parent="World/Objects/platforms" instance=ExtResource("8_p06oy")]
+[node name="platform_move_hor_02" parent="World/Objects/platforms" instance=ExtResource("8_gy47i")]
 position = Vector2(225, -316)
 left_limit_node = NodePath("../platform_positions/02_left_limit")
 right_limit_node = NodePath("../platform_positions/02_right_limit")
 
-[node name="Platform_static_05" parent="World/Objects/platforms" instance=ExtResource("7_c8b0t")]
-position = Vector2(285, -191)
+[node name="Platform_static_05" parent="World/Objects/platforms" instance=ExtResource("7_afk2j")]
+position = Vector2(117, -49)
 
 [node name="Labels" type="Node" parent="World/Objects"]
 
 [node name="Level_Name" type="Label" parent="World/Objects/Labels"]
-offset_left = 15.0
-offset_top = -131.0
-offset_right = 101.0
-offset_bottom = -79.0
-theme_override_fonts/font = ExtResource("9_sf5j6")
+offset_left = 80.0
+offset_top = -105.0
+offset_right = 166.0
+offset_bottom = -53.0
+theme_override_fonts/font = ExtResource("9_nyonc")
 theme_override_font_sizes/font_size = 8
 text = "Level 01"
 metadata/_edit_use_anchors_ = true
 
-[node name="up" type="Label" parent="World/Objects/Labels"]
-offset_left = 138.0
-offset_top = -136.0
-offset_right = 224.0
-offset_bottom = -84.0
-theme_override_fonts/font = ExtResource("9_sf5j6")
-theme_override_font_sizes/font_size = 8
-text = "up
-"
-metadata/_edit_use_anchors_ = true
-
-[node name="shoot" type="Label" parent="World/Objects/Labels"]
-offset_left = 128.0
-offset_top = -71.0
-offset_right = 214.0
-offset_bottom = -19.0
-theme_override_fonts/font = ExtResource("9_sf5j6")
-theme_override_font_sizes/font_size = 8
-text = "shoot
-
-"
-
-[node name="left" type="Label" parent="World/Objects/Labels"]
-offset_left = 99.0
-offset_top = -103.0
-offset_right = 185.0
-offset_bottom = -51.0
-theme_override_fonts/font = ExtResource("9_sf5j6")
-theme_override_font_sizes/font_size = 8
-text = "left
-
-"
-
-[node name="right" type="Label" parent="World/Objects/Labels"]
-offset_left = 163.0
-offset_top = -103.0
-offset_right = 249.0
-offset_bottom = -51.0
-theme_override_fonts/font = ExtResource("9_sf5j6")
-theme_override_font_sizes/font_size = 8
-text = "right
-
-
-"
-
 [node name="Gates" type="Node" parent="World/Objects"]
 
-[node name="Gate_A" parent="World/Objects/Gates" instance=ExtResource("10_mh1rn")]
+[node name="Gate_A" parent="World/Objects/Gates" instance=ExtResource("10_o5qox")]
 position = Vector2(848, -55)
 gate_letter = "A"
 
-[node name="Gate_B" parent="World/Objects/Gates" instance=ExtResource("11_ig6pe")]
+[node name="Gate_B" parent="World/Objects/Gates" instance=ExtResource("11_itm7u")]
 position = Vector2(731, -231)
 gate_letter = "B"
 
-[node name="Gate_C" parent="World/Objects/Gates" instance=ExtResource("11_ig6pe")]
+[node name="Gate_C" parent="World/Objects/Gates" instance=ExtResource("11_itm7u")]
 position = Vector2(470, -181)
 gate_letter = "C"
 
-[node name="Gate_D" parent="World/Objects/Gates" instance=ExtResource("11_ig6pe")]
+[node name="Gate_D" parent="World/Objects/Gates" instance=ExtResource("11_itm7u")]
 position = Vector2(39, -343)
 gate_letter = "D"
 right_gate = true
 
 [node name="Triggers" type="Node" parent="World/Objects"]
 
-[node name="question_trigger" parent="World/Objects/Triggers" instance=ExtResource("19_p385n")]
-position = Vector2(220, -97)
-
-[node name="instructions_trigger" parent="World/Objects/Triggers" instance=ExtResource("23_y5ngq")]
-position = Vector2(59, -63)
+[node name="question_trigger" parent="World/Objects/Triggers" instance=ExtResource("12_vugse")]
+position = Vector2(186, -90)
 
 [node name="TileMap" type="TileMap" parent="World"]
 position = Vector2(83, -127)
 tile_set = SubResource("TileSet_dyiks")
 format = 2
 layer_0/name = "Background"
-layer_0/tile_data = PackedInt32Array(458757, 262144, 9, 458758, 262144, 9, 458759, 262144, 9, 458762, 262144, 9, 458763, 262144, 9, 524283, 262144, 9, 524284, 262144, 9, 524282, 262144, 9, 524281, 262144, 9, 524280, 262144, 9, 458766, 262144, 9, 458767, 262144, 9, 458768, 262144, 9, 458769, 262144, 9, 458774, 262144, 9, 458775, 262144, 9, 458778, 262144, 9, 458779, 262144, 9, 458780, 262144, 9, 458781, 262144, 9, 458782, 262144, 9, 458783, 262144, 9, 458784, 262144, 9, 458785, 262144, 9, 458788, 262144, 9, 458789, 262144, 9, 458790, 262144, 9, 458791, 262144, 9, 458792, 262144, 9, 458793, 262144, 9, 458795, 262144, 9, 458794, 262144, 9, 458802, 262144, 9, 458803, 262144, 9, 458804, 262144, 9, 458805, 262144, 9, 458806, 262144, 9, 458807, 262144, 9, 458808, 262144, 9, 196622, 393216, 1)
+layer_0/tile_data = PackedInt32Array(458757, 262144, 9, 458758, 262144, 9, 458759, 262144, 9, 458762, 262144, 9, 458763, 262144, 9, 524283, 262144, 9, 524284, 262144, 9, 524282, 262144, 9, 524281, 262144, 9, 524280, 262144, 9, 458766, 262144, 9, 458767, 262144, 9, 458768, 262144, 9, 458769, 262144, 9, 458774, 262144, 9, 458775, 262144, 9, 458778, 262144, 9, 458779, 262144, 9, 458780, 262144, 9, 458781, 262144, 9, 458782, 262144, 9, 458783, 262144, 9, 458784, 262144, 9, 458785, 262144, 9, 458788, 262144, 9, 458789, 262144, 9, 458790, 262144, 9, 458791, 262144, 9, 458792, 262144, 9, 458793, 262144, 9, 458795, 262144, 9, 458794, 262144, 9, 458802, 262144, 9, 458803, 262144, 9, 458804, 262144, 9, 458805, 262144, 9, 458806, 262144, 9, 458807, 262144, 9, 458808, 262144, 9)
 layer_1/name = "Midground"
-layer_1/tile_data = PackedInt32Array(393217, 65536, 0, 393219, 65536, 0, 458756, 65536, 0, 524286, 65536, 0, 458752, 65536, 0, 327685, 589824, 0, 327686, 655360, 0, 327687, 720896, 0, 327692, 65536, 0, 458764, 65536, 0, 393224, 65536, 0, 458761, 65536, 0, 393229, 65536, 0, -131044, 0, 0, -131045, 0, 0, -131046, 0, 0, -65510, 65536, 1, -65511, 0, 1, -131047, 0, 0, 327700, 262144, 1, 393236, 262144, 1, 458772, 131072, 1, 327701, 262144, 1, 393237, 262144, 1, 458773, 131072, 1, 327702, 196608, 1, 327703, 196608, 1, 262168, 196608, 1, 327704, 131072, 1, 393240, 131072, 1, 458776, 262144, 1, 196633, 196608, 1, 262169, 196608, 1, 327705, 196608, 0, 393241, 131072, 1, 458777, 262144, 1, 327714, 131072, 1, 393250, 131072, 1, 327715, 131072, 0, 393251, 131072, 1, 262182, 131072, 1, 196647, 131072, 1, 262183, 262144, 1, 196648, 262144, 1, 262184, 131072, 1, 131113, 196608, 8, 196649, 131072, 1, 262185, 131072, 1, 327699, 196608, 0, 393234, 196608, 0, 458771, 196608, 0, 262162, 196608, 0, 65577, 196608, 8, -65495, 131072, 4, -131040, 131072, 1, -131039, 131072, 1, -131038, 131072, 1, -65502, 131072, 1, 196604, 65536, 0, 196605, 65536, 0, 196606, 65536, 1, 196603, 65536, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 393216, 65536, 1, 458755, 65536, 1, 327688, 0, 0, 327689, 0, 0, 393225, 65536, 1, 393228, 0, 1, 458765, 0, 1, 327693, 65536, 1, 393218, 0, 1, 393220, 0, 1, 458751, 0, 1, 524287, 0, 1, 458754, 0, 1, 458753, 0, 1, 458760, 0, 1, 327698, 196608, 1, 393235, 131072, 1, 458770, 131072, 1, 458787, 262144, 1, 458786, 262144, 1, 458796, 65536, 0, 458797, 65536, 1, 393260, 0, 0, 393261, 0, 0, 393262, 0, 0, 393263, 0, 0, 393264, 0, 0, 393265, 0, 0, 458798, 0, 1, 458799, 65536, 1, 458800, 0, 1, 458801, 65536, 0, -327644, 0, 0, -327643, 0, 0, -327642, 0, 0, -327641, 0, 0, -327640, 0, 0, -327639, 0, 0, -327638, 0, 0, -262107, 65536, 1, -262105, 65536, 1, -262106, 0, 1, -262108, 0, 1, -262104, 0, 1, -262103, 0, 1, -262102, 65536, 1, -131048, 0, 0, -131049, 0, 0, -131050, 0, 0, -65514, 0, 1, -65513, 65536, 1, -65512, 65536, 0, -65509, 0, 1, -65508, 0, 1, -65536, 0, 0, 0, 65536, 0, -65535, 0, 0, 1, 65536, 0, -720901, 0, 0, -655365, 65536, 1, -720900, 0, 0, -655364, 0, 1, -720899, 0, 0, -655363, 0, 1, -720898, 0, 0, -655362, 65536, 1, -720897, 0, 0, -655361, 0, 1, -786432, 0, 0, -720896, 65536, 0, -720895, 0, 0, -720894, 0, 0, -262140, 131072, 0, -196604, 196608, 1, -262139, 131072, 0, -196603, 196608, 1, -262138, 131072, 0, -196602, 196608, 1, -655346, 196608, 1, -589810, 196608, 0, -524274, 131072, 1, -655345, 196608, 0, -589809, 196608, 1, -524273, 196608, 0, -589808, 196608, 0, -524272, 131072, 1, -589807, 262144, 1, -524271, 262144, 1, -589806, 262144, 1, -524270, 262144, 1, -589805, 196608, 1, -589804, 196608, 1, -589803, 131072, 1, -655338, 196608, 1, -589802, 196608, 0, -524266, 131072, 1, -589811, 131072, 1, -524275, 131072, 1, -720882, 196608, 1, -524267, 131072, 1, -327674, 65536, 3, -327675, 65536, 6, 262157, 65536, 6, 262178, 65536, 3, -196575, 65536, 6, -196576, 65536, 3, 131067, 65536, 6, -196586, 65536, 6, -393179, 0, 5, -458715, 0, 4, -524251, 0, 4, -589787, 0, 3, -393180, 65536, 5, -196582, 65536, 6, -196581, 65536, 6, -851968, 196608, 8, -917504, 196608, 7, -1048576, 131072, 4, -131071, 65536, 6, 262179, 0, 5, 196643, 0, 4, 131107, 0, 3, 327729, 0, 5, 262193, 0, 4, 196657, 0, 4, 131121, 0, 3, -327676, 0, 5, -393212, 0, 4, -458748, 0, 3, 196626, 65536, 6, -655344, 196608, 8, -720880, 196608, 7, -851952, 131072, 4, -131058, 131072, 0, -131057, 131072, 0, -131056, 131072, 0, -131055, 131072, 0, -131059, 131072, 0, -65523, 131072, 1, -65522, 131072, 1, -65521, 196608, 0, -65520, 131072, 1, -65519, 196608, 1, -196594, 196608, 8, -262130, 196608, 7, -393202, 131072, 4, -196593, 393216, 5, -262129, 393216, 3, -196595, 65536, 6, 262147, 65536, 6, 524285, 65536, 1, 458750, 0, 1, 393215, 0, 0, 131084, 131072, 4, 262156, 196608, 7)
+layer_1/tile_data = PackedInt32Array(327685, 589824, 0, 327686, 655360, 0, 327687, 720896, 0, 327692, 65536, 0, 458764, 65536, 0, 393224, 65536, 0, 458761, 65536, 0, 393229, 65536, 0, -131044, 0, 0, -131045, 0, 0, -131046, 0, 0, -65510, 65536, 1, -65511, 0, 1, -131047, 0, 0, 327700, 262144, 1, 393236, 262144, 1, 458772, 131072, 1, 327701, 262144, 1, 393237, 262144, 1, 458773, 131072, 1, 327702, 196608, 1, 327703, 196608, 1, 262168, 196608, 1, 327704, 131072, 1, 393240, 131072, 1, 458776, 262144, 1, 196633, 196608, 1, 262169, 196608, 1, 327705, 196608, 0, 393241, 131072, 1, 458777, 262144, 1, 327714, 131072, 1, 393250, 131072, 1, 327715, 131072, 0, 393251, 131072, 1, 262182, 131072, 1, 196647, 131072, 1, 262183, 262144, 1, 196648, 262144, 1, 262184, 131072, 1, 131113, 196608, 8, 196649, 131072, 1, 262185, 131072, 1, 327699, 196608, 0, 393234, 196608, 0, 458771, 196608, 0, 262162, 196608, 0, 65577, 196608, 8, -65495, 131072, 4, -131040, 131072, 1, -131039, 131072, 1, -131038, 131072, 1, -65502, 131072, 1, 196604, 65536, 0, 196605, 65536, 0, 196606, 65536, 1, 196603, 65536, 0, 327688, 0, 0, 327689, 0, 0, 393225, 65536, 1, 393228, 0, 1, 458765, 0, 1, 327693, 65536, 1, 458760, 0, 1, 327698, 196608, 1, 393235, 131072, 1, 458770, 131072, 1, 458787, 262144, 1, 458786, 262144, 1, 458796, 65536, 0, 458797, 65536, 1, 393260, 0, 0, 393261, 0, 0, 393262, 0, 0, 393263, 0, 0, 393264, 0, 0, 393265, 0, 0, 458798, 0, 1, 458799, 65536, 1, 458800, 0, 1, 458801, 65536, 0, -327644, 0, 0, -327643, 0, 0, -327642, 0, 0, -327641, 0, 0, -327640, 0, 0, -327639, 0, 0, -327638, 0, 0, -262107, 65536, 1, -262105, 65536, 1, -262106, 0, 1, -262108, 0, 1, -262104, 0, 1, -262103, 0, 1, -262102, 65536, 1, -131048, 0, 0, -131049, 0, 0, -131050, 0, 0, -65514, 0, 1, -65513, 65536, 1, -65512, 65536, 0, -65509, 0, 1, -65508, 0, 1, -65536, 0, 0, 0, 65536, 0, -65535, 0, 0, 1, 65536, 0, -720901, 0, 0, -655365, 65536, 1, -720900, 0, 0, -655364, 0, 1, -720899, 0, 0, -655363, 0, 1, -720898, 0, 0, -655362, 65536, 1, -720897, 0, 0, -655361, 0, 1, -786432, 0, 0, -720896, 65536, 0, -720895, 0, 0, -720894, 0, 0, -262140, 131072, 0, -196604, 196608, 1, -262139, 131072, 0, -196603, 196608, 1, -262138, 131072, 0, -196602, 196608, 1, -655346, 196608, 1, -589810, 196608, 0, -524274, 131072, 1, -655345, 196608, 0, -589809, 196608, 1, -524273, 196608, 0, -589808, 196608, 0, -524272, 131072, 1, -589807, 262144, 1, -524271, 262144, 1, -589806, 262144, 1, -524270, 262144, 1, -589805, 196608, 1, -589804, 196608, 1, -589803, 131072, 1, -655338, 196608, 1, -589802, 196608, 0, -524266, 131072, 1, -589811, 131072, 1, -524275, 131072, 1, -720882, 196608, 1, -524267, 131072, 1, 131081, 131072, 4, 262153, 196608, 7, -65540, 131072, 4, 65532, 196608, 7, 131068, 196608, 8, -327674, 65536, 3, -327675, 65536, 6, 262157, 65536, 6, 262178, 65536, 3, -196575, 65536, 6, -196576, 65536, 3, 131067, 65536, 6, -196586, 65536, 6, -393179, 0, 5, -458715, 0, 4, -524251, 0, 4, -589787, 0, 3, -393180, 65536, 5, -196582, 65536, 6, -196581, 65536, 6, -851968, 196608, 8, -917504, 196608, 7, -1048576, 131072, 4, -131071, 65536, 6, 262179, 0, 5, 196643, 0, 4, 131107, 0, 3, 327729, 0, 5, 262193, 0, 4, 196657, 0, 4, 131121, 0, 3, -327676, 0, 5, -393212, 0, 4, -458748, 0, 3, 196626, 65536, 6, -655344, 196608, 8, -720880, 196608, 7, -851952, 131072, 4, -131058, 131072, 0, -131057, 131072, 0, -131056, 131072, 0, -131055, 131072, 0, -131059, 131072, 0, -65523, 131072, 1, -65522, 131072, 1, -65521, 196608, 0, -65520, 131072, 1, -65519, 196608, 1, -196594, 196608, 8, -262130, 196608, 7, -393202, 131072, 4, -196593, 393216, 5, -262129, 393216, 3, -196595, 65536, 6, 262147, 65536, 6, 131069, 65536, 3, 524287, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0)
 layer_2/name = "foreground"
 layer_2/tile_data = PackedInt32Array()
 
 [node name="Enemies" type="Node" parent="World"]
 
-[node name="slime_red" parent="World/Enemies" instance=ExtResource("15_n555e")]
+[node name="slime_red" parent="World/Enemies" instance=ExtResource("16_s6xe1")]
 position = Vector2(369, -271)
 
-[node name="slime_green" parent="World/Enemies" instance=ExtResource("16_u8sno")]
+[node name="slime_green" parent="World/Enemies" instance=ExtResource("17_l18h2")]
 position = Vector2(402, -46)
 
-[node name="Killzone" parent="World" instance=ExtResource("17_mecyw")]
+[node name="Killzone" parent="World" instance=ExtResource("18_slgk1")]
 position = Vector2(-16, 55)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="World"]
 visible = false
 scale = Vector2(0.8, 0.8)
 transform = Transform2D(0.8, 0, 0, 0.8, 0, 0)
-scroll_offset = Vector2(244.93, 282.032)
+scroll_offset = Vector2(0, 207.604)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="World/ParallaxBackground"]
 motion_scale = Vector2(0.2, 0.2)
 motion_mirroring = Vector2(1024, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="World/ParallaxBackground/ParallaxLayer"]
-texture = ExtResource("18_qg7a6")
+texture = ExtResource("19_r1htx")
 centered = false
 
-[node name="player" parent="World" instance=ExtResource("22_sqpml")]
-position = Vector2(111, -49)
+[node name="player" parent="World" instance=ExtResource("22_usj8e")]
+position = Vector2(97, -15)
 
-[node name="Heads-Up_Display" parent="." instance=ExtResource("20_y1mui")]
+[node name="Heads-Up_Display" parent="." instance=ExtResource("21_6ob0m")]
 
-[node name="Dialogue" parent="Heads-Up_Display" instance=ExtResource("21_xksu5")]
-titel = "Thema: Democratie"
-question = "Vraag 01: Welke kernwaarde van de westerse democratie beschermt het recht om kritiek te leveren zonder angst voor vervolging?"
-answer_A = " A) Nationale soevereiniteit."
-answer_B = "  B) Economische gelijkheid."
-answer_C = "  C) Sociale cohesie."
-answer_D = "  D) Vrijheid van meningsuiting."
-right_answer = " D"
-
-[node name="Dialogue_old" parent="Heads-Up_Display" instance=ExtResource("21_xksu5")]
+[node name="Dialogue" parent="Heads-Up_Display" instance=ExtResource("22_uxcy6")]
 titel = "Thema: De Bijbel."
 question = "Vraag 01: uit hoeveel boeken bestaat de bijbel?"
 answer_A = " A) De bijbel bestaat uit 12 boeken."
@@ -1485,46 +1418,3 @@ answer_B = "  B) Het aantal boeken in de bijbel is 60."
 answer_C = "  C) Er staan 53 boeken in de bijbel."
 answer_D = "  D) 66 boeken zijn er terug te vinden in de bijbel."
 right_answer = " D"
-
-[node name="Instructions" parent="Heads-Up_Display" instance=ExtResource("23_uc104")]
-titel = "!!! SPEL INSTRUCTIES :"
-question = "Open de vraag door tegen het icoontje met het vraagteken te springen."
-answer_A = "Lees de vraag en de mogelijke antwoorden A, B, C of D."
-answer_B = "Kies volgens jou het juiste antwoord en onthoud de bijbehorende letter (A,B,C of D)."
-answer_C = "Zoek de poort met de letter die overeen komt met je gekozen antwoord en ga die binnen."
-answer_D = "Alleen de poort met het juiste antwoord geeft toegang tot het volgende level. Succes !"
-
-[node name="direction_arrow" parent="." instance=ExtResource("25_3rvvy")]
-position = Vector2(-5, 66)
-scale = Vector2(0.5, 0.5)
-flip_h = true
-
-[node name="input_controls" parent="." instance=ExtResource("26_cq6x1")]
-offset_left = 43.0
-offset_top = 38.0
-offset_right = 43.0
-offset_bottom = 38.0
-
-[node name="Gemstone_one" parent="." instance=ExtResource("27_h5aai")]
-position = Vector2(647, 43)
-led_index = 1
-
-[node name="Gemstone_two" parent="." instance=ExtResource("28_lncfi")]
-position = Vector2(551, -37)
-led_index = 2
-
-[node name="Gemstone_three" parent="." instance=ExtResource("29_g41u7")]
-position = Vector2(263, -36)
-led_index = 3
-
-[node name="Gemstone_four" parent="." instance=ExtResource("30_yw62w")]
-position = Vector2(359, -165)
-led_index = 4
-
-[node name="Gemstone_five" parent="." instance=ExtResource("31_sdf8h")]
-position = Vector2(215, -149)
-led_index = 5
-
-[node name="Gemstone" parent="." instance=ExtResource("27_1u3c4")]
-position = Vector2(28, -179)
-led_index = 6
